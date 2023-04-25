@@ -1,12 +1,23 @@
 .login {
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgb(136, 171, 241);
+}
+
+.cardlogin {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: white;
+  border-radius: 10px;
+  height: 550px;
+  overflow: hidden;
 }
 
 form {
   width: 360px;
-  padding: 100px 0px;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -15,6 +26,9 @@ form {
 h1 {
   color: gray;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 label {
@@ -23,7 +37,8 @@ label {
 }
 
 .input {
-  padding: 20px;
+  border: none;
+  padding: 20px 10px;
   border: 1px solid rgb(216, 214, 214);
 }
 
@@ -31,8 +46,13 @@ label {
   border: none;
   padding: 20px;
   color: white;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 18px;
   background-color: #0715cf;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.registrate {
+  color: red;
   cursor: pointer;
 }

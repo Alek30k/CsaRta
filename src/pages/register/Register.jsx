@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 import axios from "axios";
 
@@ -32,7 +32,7 @@ const Register = () => {
     <div className="register">
       <div className="card">
         <div className="registerform">
-          {/* <h1>Register</h1> */}
+          <h1>Registrarse</h1>
           <form>
             <input
               type="text"
@@ -59,7 +59,14 @@ const Register = () => {
               onChange={handleChange}
             />
             {err && err}
-            <button onClick={handleClick}>Register</button>
+            <button onClick={handleClick} className="button">
+              Register
+            </button>
+            <span>¿Tiene usted una cuenta?</span>
+            <Link to="/login">
+              {/* <button >Login</button> */}
+              <p>Iniciar sesión</p>
+            </Link>
           </form>
         </div>
       </div>

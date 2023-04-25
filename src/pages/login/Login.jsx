@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 import newRequest from "../../utils/newRequest";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -27,32 +27,36 @@ function Login() {
 
   return (
     <div className="login">
-      <form onSubmit={handleSubmit}>
-        <h1>Sign in</h1>
-        <label htmlFor="">Username</label>
-        <input
-          name="username"
-          type="text"
-          placeholder="johndoe"
-          className="input"
-          onChange={(e) => setUsername(e.target.value)}
-        />
+      <div className="cardlogin">
+        <form onSubmit={handleSubmit}>
+          <h1>Iniciar sesión</h1>
+          <label htmlFor="">Nombre de usuario</label>
+          <input
+            name="username"
+            type="text"
+            placeholder="johndoe"
+            className="input"
+            onChange={(e) => setUsername(e.target.value)}
+          />
 
-        <label htmlFor="">Password</label>
-        <input
-          name="password"
-          type="password"
-          className="input"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit" className="button">
-          Ingresar
-        </button>
-        <button type="submit" className="button" onClick={handleRegister}>
-          Registro
-        </button>
-        {error && error}
-      </form>
+          <label htmlFor="">Contraseña</label>
+          <input
+            name="password"
+            type="password"
+            className="input"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="submit" className="button">
+            Ingresar
+          </button>
+
+          <div onClick={handleRegister} className="registrate">
+            Registrate
+          </div>
+
+          {error && error}
+        </form>
+      </div>
     </div>
   );
 }
