@@ -22,13 +22,12 @@ label {
   font-size: 18px;
 }
 
-input,
-textarea {
+.input {
   padding: 20px;
   border: 1px solid rgb(216, 214, 214);
 }
 
-button {
+.button {
   border: none;
   padding: 20px;
   color: white;
@@ -36,9 +35,4 @@ button {
   font-size: 18px;
   background-color: #0715cf;
   cursor: pointer;
-}
-
-span {
-  color: red;
-  font-size: 12px;
 }

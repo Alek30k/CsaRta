@@ -1,14 +1,24 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  Outlet,
+  RouterProvider,
+} from "react-router-dom";
 import Header from "./common/header/Header";
 import Pages from "./pages/Pages";
 import Data from "./components/Data";
 import Cart from "./common/Cart/Cart";
 import Footer from "./common/footer/Footer";
 import Sdata from "./components/shops/Sdata";
+import Login from "./pages/login/Login";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { AuthContext } from "./context/authContext";
 
 function App() {
+  const { currentUser } = useContext(AuthContext);
   /*
   step1 :  const { productItems } = Data 
   lai pass garne using props
@@ -78,30 +88,95 @@ function App() {
     }
   };
 
-  return (
-    <>
-      <Router>
-        <Header CartItem={CartItem} />
-        <Switch>
-          <Route path="/" exact>
+  const queryClient = new QueryClient();
+
+  const Layout = () => {
+    return (
+      <div className="app">
+        <QueryClientProvider client={queryClient}>
+          <Header CartItem={CartItem} />
+          <Outlet />
+          <Footer />
+        </QueryClientProvider>
+      </div>
+    );
+  };
+
+  const ProtectedRoute = ({ children }) => {
+    if (!currentUser) {
+      return <Navigate to="/login" />;
+    }
+
+    return children;
+  };
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <ProtectedRoute>
+          <Layout />
+        </ProtectedRoute>
+      ),
+      children: [
+        {
+          path: "/",
+          element: (
             <Pages
               productItems={productItems}
               addToCart={addToCart}
               shopItems={shopItems}
             />
-          </Route>
-          <Route path="/cart" exact>
+          ),
+        },
+        {
+          path: "/cart",
+          element: (
             <Cart
               CartItem={CartItem}
               addToCart={addToCart}
               decreaseQty={decreaseQty}
             />
-          </Route>
-        </Switch>
-        <Footer />
-      </Router>
-    </>
-  );
+          ),
+        },
+      ],
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
+
+//   return (
+//     <div>
+//       <Router>
+//         <Header CartItem={CartItem} />
+//         <Switch>
+//           <Route path="/" exact>
+//             <Pages
+//               productItems={productItems}
+//               addToCart={addToCart}
+//               shopItems={shopItems}
+//             />
+//           </Route>
+//           <Route path="/cart" exact>
+//             <Cart
+//               CartItem={CartItem}
+//               addToCart={addToCart}
+//               decreaseQty={decreaseQty}
+//             />
+//           </Route>
+//           <Route path="/login" exact>
+//             <Login />
+//           </Route>
+//         </Switch>
+//         <Footer />
+//       </Router>
+//     </div>
+//   );
+// }
 
 export default App;

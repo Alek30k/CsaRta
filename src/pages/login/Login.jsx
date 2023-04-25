@@ -1,23 +1,23 @@
 import React, { useState } from "react";
-import "./login.css";
+import "./style.css";
 import newRequest from "../../utils/newRequest";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await newRequest.post("/auth/login", { username, password });
       localStorage.setItem("currentUser", JSON.stringify(res.data));
-      // navigate("/");
+      navigate("/");
     } catch (err) {
-      setError(err.response.data);
+      console.log(err);
     }
   };
 
@@ -30,6 +30,7 @@ function Login() {
           name="username"
           type="text"
           placeholder="johndoe"
+          className="input"
           onChange={(e) => setUsername(e.target.value)}
         />
 
@@ -37,9 +38,12 @@ function Login() {
         <input
           name="password"
           type="password"
+          className="input"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Login</button>
+        <button type="submit" className="button">
+          Login
+        </button>
         {error && error}
       </form>
     </div>
