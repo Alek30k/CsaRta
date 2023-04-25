@@ -1,0 +1,84 @@
+.register {
+  height: 100vh;
+  background-color: rgb(136, 171, 241);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 30%;
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: white;
+  border-radius: 10px;
+  height: 500px;
+  overflow: hidden;
+}
+
+/* .left {
+  flex: 1;
+  background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
+    url("https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600")
+      center;
+  background-size: cover;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  color: white;
+}
+
+.left h1 {
+  font-size: 100px;
+  line-height: 100px;
+  color: aqua;
+}
+
+.left span {
+  font-size: 14px;
+}
+
+.left button {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  background-color: white;
+  color: rebeccapurple;
+  cursor: pointer;
+  font-weight: bold;
+} */
+
+.registerform {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+}
+
+.registerform h1 {
+  color: #555;
+}
+
+.registerform form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.registerform input {
+  border: none;
+  border-bottom: 1px solid lightgray;
+  padding: 20px 10px;
+}
+
+.registerform button {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  background-color: rgb(50, 225, 248);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}

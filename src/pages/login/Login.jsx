@@ -21,6 +21,10 @@ function Login() {
     }
   };
 
+  const handleRegister = () => {
+    navigate("/register");
+  };
+
   return (
     <div className="login">
       <form onSubmit={handleSubmit}>
@@ -42,7 +46,10 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit" className="button">
-          Login
+          Ingresar
+        </button>
+        <button type="submit" className="button" onClick={handleRegister}>
+          Registro
         </button>
         {error && error}
       </form>

@@ -15,10 +15,11 @@ import Footer from "./common/footer/Footer";
 import Sdata from "./components/shops/Sdata";
 import Login from "./pages/login/Login";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { AuthContext } from "./context/authContext";
+import Register from "./pages/register/Register";
+// import { AuthContext } from "./context/authContext";
 
 function App() {
-  const { currentUser } = useContext(AuthContext);
+  // const { currentUser } = useContext(AuthContext);
   /*
   step1 :  const { productItems } = Data 
   lai pass garne using props
@@ -102,22 +103,23 @@ function App() {
     );
   };
 
-  const ProtectedRoute = ({ children }) => {
-    if (!currentUser) {
-      return <Navigate to="/login" />;
-    }
+  // const ProtectedRoute = ({ children }) => {
+  //   if (!currentUser) {
+  //     return <Navigate to="/login" />;
+  //   }
 
-    return children;
-  };
+  //   return children;
+  // };
 
   const router = createBrowserRouter([
     {
       path: "/",
       element: (
-        <ProtectedRoute>
-          <Layout />
-        </ProtectedRoute>
+        // <ProtectedRoute>
+        <Layout />
       ),
+      // </ProtectedRoute>
+
       children: [
         {
           path: "/",
@@ -144,6 +146,10 @@ function App() {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/register",
+      element: <Register />,
     },
   ]);
 
