@@ -5,23 +5,23 @@ const Wrapper = () => {
   const data = [
     {
       cover: <i className="fa-solid fa-truck-fast"></i>,
-      title: "Worldwide Delivery",
-      decs: "We offer competitive prices on our 100 million plus product any range.",
+      title: "Envíos a todo el mundo",
+      decs: "Ofrecemos precios competitivos en nuestros más de 100 millones de productos de cualquier rango.",
     },
     {
       cover: <i className="fa-solid fa-id-card"></i>,
-      title: "Safe Payment",
-      decs: "We offer competitive prices on our 100 million plus product any range.",
+      title: "Pago Seguro",
+      decs: "Ofrecemos precios competitivos en nuestros más de 100 millones de productos de cualquier rango.",
     },
     {
       cover: <i className="fa-solid fa-shield"></i>,
-      title: "Shop With Confidence ",
-      decs: "We offer competitive prices on our 100 million plus product any range.",
+      title: "Compra con confianza ",
+      decs: "Ofrecemos precios competitivos en nuestros más de 100 millones de productos de cualquier rango.",
     },
     {
       cover: <i className="fa-solid fa-headset"></i>,
-      title: "24/7 Support ",
-      decs: "We offer competitive prices on our 100 million plus product any range.",
+      title: "Soporte 24/7",
+      decs: "Ofrecemos precios competitivos en nuestros más de 100 millones de productos de cualquier rango.",
     },
   ];
   return (

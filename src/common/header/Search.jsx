@@ -18,8 +18,6 @@ const Search = ({ CartItem }) => {
   const { currentUser } = useContext(AuthContext);
   const { logout } = useContext(AuthContext);
 
-  console.log(currentUser);
-
   const handleLogout = async (e) => {
     try {
       await logout();

@@ -1,12 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import {
-  createBrowserRouter,
-  Navigate,
-  Outlet,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Header from "./common/header/Header";
 import Pages from "./pages/Pages";
 import Data from "./components/Data";
@@ -16,10 +10,9 @@ import Sdata from "./components/shops/Sdata";
 import Login from "./pages/login/Login";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Register from "./pages/register/Register";
-// import { AuthContext } from "./context/authContext";
+import ProductCard from "./pages/card/ProductCard";
 
 function App() {
-  // const { currentUser } = useContext(AuthContext);
   /*
   step1 :  const { productItems } = Data 
   lai pass garne using props
@@ -135,6 +128,16 @@ function App() {
           path: "/cart",
           element: (
             <Cart
+              CartItem={CartItem}
+              addToCart={addToCart}
+              decreaseQty={decreaseQty}
+            />
+          ),
+        },
+        {
+          path: "/product/:id",
+          element: (
+            <ProductCard
               CartItem={CartItem}
               addToCart={addToCart}
               decreaseQty={decreaseQty}
