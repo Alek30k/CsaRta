@@ -138,9 +138,9 @@ function App() {
           path: "/product/:id",
           element: (
             <ProductCard
-              CartItem={CartItem}
+              productItems={productItems}
               addToCart={addToCart}
-              decreaseQty={decreaseQty}
+              shopItems={shopItems}
             />
           ),
         },
