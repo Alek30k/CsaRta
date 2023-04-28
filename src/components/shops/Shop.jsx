@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import Catg from "./Catg";
 import ShopCart from "./ShopCart";
 import "./style.css";
 
 const Shop = ({ addToCart, shopItems }) => {
+  const allMarcas = [
+    "all",
+    ...new Set(shopItems.map((producto) => producto.cateName)),
+  ];
+
+  const [cateName, setCateName] = useState(allMarcas);
+  const [products, setProducts] = useState(shopItems);
+
+  const filterMarcas = (marca) => {
+    if (marca === "all") {
+      setProducts(shopItems);
+      return;
+    }
+    const filteredProduct = shopItems.filter((p) => p.cateName === marca);
+    setProducts(filteredProduct);
+  };
+
   return (
     <>
       <section className="shop background">
         <div className="container d_flex">
-          <Catg />
+          <Catg cateName={cateName} filterMarcas={filterMarcas} />
 
           <div className="contentWidth">
             <div className="heading d_flex">
@@ -21,7 +38,11 @@ const Shop = ({ addToCart, shopItems }) => {
               </div>
             </div>
             <div className="product-content  grid1">
-              <ShopCart addToCart={addToCart} shopItems={shopItems} />
+              <ShopCart
+                addToCart={addToCart}
+                shopItems={shopItems}
+                products={products}
+              />
             </div>
           </div>
         </div>

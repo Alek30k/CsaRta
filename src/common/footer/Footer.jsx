@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <>
       <footer>
-        <div className="container grid2">
+        <div className="container grid2" id="QuienesSomos">
           <div className="box">
             {/* <div className="logo width ">
               <img src={logo} alt="" />

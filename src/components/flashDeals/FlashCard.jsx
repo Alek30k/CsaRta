@@ -8,6 +8,7 @@ import {
   faCircleArrowRight,
   faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const SampleNextArrow = (props) => {
   const { onClick } = props;
@@ -34,6 +35,7 @@ const FlashCard = ({ productItems, addToCart }) => {
   const increment = () => {
     setCount(count + 1);
   };
+
   const settings = {
     dots: false,
     infinite: true,
@@ -44,55 +46,44 @@ const FlashCard = ({ productItems, addToCart }) => {
     prevArrow: <SamplePrevArrow />,
   };
 
+  const [slideNumber, setSlideNumber] = useState("");
   const [open, setOpen] = useState(false);
 
+  const handleOpen = (i) => {
+    setSlideNumber(i);
+    setOpen(true);
+  };
+
   return (
-    <>
+    <div>
       <Slider {...settings}>
-        {productItems.map((productItems) => {
+        {productItems.map((productItems, i) => {
           return (
-            <>
-              {open && (
-                <div className="slider">
-                  <FontAwesomeIcon
-                    icon={faCircleXmark}
-                    className="close"
-                    onClick={() => setOpen(false)}
-                  />
-                  <FontAwesomeIcon
-                    icon={faCircleArrowLeft}
-                    className="arrow"
-                    // onClick={() => handleMove("l")}
-                  />
-                  <div className="sliderWrapper">
-                    <img
-                      src={productItems.cover}
-                      alt=""
-                      className="sliderImg"
-                    />
-                  </div>
-                  <FontAwesomeIcon
-                    icon={faCircleArrowRight}
-                    className="arrow"
-                    // onClick={() => handleMove("r")}
-                  />
-                </div>
-              )}
-              <div className="box" key={productItems}>
+            <div key={i}>
+              <div className="box">
                 <div className="product mtop">
                   <div className="img">
                     <span className="discount">
                       {productItems.discount}% Off
                     </span>
 
-                    <img src={productItems.cover} alt="" />
+                    <Link to={`/product/${productItems.id}`}>
+                      <img
+                        src={productItems.cover}
+                        alt=""
+                        onClick={() => handleOpen(i)}
+                      />
+                    </Link>
 
                     <div className="product-like">
-                      <label>{count}</label> <br />
+                      {/* <label>{count}</label> <br /> */}
+
                       <i
                         className="fa-regular fa-heart"
-                        onClick={increment}
+                        // onClick={increment}
                       ></i>
+
+                      {/* <i class="fa-solid fa-heart"></i> */}
                     </div>
                   </div>
                   <div className="product-details">
@@ -116,12 +107,53 @@ const FlashCard = ({ productItems, addToCart }) => {
                   </div>
                 </div>
               </div>
-            </>
+            </div>
           );
         })}
       </Slider>
-    </>
+    </div>
   );
 };
 
 export default FlashCard;
+
+// {open && (
+//   <div className="productContainer">
+//     <div className="slideer">
+//       <FontAwesomeIcon
+//         icon={faCircleXmark}
+//         className="closee"
+//         onClick={() => setOpen(false)}
+//       />
+//       {/* <FontAwesomeIcon
+//             icon={faCircleArrowLeft}
+//             className="arrow"
+//             // onClick={() => handleMove("l")}
+//           /> */}
+
+//       <div className="sliderWrapper">
+//         <img
+//           src={productItems[slideNumber].cover}
+//           alt=""
+//           className="sliderImg"
+//         />
+//         <div className="price">
+//           <h3>{productItems[slideNumber].name}</h3>
+//           <h4>${productItems[slideNumber].price}.00 </h4>
+//           {/* step : 3
+//                if hami le button ma click garryo bahne
+//               */}
+//           <button onClick={() => addToCart(productItems)}>
+//             <i className="fa fa-plus"></i>
+//           </button>
+//         </div>
+//       </div>
+
+//       {/* <FontAwesomeIcon
+//             icon={faCircleArrowRight}
+//             className="arrow"
+//             // onClick={() => handleMove("r")}
+//           /> */}
+//     </div>
+//   </div>
+// )}

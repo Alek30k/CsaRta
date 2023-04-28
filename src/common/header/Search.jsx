@@ -9,7 +9,6 @@ const Search = ({ CartItem }) => {
 
   const navigate = useNavigate();
 
-  // fixed Header
   window.addEventListener("scroll", function () {
     const search = document.querySelector(".search");
     search.classList.toggle("active", window.scrollY > 100);
@@ -18,6 +17,7 @@ const Search = ({ CartItem }) => {
   const { currentUser } = useContext(AuthContext);
   const { logout } = useContext(AuthContext);
 
+  console.log(currentUser);
   const handleLogout = async (e) => {
     try {
       await logout();

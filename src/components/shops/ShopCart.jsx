@@ -46,7 +46,7 @@
 
 import React, { useState } from "react";
 
-const ShopCart = ({ shopItems, addToCart }) => {
+const ShopCart = ({ addToCart, products }) => {
   const [count, setCount] = useState(0);
   const increment = () => {
     setCount(count + 1);
@@ -54,7 +54,7 @@ const ShopCart = ({ shopItems, addToCart }) => {
 
   return (
     <>
-      {shopItems.map((shopItems, index) => {
+      {products.slice(0, 9).map((shopItems, index) => {
         return (
           <div className="box" key={index}>
             <div className="product mtop">

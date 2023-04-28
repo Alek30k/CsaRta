@@ -1,19 +1,20 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-// import Categories from "../../components/MainPage/Categories";
+import Categories from "../../components/MainPage/Categories";
 
 const Navbar = () => {
   // Toogle Menu
   const [MobileMenu, setMobileMenu] = useState(false);
+  const [Menu, setMenu] = useState(false);
 
   return (
     <>
       <header className="header">
         <div className="container d_flex">
-          <div className="catgrories d_flex">
+          <div className="catgrories d_flex" onClick={() => setMenu(!Menu)}>
             <span className="fa-solid fa-border-all"></span>
             <h4>
-              Categorias <i className="fa fa-chevron-down"></i>
+              Categorias
+              <i className="fa fa-chevron-down"></i>
             </h4>
           </div>
 
@@ -25,23 +26,19 @@ const Navbar = () => {
               onClick={() => setMobileMenu(false)}
             >
               {/*<ul className='link f_flex uppercase {MobileMenu ? "nav-links-MobileMenu" : "nav-links"} onClick={() => setMobileMenu(false)}'>*/}
+
               <li>
-                <Link to="/">home</Link>
+                <a href="#ProductosDestacados">Productos Destacados</a>
               </li>
               <li>
-                <Link to="/pages">Productos Destacados</Link>
+                <a href="#GrandesDescuentos">Grandes Descuentos</a>
               </li>
               <li>
-                <Link to="/user">Sobre nosotros</Link>
+                <a href="#QuienesSomos">Quiénes Somos</a>
               </li>
+
               <li>
-                <Link to="/vendor">vendor account</Link>
-              </li>
-              <li>
-                <Link to="/track">track my order</Link>
-              </li>
-              <li>
-                <Link to="/contact">contactos</Link>
+                <a href="#QuienesSomos">Contactos</a>
               </li>
             </ul>
 
@@ -58,6 +55,7 @@ const Navbar = () => {
           </div>
         </div>
       </header>
+      <div className="categroriesMenu">{Menu && <Categories />}</div>
     </>
   );
 };

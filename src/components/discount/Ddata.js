@@ -1,48 +1,48 @@
 const Ddata = [
   {
-    cover: "./images/discount/discount-1.png",
-    name: "BenuX 2022",
+    cover: "./images/discount/desc1.jpg",
+    name: "Monitor HP 19.5”",
     price: "$250",
   },
   {
-    cover: "./images/discount/discount-2.png",
-    name: "Sony TV 1080p",
+    cover: "./images/discount/desc2.jpg",
+    name: "Smart TV AOC 32”",
     price: "$450",
   },
   {
-    cover: "./images/discount/discount-3.png",
-    name: "Sony PS4",
+    cover: "./images/discount/desc3.jpg",
+    name: "Butacas",
     price: "$50",
   },
   {
-    cover: "./images/discount/discount-4.png",
-    name: "Setgearr 2022",
+    cover: "./images/discount/desc4.jpg",
+    name: "Moto Triciclo",
     price: "$100",
   },
   {
-    cover: "./images/discount/discount-5.png",
-    name: "Tony BGB",
+    cover: "./images/discount/desc5.jpg",
+    name: "Bicicleta Philco",
     price: "$20",
   },
   {
-    cover: "./images/discount/discount-6.png",
-    name: "RG products",
+    cover: "./images/discount/desc6.jpg",
+    name: "Bicicletas R12",
     price: "$200",
   },
   {
-    cover: "./images/discount/discount-7.png",
-    name: "Ranasonic 2022",
+    cover: "./images/discount/desc7.jpg",
+    name: "Cochecito de Bebé",
     price: "$300",
   },
   {
-    cover: "./images/discount/discount-8.png",
-    name: "Pune HD",
+    cover: "./images/discount/desc8.jpg",
+    name: "Horno Eléctrico BGH",
     price: "$30",
   },
   {
-    cover: "./images/discount/discount-9.png",
-    name: "Sony CCTV",
+    cover: "./images/discount/desc0.jpg",
+    name: "Secarropas",
     price: "$80",
   },
-]
-export default Ddata
+];
+export default Ddata;

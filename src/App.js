@@ -10,7 +10,7 @@ import Sdata from "./components/shops/Sdata";
 import Login from "./pages/login/Login";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Register from "./pages/register/Register";
-import ProductCard from "./pages/card/ProductCard";
+import ProductCard from "./components/flashDeals/ProductCard";
 
 function App() {
   /*
@@ -140,7 +140,7 @@ function App() {
             <ProductCard
               productItems={productItems}
               addToCart={addToCart}
-              shopItems={shopItems}
+              decreaseQty={decreaseQty}
             />
           ),
         },

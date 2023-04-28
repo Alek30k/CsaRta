@@ -8,13 +8,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: yellowgreen;
+  margin-left: 30px;
 }
 
 .rightt {
   flex: 1;
-  padding: 20px;
-  background-color: #d1411e;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  margin: 60px 0px;
+  gap: 40px;
 }
 
 .imgContainer {
@@ -23,10 +26,34 @@
   position: relative;
 }
 
+.precioUnidad {
+  color: rgb(172, 172, 201);
+  font-size: 16px;
+}
+
+.cantidad {
+  font-size: 20px;
+  gap: 20px;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.count {
+  margin: 10px;
+}
+
+.count {
+  padding: 10px;
+}
+.buttonCant button {
+  padding: 10px;
+  border: 1px solid gray;
+}
+
 .pricee {
-  color: #180804;
+  color: #df3207;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: bold;
   border-bottom: 1px solid #d1411e;
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import Categories from "./Categories";
+// import Categories from "./Categories";
 import "./Home.css";
 import SliderHome from "./Slider";
 
@@ -8,7 +8,7 @@ const Home = () => {
     <>
       <section className="home">
         <div className="container d_flex">
-          <Categories />
+          {/* <Categories /> */}
           <SliderHome />
         </div>
       </section>

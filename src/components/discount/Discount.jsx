@@ -4,7 +4,10 @@ import Dcard from "./Dcard";
 const Discount = () => {
   return (
     <>
-      <section className="Discount background NewArrivals">
+      <section
+        className="Discount background NewArrivals"
+        id="GrandesDescuentos"
+      >
         <div className="container">
           <div className="heading d_flex">
             <div className="heading-left row  f_flex">
