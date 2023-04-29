@@ -54,6 +54,13 @@
   height: 60vh;
   object-fit: contain;
 }
+.NewArrivals .sliderWrapper .price {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
 
 .closee {
   position: absolute;

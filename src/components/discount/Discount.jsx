@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Dcard from "./Dcard";
 
-const Discount = ({ productItems, addToCart }) => {
+const Discount = ({ addToCart }) => {
   return (
     <>
       <section
@@ -19,7 +19,7 @@ const Discount = ({ productItems, addToCart }) => {
               <i className="fa-solid fa-caret-right"></i>
             </div>
           </div>
-          <Dcard productItems={productItems} addToCart={addToCart} />
+          <Dcard addToCart={addToCart} />
         </div>
       </section>
     </>

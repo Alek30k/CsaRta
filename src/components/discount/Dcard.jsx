@@ -11,7 +11,7 @@ import {
   faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Dcard = ({ productItems, addToCart }) => {
+const Dcard = ({ addToCart }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -26,6 +26,18 @@ const Dcard = ({ productItems, addToCart }) => {
   const handleOpen = (i) => {
     setSlideNumber(i);
     setOpen(true);
+  };
+
+  const handleMove = (direction) => {
+    let newSlideNumber;
+
+    if (direction === "l") {
+      newSlideNumber = slideNumber === 0 ? 5 : slideNumber - 1;
+    } else {
+      newSlideNumber = slideNumber === 5 ? 0 : slideNumber + 1;
+    }
+
+    setSlideNumber(newSlideNumber);
   };
 
   return (
@@ -56,7 +68,7 @@ const Dcard = ({ productItems, addToCart }) => {
             <FontAwesomeIcon
               icon={faCircleArrowLeft}
               className="arrow"
-              // onClick={() => handleMove("l")}
+              onClick={() => handleMove("l")}
             />
 
             <div className="sliderWrapper">
@@ -67,11 +79,11 @@ const Dcard = ({ productItems, addToCart }) => {
               />
               <div className="price">
                 <h3>{Ddata[slideNumber].name}</h3>
-                <h4>${Ddata[slideNumber].price}.00 </h4>
+                <h4>{Ddata[slideNumber].price}.00 </h4>
                 {/* step : 3
                      if hami le button ma click garryo bahne
                     */}
-                <button onClick={() => addToCart(Ddata)}>
+                <button onClick={() => addToCart(Ddata[slideNumber])}>
                   <i className="fa fa-plus"></i>
                 </button>
               </div>
@@ -80,7 +92,7 @@ const Dcard = ({ productItems, addToCart }) => {
               <FontAwesomeIcon
                 icon={faCircleArrowRight}
                 className="arrow"
-                // onClick={() => handleMove("r")}
+                onClick={() => handleMove("r")}
               />
             }
           </div>
