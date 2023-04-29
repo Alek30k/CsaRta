@@ -138,12 +138,23 @@ button {
 /*---------product-----------*/
 .product {
   background: #fff;
-  padding: 20px;
+  padding: 10px 6px;
   position: relative;
   border-radius: 8px;
   box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
   margin: 10px;
 }
+.productFlash {
+  background: #fff;
+  position: relative;
+  border-radius: 8px;
+  box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
+  margin: 10px;
+}
+.product-detailss {
+  padding: 0px 10px;
+}
+
 .product h3 {
   font-weight: 400;
   font-size: 17px;

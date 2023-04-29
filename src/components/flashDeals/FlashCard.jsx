@@ -72,6 +72,7 @@ const FlashCard = ({ productItems, addToCart }) => {
                         src={productItems.cover}
                         alt=""
                         onClick={() => handleOpen(i)}
+                        className="flashImg"
                       />
                     </Link>
 

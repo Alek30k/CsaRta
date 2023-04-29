@@ -31,12 +31,12 @@ const Ddata = [
   },
   {
     cover: "./images/discount/desc7.jpg",
-    name: "Cochecito de Bebé",
+    name: "Cochecito",
     price: "$300",
   },
   {
     cover: "./images/discount/desc8.jpg",
-    name: "Horno Eléctrico BGH",
+    name: "Horno Eléctrico",
     price: "$30",
   },
   {
