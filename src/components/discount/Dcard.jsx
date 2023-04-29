@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Ddata from "./Ddata";
 import "../newarrivals/style.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCircleArrowLeft,
+  faCircleArrowRight,
+  faCircleXmark,
+} from "@fortawesome/free-solid-svg-icons";
 
-const Dcard = () => {
+const Dcard = ({ productItems, addToCart }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -13,12 +19,21 @@ const Dcard = () => {
     slidesToScroll: 1,
     autoplay: true,
   };
+
+  const [slideNumber, setSlideNumber] = useState("");
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = (i) => {
+    setSlideNumber(i);
+    setOpen(true);
+  };
+
   return (
     <>
       <Slider {...settings}>
-        {Ddata.map((value, index) => {
+        {Ddata.map((value, i) => {
           return (
-            <div key={index}>
+            <div key={i} onClick={() => handleOpen(i)}>
               <div className="box product">
                 <div className="img">
                   <img src={value.cover} alt="" width="100%" />
@@ -30,6 +45,47 @@ const Dcard = () => {
           );
         })}
       </Slider>
+      {open && (
+        <div className="productContainer">
+          <div className="slideer">
+            <FontAwesomeIcon
+              icon={faCircleXmark}
+              className="closee"
+              onClick={() => setOpen(false)}
+            />
+            <FontAwesomeIcon
+              icon={faCircleArrowLeft}
+              className="arrow"
+              // onClick={() => handleMove("l")}
+            />
+
+            <div className="sliderWrapper">
+              <img
+                src={`.${Ddata[slideNumber].cover}`}
+                alt=""
+                className="sliderImg"
+              />
+              <div className="price">
+                <h3>{Ddata[slideNumber].name}</h3>
+                <h4>${Ddata[slideNumber].price}.00 </h4>
+                {/* step : 3
+                     if hami le button ma click garryo bahne
+                    */}
+                <button onClick={() => addToCart(Ddata)}>
+                  <i className="fa fa-plus"></i>
+                </button>
+              </div>
+            </div>
+            {
+              <FontAwesomeIcon
+                icon={faCircleArrowRight}
+                className="arrow"
+                // onClick={() => handleMove("r")}
+              />
+            }
+          </div>
+        </div>
+      )}
     </>
   );
 };
