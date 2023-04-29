@@ -10,7 +10,7 @@ const Data = {
     {
       id: 2,
       discount: 40,
-      cover: "./images/flash/b.jpg",
+      cover: "./images/flash/b.png",
       name: "Jugos Naturales sin azúcar",
       price: 20,
     },
@@ -39,7 +39,7 @@ const Data = {
       id: 6,
       discount: 50,
       cover: "./images/flash/e.jpg",
-      name: "Shoes",
+      name: "Pack promo ala",
       price: 100,
     },
   ],
