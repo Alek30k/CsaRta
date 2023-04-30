@@ -6,12 +6,29 @@
 .NewArrivals h4 {
   font-weight: 400;
 }
+.NewArrivals .box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+}
+.NewArrivals .boxNew {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-bottom: 20px;
+}
+.NewArrivals .boxNew .boxPrice {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
 .NewArrivals span {
   color: #e94560;
   font-size: 15px;
   font-weight: 500;
 }
-.NewArrivals .box img {
+.NewArrivals .boxNew img {
   width: 100%;
   height: 100%;
 }
