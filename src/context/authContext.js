@@ -10,7 +10,7 @@ export const AuthContextProvider = ({ children }) => {
 
   const login = async (inputs) => {
     const res = await axios.post(
-      "http://localhost:8800/api/auth/login",
+      "https://csarta.onrender.com/api/auth/login",
       inputs
       // {
       //   withCredentials: true,
@@ -20,7 +20,7 @@ export const AuthContextProvider = ({ children }) => {
     setCurrentUser(res.data);
   };
   const logout = async () => {
-    const res = await axios.post("http://localhost:8800/api/auth/logout");
+    const res = await axios.post("https://csarta.onrender.com/api/auth/logout");
 
     setCurrentUser(res.data);
   };
