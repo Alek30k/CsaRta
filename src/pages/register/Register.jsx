@@ -2,13 +2,16 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 import axios from "axios";
+import upload from "../../utils/upload";
 
 const Register = () => {
+  const [file, setFile] = useState(null);
   const [inputs, setInputs] = useState({
     username: "",
     email: "",
     password: "",
-    country: "",
+    passwordAgain: "",
+    img: "",
   });
 
   const navigate = useNavigate();
@@ -21,7 +24,7 @@ const Register = () => {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8800/api/auth/register", inputs);
+      await axios.post("https://csarta.onrender.com/api/auth/register", inputs);
       navigate("/login");
     } catch (err) {
       console.log(err);
@@ -36,7 +39,7 @@ const Register = () => {
           <form>
             <input
               type="text"
-              placeholder="Username"
+              placeholder="Nombre"
               name="username"
               onChange={handleChange}
             />
@@ -48,18 +51,25 @@ const Register = () => {
             />
             <input
               type="password"
-              placeholder="Password"
+              placeholder="Contraseña"
               name="password"
               onChange={handleChange}
             />
             <input
-              type="text"
-              placeholder="Country"
-              name="country"
+              placeholder="Password Again"
+              required
+              type="password"
+              name="passwordAgain"
               onChange={handleChange}
             />
+            <label htmlFor="">Foto de perfil</label>
+            <input
+              name="img"
+              type="file"
+              onChange={(e) => setFile(e.target.files[0])}
+            />
             {err && err}
-            <button onClick={handleClick} className="button">
+            <button onClick={handleClick} type="submit" className="button">
               Register
             </button>
             <span>¿Tiene usted una cuenta?</span>
