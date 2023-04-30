@@ -1,6 +1,6 @@
 import React from "react";
 
-const Catg = ({ cateName, filterMarcas }) => {
+const Catg = ({ cateName, filterMarcas, shopItems, setProducts }) => {
   // const data = [
   //   {
   //     cateImg: "./images/category/cat-1.png",
@@ -27,6 +27,10 @@ const Catg = ({ cateName, filterMarcas }) => {
   //     cateName: "Sony",
   //   },
   // ];
+
+  const allBrands = () => {
+    setProducts(shopItems);
+  };
   return (
     <>
       <div className="category">
@@ -47,7 +51,7 @@ const Catg = ({ cateName, filterMarcas }) => {
           );
         })}
         <div className="box box2">
-          <button>Ver todas las marcas</button>
+          <button onClick={() => allBrands()}>Ver todas las marcas</button>
         </div>
       </div>
     </>
