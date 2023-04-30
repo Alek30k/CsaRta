@@ -79,10 +79,11 @@
   font-size: 15px;
 }
 .search-box span {
-  width: 20%;
+  width: 10%;
   opacity: 0.5;
   border-left: 2px solid rgba(0, 0, 0, 0.1);
   padding: 10px;
+  cursor: pointer;
 }
 .cart {
   position: relative;
@@ -242,5 +243,8 @@ header ul li a:hover {
   }
   .category {
     width: 35%;
+  }
+  .flexi {
+    background-color: yellowgreen;
   }
 }

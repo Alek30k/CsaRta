@@ -12,7 +12,7 @@ const SlideCard = () => {
     slidesToScroll: 1,
     autoplay: true,
     appendDots: (dots) => {
-      return <ul style={{ margin: "50px" }}>{dots}</ul>;
+      return <ul style={{ margin: "0px" }}>{dots}</ul>;
     },
   };
   return (
@@ -21,13 +21,13 @@ const SlideCard = () => {
         {Sdata.map((value, index) => {
           return (
             <div key={index}>
-              <div className="box d_flex top">
+              <div className="box d_flex top flexi">
                 <div className="left">
                   <h1>{value.title}</h1>
                   <p>{value.desc}</p>
-                  <button className="btn-primary">Ver más</button>
+                  {/* <button className="btn-primary">Ver más</button> */}
                 </div>
-                <div className="right">
+                <div className="rightSlider">
                   <img src={value.cover} alt="" />
                 </div>
               </div>

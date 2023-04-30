@@ -8,7 +8,7 @@
 }
 .homeSlide ul {
   position: absolute;
-  bottom: 20px;
+  bottom: 0px;
 }
 .homeSlide ul li {
   border: 2px solid #b8b7b7;
