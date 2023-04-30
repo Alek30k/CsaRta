@@ -21,10 +21,15 @@ const Register = () => {
     setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleClick = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const url = await upload(file);
     try {
-      await axios.post("https://csarta.onrender.com/api/auth/register", inputs);
+      await axios.post("https://csarta.onrender.com/api/auth/register", {
+        ...inputs,
+        img: url,
+      });
       navigate("/login");
     } catch (err) {
       console.log(err);
@@ -36,7 +41,7 @@ const Register = () => {
       <div className="card">
         <div className="registerform">
           <h1>Registrarse</h1>
-          <form>
+          <form onSubmit={handleSubmit}>
             <input
               type="text"
               placeholder="Nombre"
@@ -69,7 +74,7 @@ const Register = () => {
               onChange={(e) => setFile(e.target.files[0])}
             />
             {err && err}
-            <button onClick={handleClick} type="submit" className="button">
+            <button type="submit" className="button">
               Register
             </button>
             <span>¿Tiene usted una cuenta?</span>
