@@ -171,7 +171,24 @@ header ul li a:hover {
   header ul {
     padding-top: 30px;
   }
-  .nav-links-mobile {
+
+  .search-box span {
+    width: 40%;
+  }
+
+  .search .logo img {
+    width: 200px;
+    height: 60px;
+    margin-top: 5px;
+  }
+
+  .search .logo img {
+    width: 150px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  .nav-links-MobileMenu {
     position: absolute;
     display: block;
     list-style: none;
@@ -180,7 +197,7 @@ header ul li a:hover {
     left: 0;
     top: 0;
     transition: all 0.5s ease-in-out;
-    width: 60%;
+    width: 50%;
     height: 100vh;
     background-color: white;
     z-index: 888;
@@ -197,15 +214,19 @@ header ul li a:hover {
   .close,
   .open {
     position: absolute;
-    top: 35px;
+    top: 20px;
     right: 20px;
-    color: #2bb136;
+    color: #ff014f;
     display: block;
     font-size: 25px;
     z-index: 999;
   }
+  /* .open {
+    top: 18%;
+    right: 30px;
+  } */
   .close {
-    right: 45%;
+    right: 52%;
   }
   .close.home-btn {
     background: linear-gradient(145deg, #e2e8ec, #ffffff);
@@ -218,5 +239,8 @@ header ul li a:hover {
   }
   .header.active {
     height: 10vh;
+  }
+  .category {
+    width: 35%;
   }
 }

@@ -84,8 +84,11 @@
   top: 35px;
   right: 170px;
   font-size: 30px;
-  color: rgb(199, 26, 26);
   cursor: pointer;
+  color: rgb(226, 141, 141);
+}
+.closee:hover {
+  color: rgb(211, 71, 71);
 }
 
 .arrow {

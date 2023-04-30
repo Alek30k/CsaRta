@@ -13,7 +13,7 @@ const Head = () => {
           </div>
           <div className="right row RText">
             <label>Theme FAQ"s</label>
-            <label>Need Help?</label>
+
             <span>🏳️‍⚧️</span>
             <label>EN</label>
             <span>🏳️‍⚧️</span>

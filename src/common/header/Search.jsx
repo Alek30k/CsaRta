@@ -46,7 +46,7 @@ const Search = ({ CartItem }) => {
 
           <div className="search-box f_flex">
             <i className="fa fa-search"></i>
-            <input type="text" placeholder="Busca y presiona enter..." />
+            <input type="text" placeholder="Buscar..." />
             <span>Buscar</span>
           </div>
 

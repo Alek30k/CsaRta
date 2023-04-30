@@ -6,6 +6,8 @@ const Navbar = () => {
   const [MobileMenu, setMobileMenu] = useState(false);
   const [Menu, setMenu] = useState(false);
 
+  console.log(MobileMenu);
+
   return (
     <>
       <header className="header">
@@ -21,7 +23,7 @@ const Navbar = () => {
           <div className="navlink">
             <ul
               className={
-                MobileMenu ? "nav-links-Mobile" : "link f_flex capitalize"
+                MobileMenu ? "nav-links-MobileMenu" : "link f_flex capitalize"
               }
               onClick={() => setMobileMenu(false)}
             >
