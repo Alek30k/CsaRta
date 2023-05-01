@@ -34,14 +34,14 @@ const Catg = ({ cateName, filterMarcas, shopItems, setProducts }) => {
   return (
     <>
       <div className="category">
-        <div className="chead d_flex">
+        <div className="cheadi d_flex">
           <h1>Marcas </h1>
-          <h1>Tiendas </h1>
+          {/* <h1>Tiendas </h1> */}
         </div>
         {cateName.map((marca) => {
           return (
             <div
-              className="box f_flex"
+              className="boxi f_flex"
               key={marca}
               onClick={() => filterMarcas(marca)}
             >

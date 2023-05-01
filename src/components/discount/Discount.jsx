@@ -5,7 +5,7 @@ const Discount = ({ addToCart }) => {
   return (
     <>
       <section
-        className="Discount background NewArrivals"
+        className="Discount background NewArrivals "
         id="GrandesDescuentos"
       >
         <div className="container">
