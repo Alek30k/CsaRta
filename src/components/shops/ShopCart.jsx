@@ -8,10 +8,10 @@ const ShopCart = ({ addToCart, products }) => {
 
   return (
     <>
-      {products.slice(0, 9).map((shopItems, index) => {
+      {products.slice(0, 6).map((shopItems, index) => {
         return (
           <div className="box" key={index}>
-            <div className="product mtop">
+            <div className="product mtop productImg">
               <div className="img">
                 <span className="discount">{shopItems.discount}% Off</span>
                 <img src={shopItems.cover} alt="" />

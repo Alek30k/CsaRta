@@ -25,12 +25,14 @@ const Shop = ({ addToCart, shopItems }) => {
     <>
       <section className="shop background">
         <div className="container d_flex">
+          {/* <div className="category "> */}
           <Catg
             cateName={cateName}
             filterMarcas={filterMarcas}
             shopItems={shopItems}
             setProducts={setProducts}
           />
+          {/* </div> */}
 
           <div className="contentWidthh">
             <div className="heading d_flex">

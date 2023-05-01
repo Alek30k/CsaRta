@@ -31,6 +31,7 @@ const Catg = ({ cateName, filterMarcas, shopItems, setProducts }) => {
   const allBrands = () => {
     setProducts(shopItems);
   };
+
   return (
     <>
       <div className="category">
