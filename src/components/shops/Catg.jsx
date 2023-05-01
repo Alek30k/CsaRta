@@ -50,9 +50,6 @@ const Catg = ({ cateName, filterMarcas, shopItems, setProducts }) => {
             </div>
           );
         })}
-        <div className="box box2">
-          <button onClick={() => allBrands()}>Ver todas las marcas</button>
-        </div>
       </div>
     </>
   );

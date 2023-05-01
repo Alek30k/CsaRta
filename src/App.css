@@ -271,10 +271,24 @@ button {
 }
 
 @media (max-width: 600px) {
+  .containerr {
+    max-width: 90%;
+    margin: auto;
+  }
+  .d_flexx {
+    display: flex;
+    background-color: yellow;
+  }
+
+  .shop .contentWidthh {
+    margin-left: 0px;
+    background-color: tomato;
+    position: absolute;
+    height: 50vh;
+  }
   .productStock {
     padding: 10px 6px;
     display: grid;
-
     position: relative;
     border-radius: 8px;
     box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
@@ -285,8 +299,14 @@ button {
     margin: 5px;
   }
 
+  .shop {
+    padding: 10px;
+    height: 50vh;
+    background-color: violet;
+  }
+
   .shop .category .boxi {
-    background-color: #f6f9fc;
+    background-color: #f6fcf9;
     margin: 15px 0;
     transition: 0.5s;
     border-radius: 5px;
@@ -301,15 +321,16 @@ button {
     width: 35%;
   }
 
-  .shop .category button {
-    display: none;
-  }
-  .shop .category .box {
-    display: none;
-  }
-
   .shop .category .boxi:hover {
     background-color: #fff;
     box-shadow: rgb(43 52 69 / 10%) 0px 4px 16px;
+  }
+
+  .shop .contentWidth {
+    background-color: yellowgreen;
+  }
+
+  .catNone {
+    display: none;
   }
 }

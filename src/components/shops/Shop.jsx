@@ -32,7 +32,7 @@ const Shop = ({ addToCart, shopItems }) => {
             setProducts={setProducts}
           />
 
-          <div className="contentWidth">
+          <div className="contentWidthh">
             <div className="heading d_flex">
               <div className="heading-left row  f_flex">
                 <h2>Teléfonos móviles</h2>

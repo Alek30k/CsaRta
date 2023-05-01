@@ -159,7 +159,6 @@ header ul li a:hover {
 }
 .search.active {
   height: 12vh;
-  position: fixed;
   top: 0;
   z-index: 1000;
   width: 100%;

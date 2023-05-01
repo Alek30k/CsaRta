@@ -6,8 +6,6 @@ const Navbar = () => {
   const [MobileMenu, setMobileMenu] = useState(false);
   const [Menu, setMenu] = useState(false);
 
-  console.log(MobileMenu);
-
   return (
     <>
       <header className="header">
