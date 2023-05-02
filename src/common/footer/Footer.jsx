@@ -23,19 +23,31 @@ const Footer = () => {
           <li className="link-area">
             <h1>SUPERMERCADOS</h1>
             <h2>Santa Rita</h2>
-            <div></div>
+            <div className="constainerIcons">
+              <div className="icons">
+                <i class="fa-solid fa-house"></i>
+                <p>Av Pers/n, Gral. Manuel Belgrano, Formosa</p>
+              </div>
+              <div className="icons">
+                <i class="fa-solid fa-phone"></i>
+                <p>0123-456-7890 </p>
+              </div>
+            </div>
           </li>
           <li>
-            <h2>Recent Post</h2>
+            <h2>Contactos</h2>
             <ul className="boxa">
               <li>
-                <a href="#"></a>Lorem ipsum dolor sit amet.
+                <a href="#"></a>QUIÉNES SOMOS
               </li>
               <li>
-                <a href="#"></a>Lorem ipsum dolor sit amet.
+                <a href="#"></a>CONTACTO
               </li>
               <li>
-                <a href="#"></a>Lorem ipsum dolor sit amet.
+                <a href="#"></a>SUCURSALES
+              </li>
+              <li>
+                <a href="#"></a>¿CÓMO REALIZAR SU PEDIDO?
               </li>
               {/* <li>
                 <a href="#"></a>Lorem ipsum dolor sit amet.
