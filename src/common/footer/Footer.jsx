@@ -1,67 +1,86 @@
 import React from "react";
 import "./style.css";
-import logo from "../../components/assets/images/logo2.png";
+import logo from "./facebook.png";
+import insta from "./instagram.png";
+import twitter from "./twitter.png";
 
 const Footer = () => {
   return (
-    <>
-      <footer>
-        <div className="container grid2" id="QuienesSomos">
-          <div className="box">
-            {/* <div className="logo width ">
-              <img src={logo} alt="" />
-            </div> */}
-            <h1>SUPERMERCADOS Santa Rita</h1>
-            <p>
-              Brindamos el mejor servicio en comercialización mayorista de
-              productos masivos, alimenticios y no alimenticios del país,
-              respondiendo día a día a las necesidades de los clientes y
-              proveedores, otorgando precios bajos y productos de excelente
-              calidad.
-            </p>
-            <div className="icon d_flex">
-              <div className="img d_flex">
-                <i className="fa-brands fa-google-play"></i>
-                <span>Google Play</span>
-              </div>
-              <div className="img d_flex">
-                <i className="fa-brands fa-app-store-ios"></i>
-                <span>App Store</span>
-              </div>
-            </div>
-          </div>
+    <div className="containerFooter">
+      <footer className="footera">
+        {/* <div className="left-area">
+          <h2>Contact</h2>
+          <ul className="boxa">
+            <li>123 , Sidcup Lane</li>
+            <li>PS15 MA12, Bromley</li>
+            <li>London, UK</li>
+            <li>www.sstarta.com</li>
+            <li>000 123 456 7890</li>
+          </ul>
+        </div> */}
 
-          <div className="box">
-            <h2>Sobre nosotros</h2>
-            <ul>
-              <li>Careers</li>
-              <li>Our Stores</li>
-              <li>Our Cares</li>
-              <li>Terms & Conditions</li>
-              <li>Privacy Policy</li>
-            </ul>
-          </div>
-          <div className="box">
-            <h2>Sucursales</h2>
-            <ul>
-              <li>General Manuel Belgrano </li>
-              <li>Laguna Blanca </li>
-              <li>Formosa </li>
-            </ul>
-          </div>
-          <div className="box">
-            <h2>Contáctenos</h2>
-            <ul>
+        <ul className="right-area">
+          <li className="link-area">
+            <h1>SUPERMERCADOS</h1>
+            <h2>Santa Rita</h2>
+            <div></div>
+          </li>
+          <li>
+            <h2>Recent Post</h2>
+            <ul className="boxa">
               <li>
-                70 Washington Square South, New York, NY 10012, United States{" "}
+                <a href="#"></a>Lorem ipsum dolor sit amet.
               </li>
-              <li>Email: uilib.help@gmail.com</li>
-              <li>Phone: +1 1123 456 780</li>
+              <li>
+                <a href="#"></a>Lorem ipsum dolor sit amet.
+              </li>
+              <li>
+                <a href="#"></a>Lorem ipsum dolor sit amet.
+              </li>
+              {/* <li>
+                <a href="#"></a>Lorem ipsum dolor sit amet.
+              </li>
+              <li>
+                <a href="#"></a>Lorem ipsum dolor sit amet.
+              </li>
+              <li>
+                <a href="#"></a>Lorem ipsum dolor sit amet.
+              </li> */}
             </ul>
-          </div>
+          </li>
+          <li>
+            <h2>SEGUINOS</h2>
+            <div className="socials">
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={logo} alt="" />
+              </a>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={insta} alt="" />
+              </a>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img src={twitter} alt="" />
+              </a>
+            </div>
+          </li>
+        </ul>
+
+        <div className="footer-bottom">
+          <p>All Right reserved by &copy;Alejandro Cabrera 2023</p>
         </div>
       </footer>
-    </>
+    </div>
   );
 };
 

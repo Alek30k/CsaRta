@@ -17,8 +17,8 @@ const Pages = ({ productItems, addToCart, CartItem, shopItems }) => {
       <NewArrivals />
       <Discount addToCart={addToCart} />
       <Shop shopItems={shopItems} addToCart={addToCart} />
-      {/* <Annocument /> */}
-      {/* <Wrapper /> */}
+      <Annocument />
+      <Wrapper />
     </div>
   );
 };

@@ -90,7 +90,7 @@ function App() {
         <QueryClientProvider client={queryClient}>
           <Header CartItem={CartItem} />
           <Outlet />
-          {/* <Footer /> */}
+          <Footer />
         </QueryClientProvider>
       </div>
     );

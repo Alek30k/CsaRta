@@ -11,6 +11,7 @@ const Shop = ({ addToCart, shopItems }) => {
 
   const [cateName, setCateName] = useState(allMarcas);
   const [products, setProducts] = useState(shopItems);
+  const [catOpen, setCatOpen] = useState(true);
 
   const filterMarcas = (marca) => {
     if (marca === "all") {
@@ -25,23 +26,24 @@ const Shop = ({ addToCart, shopItems }) => {
     <>
       <section className="shop background">
         <div className="container d_flex">
-          {/* <div className="category "> */}
-          <Catg
-            cateName={cateName}
-            filterMarcas={filterMarcas}
-            shopItems={shopItems}
-            setProducts={setProducts}
-          />
-          {/* </div> */}
-
+          <div className={!catOpen ? "category" : "categoryy"}>
+            <Catg
+              cateName={cateName}
+              filterMarcas={filterMarcas}
+              shopItems={shopItems}
+              setProducts={setProducts}
+              catOpen={catOpen}
+              setCatOpen={setCatOpen}
+            />
+          </div>
           <div className="contentWidthh">
             <div className="heading d_flex">
               <div className="heading-left row  f_flex">
                 <h2>Teléfonos móviles</h2>
               </div>
-              <div className="heading-right row ">
-                <span>Ver todo</span>
-                <i className="fa-solid fa-caret-right"></i>
+
+              <div className="noneCat" onClick={() => setCatOpen(!catOpen)}>
+                <span>Marcas</span>
               </div>
             </div>
             <div className="product-content  grid1">
