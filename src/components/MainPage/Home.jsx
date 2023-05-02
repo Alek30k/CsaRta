@@ -6,7 +6,7 @@ import SliderHome from "./Slider";
 const Home = () => {
   return (
     <>
-      <section className="home">
+      <section className="home ">
         <div className="container d_flex">
           {/* <Categories /> */}
           <SliderHome />

@@ -19,6 +19,7 @@ body {
   max-width: 90%;
   margin: auto;
 }
+
 .d_flex {
   display: flex;
   justify-content: space-between;
@@ -86,7 +87,6 @@ button {
   height: 510px;
   padding: 15px 0;
   border-radius: 5px;
-  margin-top: 5px;
   z-index: 1;
 }
 .category img {
@@ -172,6 +172,7 @@ button {
 .product .price {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   color: #e94560;
 }
 .price button {
@@ -323,16 +324,25 @@ button {
     width: 100%;
     max-height: 250px;
   }
+  .producti {
+    width: 90%;
+    max-height: 200px;
+    font-size: 14px;
+  }
 
   .product .price {
     color: #e94560;
     position: absolute;
-    bottom: 1px;
-    gap: 30px;
+    bottom: 5px;
+    gap: 55px;
   }
   .product-details {
     margin-top: 0px;
     margin-bottom: 60px;
+  }
+
+  .product .rate i {
+    font-size: 10px;
   }
 
   .product h3 {
@@ -340,7 +350,7 @@ button {
     font-size: 12px;
   }
   .heading .heading-left h2 {
-    font-size: 18px;
+    font-size: 14px;
     margin: 5px;
   }
 
@@ -374,6 +384,31 @@ button {
     justify-content: end;
     text-align: right;
     color: grey;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .Discount {
+    background: #f6f9fc;
+  }
+  .Discount .discountContainer {
+    background-color: yellow;
+    gap: 100px;
+  }
+  .Discount .product {
+    /* width: 150px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 15px 15px;
+    gap: 10px;
+    background-color: #e94560; */
+  }
+  .Discount .img {
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .annocument {
@@ -382,5 +417,35 @@ button {
 
   .wrapper {
     display: none;
+  }
+
+  .category.active {
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    opacity: 1;
+    animation: categrory 1s ease;
+  }
+
+  @keyframes categrory {
+    0% {
+      transform: translateY(-75px);
+    }
+  }
+  .category.activee {
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    opacity: 1;
+    animation: categrory 1s ease;
+  }
+
+  @keyframes categrory {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
   }
 }

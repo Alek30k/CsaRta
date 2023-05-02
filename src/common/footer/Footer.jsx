@@ -25,11 +25,11 @@ const Footer = () => {
             <h2>Santa Rita</h2>
             <div className="constainerIcons">
               <div className="icons">
-                <i class="fa-solid fa-house"></i>
+                <i className="fa-solid fa-house"></i>
                 <p>Av Pers/n, Gral. Manuel Belgrano, Formosa</p>
               </div>
               <div className="icons">
-                <i class="fa-solid fa-phone"></i>
+                <i className="fa-solid fa-phone"></i>
                 <p>0123-456-7890 </p>
               </div>
             </div>
@@ -89,7 +89,7 @@ const Footer = () => {
         </ul>
 
         <div className="footer-bottom">
-          <p>All Right reserved by &copy;Alejandro Cabrera 2023</p>
+          <p>All Right reserved by &copy;Alejandro Cabrera & Axel 2023</p>
         </div>
       </footer>
     </div>

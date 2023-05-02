@@ -51,7 +51,7 @@ const Categories = () => {
 
   return (
     <>
-      <div className="category">
+      <div className="category active">
         {data.map((value, index) => {
           return (
             <div className="box f_flex" key={index}>

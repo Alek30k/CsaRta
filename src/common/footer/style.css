@@ -55,6 +55,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 5px;
 }
 
 h2 {
@@ -66,6 +67,7 @@ h2 {
   justify-content: center;
   align-items: center;
 }
+
 .footera .right-area .link-area h2 {
   font-size: 18px;
   font-weight: 600;
@@ -123,6 +125,7 @@ h2 {
 
 .boxa {
   margin-top: 20px;
+  /* margin-left: 20px; */
 }
 .boxa li {
   display: flex;

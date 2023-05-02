@@ -92,8 +92,6 @@ const FlashCard = ({ productItems, addToCart }) => {
                         className="fa-regular fa-heart"
                         // onClick={increment}
                       ></i>
-
-                      {/* <i class="fa-solid fa-heart"></i> */}
                     </div>
                   </div>
                   <div className="product-details">

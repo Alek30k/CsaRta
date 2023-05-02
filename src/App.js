@@ -86,7 +86,7 @@ function App() {
 
   const Layout = () => {
     return (
-      <div className="app">
+      <div className="app ">
         <QueryClientProvider client={queryClient}>
           <Header CartItem={CartItem} />
           <Outlet />

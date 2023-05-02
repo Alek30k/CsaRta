@@ -26,7 +26,7 @@ const Dcard = ({ addToCart }) => {
       },
       {
         breakpoint: 600,
-        settings: { slidesToShow: 2, slidesToScroll: 2, infinite: false },
+        settings: { slidesToShow: 3, slidesToScroll: 2, infinite: false },
       },
       {
         breakpoint: 768,
@@ -69,9 +69,9 @@ const Dcard = ({ addToCart }) => {
         {Ddata.map((value, i) => {
           return (
             <div key={i} onClick={() => handleOpen(i)}>
-              <div className="box product">
+              <div className="box product producti">
                 <div className="img">
-                  <img src={value.cover} alt="" width="100%" />
+                  <img src={value.cover} alt="" width="90%" />
                 </div>
                 <h4>{value.name}</h4>
                 <span>{value.price}</span>

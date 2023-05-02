@@ -39,23 +39,9 @@ const Catg = ({
     setProducts(shopItems);
   };
 
-  // const [isMobile, setIsMobile] = useState(window.innerWidth < 601);
-  // console.log(isMobile);
-
-  // useEffect(() => {
-  //   window.addEventListener(
-  //     "resize",
-  //     () => {
-  //       const ismobile = window.innerWidth < 601;
-  //       if (ismobile !== isMobile) setIsMobile(ismobile);
-  //     },
-  //     false
-  //   );
-  // }, [isMobile]);
-
   return (
     <>
-      <div className={catOpen && "category "} onClick={() => setCatOpen(true)}>
+      <div className={catOpen && "category"} onClick={() => setCatOpen(true)}>
         <div className="cheadi d_flex">
           <h1>Marcas </h1>
           {/* <h1>Tiendas </h1> */}

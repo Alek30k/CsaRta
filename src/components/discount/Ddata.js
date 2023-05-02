@@ -6,7 +6,7 @@ const Ddata = [
   },
   {
     cover: "./images/discount/desc2.jpg",
-    name: "Smart TV AOC 32”",
+    name: "Smart TV 32”",
     price: "$450",
   },
   {

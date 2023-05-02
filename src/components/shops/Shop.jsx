@@ -26,7 +26,7 @@ const Shop = ({ addToCart, shopItems }) => {
     <>
       <section className="shop background">
         <div className="container d_flex">
-          <div className={!catOpen ? "category" : "categoryy"}>
+          <div className={!catOpen ? "category activee" : "categoryy"}>
             <Catg
               cateName={cateName}
               filterMarcas={filterMarcas}
@@ -44,6 +44,7 @@ const Shop = ({ addToCart, shopItems }) => {
 
               <div className="noneCat" onClick={() => setCatOpen(!catOpen)}>
                 <span>Marcas</span>
+                <i className="fa fa-chevron-down"></i>
               </div>
             </div>
             <div className="product-content  grid1">

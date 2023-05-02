@@ -55,7 +55,9 @@ const Navbar = () => {
           </div>
         </div>
       </header>
-      <div className="categroriesMenu">{Menu && <Categories />}</div>
+      <div className="categroriesMenu" onClick={() => setMenu(false)}>
+        {Menu && <Categories />}
+      </div>
     </>
   );
 };

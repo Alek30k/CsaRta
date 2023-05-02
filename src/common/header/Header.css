@@ -1,7 +1,7 @@
 /*------head-----------*/
 .head {
   background-color: #0410b3;
-  padding: 20px 0;
+  padding: 10px 0;
   color: #fff;
 }
 .head i {
@@ -214,7 +214,7 @@ header ul li a:hover {
   .close,
   .open {
     position: absolute;
-    top: 20px;
+    top: 10px;
     right: 20px;
     color: #ff014f;
     display: block;
