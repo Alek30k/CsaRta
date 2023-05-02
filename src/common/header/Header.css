@@ -167,7 +167,7 @@ header ul li a:hover {
   transition: 0.5s;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   header ul {
     padding-top: 30px;
   }
@@ -244,6 +244,6 @@ header ul li a:hover {
     width: 35%;
   }
   .flexi {
-    background-color: yellowgreen;
+    background-color: rgb(192, 50, 205);
   }
 }

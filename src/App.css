@@ -288,6 +288,21 @@ button {
     padding: 35px 0;
   }
 
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+  h1 {
+    font-size: 16px;
+    margin: 5px;
+  }
+
+  .flash .flashImg {
+    width: 81%;
+    margin: 0px 20px;
+  }
+
   .containerCat {
     display: none;
   }
@@ -324,10 +339,25 @@ button {
     width: 100%;
     max-height: 250px;
   }
+  .productt {
+    width: 96%;
+  }
   .producti {
     width: 90%;
     max-height: 200px;
     font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+
+  .control-btn .next,
+  .control-btn .prev {
+    width: 40px;
+    height: 40px;
+    background: #042c5e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .product .price {
@@ -391,10 +421,7 @@ button {
   .Discount {
     background: #f6f9fc;
   }
-  .Discount .discountContainer {
-    background-color: yellow;
-    gap: 100px;
-  }
+
   .Discount .product {
     /* width: 150px; */
     display: flex;
