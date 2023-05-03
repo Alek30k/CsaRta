@@ -3,7 +3,7 @@ const Sdata = [
     id: 1,
     // title: "10% de descuento para su primera compra",
     // desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis lobortis consequat eu, quam etiam at quis ut convallis.",
-    cover: "./images/SlideCard/slider.jpg",
+    cover: "./images/SlideCard/banner1.jpg",
   },
   {
     id: 2,

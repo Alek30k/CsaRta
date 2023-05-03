@@ -244,6 +244,6 @@ header ul li a:hover {
     width: 35%;
   }
   .flexi {
-    background-color: rgb(192, 50, 205);
+    max-height: 200px;
   }
 }

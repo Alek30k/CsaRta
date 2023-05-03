@@ -7,11 +7,11 @@ import "slick-carousel/slick/slick-theme.css";
 const SlideCard = () => {
   const settings = {
     dots: true,
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    arrows: true,
+    // infinite: true,
+    // slidesToShow: 1,
+    // slidesToScroll: 1,
+    // autoplay: true,
+    // arrows: true,
 
     appendDots: (dots) => {
       return <ul style={{ margin: "0px" }}>{dots}</ul>;
@@ -24,13 +24,12 @@ const SlideCard = () => {
           return (
             <div key={index}>
               <div className="box d_flex topSLider flexi">
-                <div className="left">
+                {/* <div className="leftSlider">
                   <h1>{value.title}</h1>
                   <p>{value.desc}</p>
-                  {/* <button className="btn-primary">Ver más</button> */}
-                </div>
+                </div> */}
                 <div className="rightSlider">
-                  <img src={value.cover} alt="" />
+                  <img className="rightImg" src={value.cover} alt="" />
                 </div>
               </div>
             </div>
