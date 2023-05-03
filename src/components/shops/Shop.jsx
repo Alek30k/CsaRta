@@ -21,12 +21,14 @@ const Shop = ({ addToCart, shopItems }) => {
     const filteredProduct = shopItems.filter((p) => p.cateName === marca);
     setProducts(filteredProduct);
   };
-
+  console.log(catOpen);
   return (
     <>
-      <section className="shop background">
+      <section className="shop background categoris">
         <div className="container d_flex">
-          <div className={!catOpen ? "category activee" : "categoryy"}>
+          <div
+            className={!catOpen ? " category categorys activve" : "categoryy"}
+          >
             <Catg
               cateName={cateName}
               filterMarcas={filterMarcas}
