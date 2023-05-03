@@ -528,7 +528,7 @@ button {
 
   .contentWidth {
     width: 100%;
-    background-color: yellow;
+    /* background-color: yellow; */
   }
 
   /* .homeSlide .leftSlider h1 {

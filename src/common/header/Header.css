@@ -62,6 +62,9 @@
   border: 2px solid rgba(0, 0, 0, 0.1);
   /*padding: 10px;*/
   border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .search-box i {
   width: 5%;
@@ -79,7 +82,7 @@
   font-size: 15px;
 }
 .search-box span {
-  width: 10%;
+  width: 15%;
   opacity: 0.5;
   border-left: 2px solid rgba(0, 0, 0, 0.1);
   padding: 10px;
@@ -108,7 +111,7 @@
   background-color: #f6f9fc;
   padding: 0px 30px;
   border-radius: 5px;
-  height: 6vh;
+  height: 8vh;
   margin-top: 5px;
 }
 .catgrories span {
@@ -136,7 +139,7 @@
 }
 
 header {
-  height: 8vh;
+  height: 10vh;
   box-shadow: -1px 15px 17px -8px rgba(0, 0, 0, 0.1);
 }
 header ul {
@@ -159,6 +162,7 @@ header ul li a:hover {
 }
 .search.active {
   height: 12vh;
+  position: fixed;
   top: 0;
   z-index: 1000;
   width: 100%;
@@ -170,6 +174,14 @@ header ul li a:hover {
 @media (max-width: 600px) {
   header ul {
     padding-top: 30px;
+  }
+
+  header {
+    height: 6vh;
+  }
+
+  .catgrories {
+    height: 5vh;
   }
 
   .search-box span {
@@ -245,5 +257,33 @@ header ul li a:hover {
   }
   .flexi {
     max-height: 200px;
+  }
+  .search {
+    padding: 10px 0;
+  }
+  .search.active {
+    height: 8vh;
+    position: static;
+  }
+  .search .logo img {
+    width: 150px;
+    height: 50px;
+    margin-top: 5px;
+  }
+  .search .width .icon-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .search .cart span {
+    width: 18px;
+    height: 18px;
   }
 }
