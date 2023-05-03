@@ -538,10 +538,7 @@ button {
     background-color: turquoise;
   } */
   .homeSlide .rightSlider .rightImg {
-    /* background-color: rgb(64, 224, 77); */
-
     width: 100%;
-    max-height: 200px;
-    object-fit: contain;
+    height: 100%;
   }
 }
