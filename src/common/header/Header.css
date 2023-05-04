@@ -331,6 +331,18 @@ header ul li a:hover {
     align-items: center;
     justify-content: center;
   }
+  .search .width .user {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    /* border-radius: 50%;
+    object-fit: cover;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center; */
+  }
 
   .search .cart span {
     width: 18px;
