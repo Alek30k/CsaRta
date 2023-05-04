@@ -324,9 +324,16 @@ button {
   }
 
   .containerr {
-    max-width: 90%;
-    margin: auto;
+    max-height: 500px;
   }
+
+  .containerr .rightt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
   .d_flexx {
     display: flex;
   }
