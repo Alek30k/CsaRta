@@ -78,7 +78,7 @@ const Search = ({ CartItem }) => {
             {avatarOpenIngresar && (
               <div className="menuAvatar">
                 <div className="buttonLogout">
-                  <button onClick={handleLogin}>Ingresar</button>
+                  <button onClick={handleLogin}>Iniciar Sesion</button>
                 </div>
               </div>
             )}

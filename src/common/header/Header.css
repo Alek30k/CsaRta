@@ -180,6 +180,56 @@ header ul li a:hover {
     height: 6vh;
   }
 
+  .cart-items .cart-total {
+    margin-left: 0px;
+    padding: 10px;
+    position: fixed;
+    top: 236px;
+    right: 0;
+  }
+  .cart-items .cart-total h2 {
+    font-size: 12px;
+  }
+  .cart-items .cart-list {
+    width: 100%;
+    /* position: relative; */
+  }
+
+  .cart-items .buttons {
+    position: absolute;
+    right: 10px;
+    gap: 0px;
+    display: flex;
+    background-color: rgb(35, 155, 139);
+  }
+  .cart-items .cartControl button {
+    width: 25px;
+    height: 25px;
+    margin: 2px;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+
+  .cart-items .cart-items-function .removeCart {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    font-size: 20px;
+    color: #97182e;
+  }
+  .cart-items .cart-items-function .cartControl {
+    position: absolute;
+    right: 10px;
+    bottom: 45px;
+    background-color: #ca7a87;
+    height: 0px;
+  }
+  .cart-items .cart-total .total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .catgrories {
     height: 5vh;
   }

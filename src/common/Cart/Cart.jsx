@@ -11,8 +11,8 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
   // prodcut qty total
   return (
     <>
-      <section className="cart-items">
-        <div className="container d_flex">
+      <section className="cart-items ">
+        <div className="container  d_flex">
           {/* if hamro cart ma kunai pani item xaina bhane no diplay */}
 
           <div className="cart-details">
@@ -48,10 +48,8 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
                         ></i>
                       </button>
                     </div>
-                    {/* stpe: 5 
-                    product ko qty lai inc ra des garne
-                    */}
-                    <div className="cartControl d_flex">
+
+                    <div className="cartControl buttons d_flex">
                       <button
                         className="incCart"
                         onClick={() => addToCart(item)}
@@ -75,7 +73,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
 
           <div className="cart-total product">
             <h2>Resumen de la compra</h2>
-            <div className=" d_flex">
+            <div className=" d_flex total">
               <h4>Precio Total :</h4>
               <h3>${totalPrice}.00</h3>
             </div>
