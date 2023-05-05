@@ -21,8 +21,12 @@ const Dcard = ({ addToCart }) => {
     arrows: true,
     responsive: [
       {
-        breakpoint: 320,
+        breakpoint: 305,
         settings: { slidesToShow: 1, slidesToScroll: 1, infinite: false },
+      },
+      {
+        breakpoint: 450,
+        settings: { slidesToShow: 2, slidesToScroll: 1, infinite: false },
       },
       {
         breakpoint: 600,
@@ -34,7 +38,7 @@ const Dcard = ({ addToCart }) => {
       },
       {
         breakpoint: 991,
-        settings: { slidesToShow: 3, slidesToScroll: 3, infinite: false },
+        settings: { slidesToShow: 4, slidesToScroll: 3, infinite: false },
       },
       {
         breakpoint: 1024,

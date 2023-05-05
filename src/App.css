@@ -621,6 +621,11 @@ button {
   }
 }
 @media (max-width: 500px) {
+  .Discount .producti .img {
+    display: block;
+    width: 100%;
+  }
+
   .product .price .containerPrice {
     width: 100px;
     display: flex;
