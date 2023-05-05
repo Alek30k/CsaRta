@@ -295,7 +295,7 @@ button {
   display: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 850px) {
   .background {
     padding: 35px 0;
   }
@@ -346,13 +346,13 @@ button {
   }
 
   .product {
-    padding: 10px 6px;
+    padding: 18px 6px;
     position: relative;
     border-radius: 8px;
     box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
     margin: 0px;
     width: 100%;
-    max-height: 250px;
+    max-height: 270px;
   }
   .productt {
     width: 96%;
@@ -367,8 +367,8 @@ button {
 
   .control-btn .next,
   .control-btn .prev {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background: #042c5e;
     display: flex;
     align-items: center;
@@ -379,20 +379,41 @@ button {
     color: #e94560;
     position: absolute;
     bottom: 5px;
-    gap: 55px;
+  }
+  .product .price .containerPrice {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
   }
   .product-details {
-    margin-top: 0px;
-    margin-bottom: 60px;
+    /* margin-top: 0px;
+    margin-bottom: 60px; */
+    padding: 0px 10px;
+    max-height: 80px;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
   }
 
   .product .rate i {
-    font-size: 10px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  .product .rate {
+    /* margin-top: 5%;
+    background-color: yellowgreen; */
+    display: none;
   }
 
   .product h3 {
-    font-weight: 300;
-    font-size: 12px;
+    margin-top: 0px;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .product .product-details {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 14px;
   }
   .heading .heading-left h2 {
     font-size: 14px;
@@ -495,7 +516,7 @@ button {
     box-shadow: rgb(43 52 69 / 10%) 0px 4px 16px;
     background-color: #fff;
     width: 0%;
-    height: 510px;
+    height: 500px;
     padding: 10px 0;
     border-radius: 5px;
     z-index: 1;
@@ -505,12 +526,10 @@ button {
   }
 
   .category.active {
-    position: absolute;
-    left: -40px;
+    left: -30px;
     top: -10px;
-    z-index: 2;
-    opacity: 1;
-    animation: categrory 1s ease;
+    font-size: 14px;
+    padding: 5px;
   }
 
   @keyframes categrory {
@@ -538,14 +557,107 @@ button {
     /* background-color: yellow; */
   }
 
-  /* .homeSlide .leftSlider h1 {
-    font-size: 22px;
-    line-height: 30px;
-    margin: 19px 20px 0px 29px;
-    background-color: turquoise;
-  } */
   .homeSlide .rightSlider .rightImg {
     width: 100%;
     height: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .product .price {
+    color: #e94560;
+    position: absolute;
+    bottom: 5px;
+  }
+  .product .price .containerPrice {
+    width: 115px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .NewArrivals h4 {
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .price button {
+    background: none;
+    color: #e94560;
+    font-size: 16px;
+    transition: 0.5s;
+    border: 1px solid rgb(3 0 71 / 9%);
+    width: 28px;
+    height: 28px;
+    border-radius: 5px;
+  }
+  .product-details {
+    /* margin-top: 0px;
+    margin-bottom: 60px; */
+    padding: 0px 10px;
+    max-height: 80px;
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product .rate i {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  .product .rate {
+    /* margin-top: 5%;
+    background-color: yellowgreen; */
+    display: none;
+  }
+
+  .product h3 {
+    margin-top: 0px;
+    font-weight: 400;
+    font-size: 12px;
+  }
+  .product .product-details {
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 14px;
+  }
+}
+@media (max-width: 500px) {
+  .product .price .containerPrice {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .NewArrivals h4 {
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+  }
+}
+@media (max-width: 305px) {
+  .product .price .containerPrice {
+    width: 150px;
+    margin-top: 30px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+  }
+  .product h3 {
+    margin-top: 0px;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .product {
+    padding: 5px 6px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
+    margin: 0px;
+    width: 100%;
+    max-height: 280px;
   }
 }

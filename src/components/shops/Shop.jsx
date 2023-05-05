@@ -21,7 +21,6 @@ const Shop = ({ addToCart, shopItems }) => {
     const filteredProduct = shopItems.filter((p) => p.cateName === marca);
     setProducts(filteredProduct);
   };
-  console.log(catOpen);
   return (
     <>
       <section className="shop background categoris">

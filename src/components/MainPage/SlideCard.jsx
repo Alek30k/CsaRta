@@ -12,6 +12,12 @@ const SlideCard = () => {
     slidesToScroll: 1,
     autoplay: true,
     arrows: true,
+    responsive: [
+      {
+        breakpoint: 500,
+        settings: { dots: false },
+      },
+    ],
 
     appendDots: (dots) => {
       return <ul style={{ margin: "0" }}>{dots}</ul>;

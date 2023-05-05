@@ -38,7 +38,7 @@ const Search = ({ CartItem }) => {
     <>
       <section className="search">
         <div className="container c_flex">
-          <div className="logo width ">
+          <div className="logo  ">
             <Link to="/">
               <img src={logo} alt="" />
             </Link>

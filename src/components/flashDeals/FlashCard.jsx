@@ -42,24 +42,28 @@ const FlashCard = ({ productItems, addToCart }) => {
     prevArrow: <SamplePrevArrow />,
     responsive: [
       {
-        breakpoint: 320,
+        breakpoint: 305,
         settings: { slidesToShow: 1, slidesToScroll: 1, infinite: false },
       },
       {
-        breakpoint: 600,
+        breakpoint: 400,
+        settings: { slidesToShow: 2, slidesToScroll: 1, infinite: false },
+      },
+      {
+        breakpoint: 500,
         settings: { slidesToShow: 3, slidesToScroll: 2, infinite: false },
       },
       {
         breakpoint: 768,
-        settings: { slidesToShow: 2, slidesToScroll: 2, infinite: false },
+        settings: { slidesToShow: 3, slidesToScroll: 2, infinite: false },
       },
       {
         breakpoint: 991,
-        settings: { slidesToShow: 3, slidesToScroll: 3, infinite: false },
+        settings: { slidesToShow: 4, slidesToScroll: 3, infinite: false },
       },
       {
         breakpoint: 1024,
-        settings: { slidesToShow: 3, slidesToScroll: 3, infinite: false },
+        settings: { slidesToShow: 4, slidesToScroll: 3, infinite: false },
       },
     ],
   };
@@ -104,13 +108,13 @@ const FlashCard = ({ productItems, addToCart }) => {
                       <i className="fa fa-star"></i>
                     </div>
                     <div className="price">
-                      <h4>${productItems.price}.00 </h4>
-                      {/* step : 3  
-                     if hami le button ma click garryo bahne 
-                    */}
-                      <button onClick={() => addToCart(productItems)}>
-                        <i className="fa fa-plus"></i>
-                      </button>
+                      <div className="containerPrice">
+                        <h4>${productItems.price}.00 </h4>
+
+                        <button onClick={() => addToCart(productItems)}>
+                          <i className="fa fa-plus"></i>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
