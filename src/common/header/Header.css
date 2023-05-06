@@ -54,6 +54,7 @@
 .menuAvatar .buttonLogout button {
   color: #0a0db9;
   font-weight: 700;
+  background-color: transparent;
   cursor: pointer;
 }
 
