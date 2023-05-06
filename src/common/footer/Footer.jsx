@@ -8,17 +8,6 @@ const Footer = () => {
   return (
     <div className="containerFooter">
       <footer className="footera">
-        {/* <div className="left-area">
-          <h2>Contact</h2>
-          <ul className="boxa">
-            <li>123 , Sidcup Lane</li>
-            <li>PS15 MA12, Bromley</li>
-            <li>London, UK</li>
-            <li>www.sstarta.com</li>
-            <li>000 123 456 7890</li>
-          </ul>
-        </div> */}
-
         <ul className="right-area">
           <li className="link-area">
             <h1>SUPERMERCADOS</h1>
@@ -49,15 +38,6 @@ const Footer = () => {
               <li>
                 <a href="#"></a>¿CÓMO REALIZAR SU PEDIDO?
               </li>
-              {/* <li>
-                <a href="#"></a>Lorem ipsum dolor sit amet.
-              </li>
-              <li>
-                <a href="#"></a>Lorem ipsum dolor sit amet.
-              </li>
-              <li>
-                <a href="#"></a>Lorem ipsum dolor sit amet.
-              </li> */}
             </ul>
           </li>
           <li>

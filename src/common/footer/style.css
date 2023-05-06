@@ -161,13 +161,186 @@ h2 {
   height: 36px;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 640px) {
+  .footera {
+    padding: 15px;
+  }
+  .containerFooter {
+    margin: 0;
+    display: grid;
+    font-size: 11px;
+  }
+}
+@media screen and (min-width: 560px) {
   .right-area > * {
     flex: 1;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 500px) {
+  .right-area > * {
+    flex: 1;
+  }
   .footera {
     padding: 15px;
+  }
+  .containerFooter {
+    margin: 0;
+    display: grid;
+    font-size: 10px;
+  }
+  h2 {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footera .right-area h1 {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+  }
+}
+@media screen and (min-width: 500px) {
+  .right-area > * {
+    flex: 1;
+  }
+  .footera {
+    padding: 10px;
+  }
+  .containerFooter {
+    margin: 0;
+    display: grid;
+    font-size: 10px;
+  }
+  h2 {
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 5px;
+    letter-spacing: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footera .right-area h1 {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+  }
+  .footera .right-area .link-area h2 {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 464px) {
+  .right-area > * {
+    flex: 1;
+  }
+  .footera {
+    padding: 8px;
+  }
+  .containerFooter {
+    margin: 0;
+    display: grid;
+    font-size: 10px;
+  }
+  h2 {
+    font-size: 11px;
+    font-weight: 300;
+    margin-top: 5px;
+    letter-spacing: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footera .right-area h1 {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+  }
+  .footera .right-area .link-area h2 {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 438px) {
+  .right-area > * {
+    flex: 1;
+  }
+  .footera {
+    padding: 8px;
+  }
+  .containerFooter {
+    margin: 0;
+    display: grid;
+    font-size: 10px;
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 5px;
+    letter-spacing: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footera .right-area h1 {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+  }
+  .footera .right-area .link-area h2 {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 420px) {
+  .right-area > * {
+    flex: 1;
+  }
+  .footera {
+    padding: 8px;
+  }
+  .containerFooter {
+    margin: 0;
+    display: grid;
+    font-size: 10px;
+  }
+  h2 {
+    font-size: 11px;
+    font-weight: 300;
+    margin-top: 5px;
+    letter-spacing: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footera .right-area h1 {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+  }
+  .footera .right-area .link-area h2 {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
