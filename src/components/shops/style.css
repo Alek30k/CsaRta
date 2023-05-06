@@ -13,7 +13,8 @@
 .shop .category .boxi {
   background-color: #f6f9fc;
   margin: 15px 0;
-  padding: 5px 10px;
+  /* padding: 5px 10px; */
+  padding: 0px;
   transition: 0.5s;
   border-radius: 5px;
 }

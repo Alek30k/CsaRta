@@ -26,7 +26,6 @@ const Catg = ({
               key={marca}
               onClick={() => filterMarcas(marca)}
             >
-              {/* <img src={marca.cateImg} alt="" /> */}
               <span>{marca}</span>
             </div>
           );
