@@ -312,9 +312,9 @@ header ul li a:hover {
   .header.active {
     height: 10vh;
   }
-  .category {
+  /* .category {
     width: 35%;
-  }
+  } */
   .flexi {
     max-height: 200px;
   }

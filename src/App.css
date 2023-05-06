@@ -15,6 +15,7 @@ body {
   background: #f6f9fc;
   padding: 50px 0;
 }
+
 .container {
   max-width: 90%;
   margin: auto;
@@ -695,7 +696,7 @@ button {
     border-radius: 5px;
   }
   .shop {
-    height: 55vh;
+    height: 75vh;
   }
 
   .product {
@@ -745,7 +746,7 @@ button {
     width: 100%;
   }
   .shop {
-    height: 50vh;
+    height: 57vh;
   }
 
   .productImg {
@@ -816,7 +817,7 @@ button {
     margin-top: 30px;
   }
   .shop {
-    height: 45vh;
+    height: 54vh;
   }
   .shop .product .product-details {
     margin: 0;
@@ -876,7 +877,7 @@ button {
     gap: 10px;
   }
   .shop {
-    height: 75vh;
+    height: 83vh;
   }
   .shop .product {
     padding: 0px 10px;
@@ -890,12 +891,12 @@ button {
 }
 @media (max-width: 375px) {
   .shop {
-    height: 75vh;
+    height: 106vh;
   }
 }
 @media (max-width: 360px) {
   .shop {
-    height: 75vh;
+    height: 93vh;
   }
 }
 @media (max-width: 350px) {
@@ -925,7 +926,7 @@ button {
   }
 
   .shop {
-    height: 60vh;
+    height: 83vh;
   }
   .shop .contentWidthh {
     position: absolute;
