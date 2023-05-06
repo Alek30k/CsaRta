@@ -13,7 +13,7 @@ const ShopCart = ({ addToCart, products }) => {
       {productsShop.map((shopItems, index) => {
         return (
           <div className="box" key={index}>
-            <div className="product mtop productImg">
+            <div className="product mtop productImg ">
               <div className="img">
                 <span className="discount">{shopItems.discount}% Off</span>
                 <img src={shopItems.cover} alt="" />

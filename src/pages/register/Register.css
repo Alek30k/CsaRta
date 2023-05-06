@@ -83,3 +83,52 @@
 .registerform p {
   color: rgb(17, 38, 224);
 }
+
+@media (max-width: 450px) {
+  .card {
+    display: flex;
+    flex-direction: row-reverse;
+    border-radius: 10px;
+    height: 520px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-size: 12px;
+  }
+
+  .registerform button {
+    padding: 10px 2px;
+    border: none;
+    background-color: #0715cf;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}
+@media (max-width: 375px) {
+  .card {
+    display: flex;
+    flex-direction: row-reverse;
+    border-radius: 10px;
+    height: 520px;
+    width: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-size: 12px;
+  }
+
+  .registerform button {
+    padding: 10px 2px;
+    border: none;
+    background-color: #0715cf;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+}

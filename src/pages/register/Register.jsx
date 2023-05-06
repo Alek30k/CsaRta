@@ -40,8 +40,8 @@ const Register = () => {
     <div className="register">
       <div className="card">
         <div className="registerform">
-          <h1>Registrarse</h1>
           <form onSubmit={handleSubmit}>
+            <h1>Registrarse</h1>
             <input
               type="text"
               placeholder="Nombre"
@@ -61,7 +61,7 @@ const Register = () => {
               onChange={handleChange}
             />
             <input
-              placeholder="Password Again"
+              placeholder="Contraseña de nuevo"
               required
               type="password"
               name="passwordAgain"
@@ -75,7 +75,7 @@ const Register = () => {
             />
             {err && err}
             <button type="submit" className="button">
-              Register
+              Registrarse
             </button>
             <span>¿Tiene usted una cuenta?</span>
             <Link to="/login">

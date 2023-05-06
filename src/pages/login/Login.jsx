@@ -1,23 +1,43 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./style.css";
-import newRequest from "../../utils/newRequest";
-import { Link, useNavigate } from "react-router-dom";
+// import newRequest from "../../utils/newRequest";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/authContext";
 
 function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
+  const [inputs, setInputs] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [err, setErr] = useState(null);
 
   const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const res = await newRequest.post("/auth/login", { username, password });
+  //     localStorage.setItem("currentUser", JSON.stringify(res.data));
+  //     navigate("/");
+  //   } catch (err) {
+  //     setError(err.response.data);
+  //   }
+  // };
+
+  const handleChange = (e) => {
+    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const { login } = useContext(AuthContext);
+
+  const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await newRequest.post("/auth/login", { username, password });
-      localStorage.setItem("currentUser", JSON.stringify(res.data));
+      await login(inputs);
       navigate("/");
     } catch (err) {
-      console.log(err);
+      setErr(err.response.data);
     }
   };
 
@@ -28,33 +48,33 @@ function Login() {
   return (
     <div className="login">
       <div className="cardlogin">
-        <form onSubmit={handleSubmit}>
+        <form>
           <h1>Iniciar sesión</h1>
           <label htmlFor="">Nombre de usuario</label>
           <input
-            name="username"
-            type="text"
-            placeholder="johndoe"
+            name="email"
+            type="email"
+            placeholder="ej. nombre@gmail.com"
             className="input"
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={handleChange}
           />
 
           <label htmlFor="">Contraseña</label>
           <input
             name="password"
             type="password"
+            placeholder="●●●●●●●●"
             className="input"
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={handleChange}
           />
-          <button type="submit" className="button">
-            Ingresar
+          {err && err}
+          <button onClick={handleLogin} className="button">
+            Iniciar Sesión
           </button>
 
           <div onClick={handleRegister} className="registrate">
             Registrate
           </div>
-
-          {error && error}
         </form>
       </div>
     </div>

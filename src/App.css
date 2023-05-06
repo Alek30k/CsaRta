@@ -295,6 +295,40 @@ button {
 .noneCat {
   display: none;
 }
+.shop .productImg .img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shop .productImg .img img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contentWidthh .grid1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.product .titleShop h3 {
+  margin-top: 0px;
+  font-size: 16px;
+}
+.product .product-details {
+  margin: 0px;
+  font-weight: 300;
+  font-size: 12px;
+  max-height: 80px;
+  min-height: 30px;
+}
+.product .price .containerPriceShop {
+  width: 180px;
+  margin-top: 10px;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 @media (max-width: 850px) {
   .background {

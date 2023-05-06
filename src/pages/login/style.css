@@ -56,3 +56,61 @@ label {
   color: red;
   cursor: pointer;
 }
+
+@media (max-width: 850px) {
+  .cardlogin {
+    height: 500px;
+  }
+}
+@media (max-width: 700px) {
+  .cardlogin {
+    height: 500px;
+  }
+}
+@media (max-width: 600px) {
+  .cardlogin {
+    height: 480px;
+  }
+  .button {
+    padding: 10px;
+    font-weight: 400;
+    font-size: 16px;
+  }
+}
+@media (max-width: 460px) {
+  .cardlogin {
+    height: 450px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .button {
+    padding: 8px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 400px) {
+  .cardlogin {
+    height: 400px;
+    width: 310px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .button {
+    padding: 6px;
+    font-size: 15px;
+  }
+  form {
+    width: 350px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .input {
+    padding: 10px 10px;
+  }
+}
