@@ -51,7 +51,7 @@ const FlashCard = ({ productItems, addToCart }) => {
       },
       {
         breakpoint: 500,
-        settings: { slidesToShow: 3, slidesToScroll: 2, infinite: false },
+        settings: { slidesToShow: 2, slidesToScroll: 2, infinite: false },
       },
       {
         breakpoint: 768,
@@ -74,8 +74,8 @@ const FlashCard = ({ productItems, addToCart }) => {
         {productItems.map((productItems, i) => {
           return (
             <div key={i}>
-              <div className="box productt">
-                <div className="product mtop ">
+              <div className="box">
+                <div className="product mtop productshop">
                   <div className="img">
                     <span className="discount">
                       {productItems.discount}% Off
@@ -85,7 +85,7 @@ const FlashCard = ({ productItems, addToCart }) => {
                       <img
                         src={productItems.cover}
                         alt=""
-                        className="flashImg"
+                        className="flashImg "
                       />
                     </Link>
 

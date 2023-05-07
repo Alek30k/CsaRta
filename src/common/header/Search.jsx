@@ -43,6 +43,7 @@ const Search = ({ CartItem }) => {
               <img src={logo} alt="" />
             </Link>
           </div>
+
           <div className="search-box f_flex">
             <i className="fa fa-search"></i>
             <input type="text" placeholder="Buscar..." />

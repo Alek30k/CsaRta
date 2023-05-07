@@ -12,13 +12,13 @@ const Annocument = () => {
   };
   return (
     <>
-      <section className="annocument background">
+      <section className="annocument backgroundb">
         <div className="container d_flex">
           <div style={mystyle}>
             <img
               src="./images/cajero.jpg"
               width="100%"
-              height="100%"
+              height="70%"
               className="imgAnuncios"
             />
           </div>
@@ -26,7 +26,7 @@ const Annocument = () => {
             <img
               src="./images/cajero2.jpg"
               width="100%"
-              height="100%"
+              height="70%"
               className="imgAnuncios"
             />
           </div>
