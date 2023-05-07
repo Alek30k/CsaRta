@@ -202,6 +202,7 @@ button {
   width: 200px;
   display: flex;
   justify-content: space-between;
+  margin: auto;
   align-items: center;
   color: #e94560;
 }
@@ -333,7 +334,7 @@ button {
 }
 .product .price .containerPriceShop {
   width: 180px;
-  margin-top: 10px;
+  margin: auto;
   padding: 2px;
   display: flex;
   align-items: center;
