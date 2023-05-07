@@ -184,7 +184,7 @@ button {
 
 .product h3 {
   font-weight: 400;
-  font-size: 17px;
+  font-size: 16px;
 }
 .product .rate i {
   font-size: 15px;
@@ -192,6 +192,14 @@ button {
   margin: 5px 5px 5px 0;
 }
 .product .price {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #e94560;
+}
+.product .price .containerPrice {
+  width: 200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -444,10 +452,6 @@ button {
 
   .catNone {
     display: none;
-  }
-
-  .containerr {
-    max-height: 500px;
   }
 
   .containerr .rightt {
