@@ -37,7 +37,7 @@ const Shop = ({ addToCart, shopItems }) => {
               setCatOpen={setCatOpen}
             />
           </div>
-          <div className="contentWidthh">
+          <div className="contentWidthh container">
             <div className="heading d_flex">
               <div className="heading-left row  f_flex">
                 <h2>Teléfonos móviles</h2>
@@ -48,7 +48,7 @@ const Shop = ({ addToCart, shopItems }) => {
                 <i className="fa fa-chevron-down"></i>
               </div>
             </div>
-            <div className="product-content  grid1">
+            <div className="product-content grid1">
               <ShopCart
                 addToCart={addToCart}
                 shopItems={shopItems}

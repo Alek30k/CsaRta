@@ -337,7 +337,7 @@ button {
 }
 .contentWidthh .grid1 {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 .product .titleShop h3 {
   margin-top: 0px;
@@ -824,9 +824,9 @@ button {
     margin: 5px;
   }
 
-  .shop {
+  /* .shop {
     height: 100vh;
-  }
+  } */
 
   .cheadi h1 {
     display: flex;
@@ -1010,9 +1010,9 @@ button {
     height: 28px;
     border-radius: 5px;
   }
-  .shop {
+  /* .shop {
     height: 100vh;
-  }
+  } */
 
   .product {
     padding: 0px;
@@ -1191,6 +1191,9 @@ button {
   }
 }
 @media (max-width: 445px) {
+  .container {
+    max-width: 80%;
+  }
   .product .product-details {
     margin: 10px 0;
     font-weight: 300;
@@ -1220,9 +1223,9 @@ button {
     width: 130px;
     margin-top: 30px;
   }
-  .shop {
+  /* .shop {
     height: 140vh;
-  }
+  } */
   .shop .product .product-details {
     margin: 0;
     font-weight: 300;

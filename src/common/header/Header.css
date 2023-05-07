@@ -356,9 +356,10 @@ header ul li a:hover {
     position: static;
   }
   .search .logo img {
-    width: 130px;
-    height: 40px;
+    width: 152px;
+    height: 53px;
     margin-top: 5px;
+    margin-right: 60px;
   }
   .search .width .icon-circle {
     width: 30px;
