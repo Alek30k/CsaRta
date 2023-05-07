@@ -22,6 +22,11 @@ body {
   margin: auto;
 }
 
+.homeSlide .rightSlider .rightImg {
+  width: 100%;
+  height: 100%;
+}
+
 .d_flex {
   display: flex;
   justify-content: space-between;
