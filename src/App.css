@@ -18,7 +18,7 @@ body {
 }
 
 .container {
-  max-width: 90%;
+  max-width: 80%;
   margin: auto;
 }
 
@@ -580,6 +580,18 @@ button {
     display: none;
   }
 
+  /* .bannerPubli {
+    width: 30%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .bannerPubli1 {
+    width: 68%;
+    height: 200px;
+    margin-bottom: 30px;
+  } */
+
   .wrapper {
     display: none;
   }
@@ -636,8 +648,8 @@ button {
   }
 
   .category.active {
-    left: -30px;
-    top: -10px;
+    left: 25px;
+    top: -40px;
     font-size: 14px;
     padding: 5px;
   }
