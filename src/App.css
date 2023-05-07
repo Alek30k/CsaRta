@@ -302,6 +302,24 @@ button {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
 }
+.home .slick-next {
+  right: -35px;
+  background-color: #d0d1cd;
+  border-radius: 50%;
+}
+.home .slick-prev {
+  right: -35px;
+  background-color: #d0d1cd;
+  border-radius: 50%;
+}
+.home .slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  color: transparent;
+  outline: none;
+  background: rgb(187, 186, 186);
+}
 
 .noneCat {
   display: none;
