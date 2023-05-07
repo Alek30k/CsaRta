@@ -21,12 +21,12 @@ const Dcard = ({ addToCart }) => {
     arrows: true,
     responsive: [
       {
-        breakpoint: 305,
-        settings: { slidesToShow: 1, slidesToScroll: 1, infinite: false },
+        breakpoint: 384,
+        settings: { slidesToShow: 2, slidesToScroll: 1, infinite: false },
       },
       {
         breakpoint: 450,
-        settings: { slidesToShow: 2, slidesToScroll: 1, infinite: false },
+        settings: { slidesToShow: 3, slidesToScroll: 1, infinite: false },
       },
       {
         breakpoint: 600,

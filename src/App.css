@@ -420,7 +420,7 @@ button {
 }
 @media (max-width: 850px) {
   .background {
-    padding: 35px 0;
+    padding: 30px 0;
   }
 
   .grid {
@@ -543,6 +543,7 @@ button {
   .product .rate i {
     font-size: 16px;
     margin-top: 10px;
+    display: none;
   }
 
   .product h3 {
@@ -717,6 +718,10 @@ button {
     position: absolute;
     bottom: 5px;
   }
+  .product .titleShop h3 {
+    margin-top: 0px;
+    font-size: 12px;
+  }
   .product .price .containerPrice {
     width: 145px;
     display: flex;
@@ -744,7 +749,7 @@ button {
     border-radius: 5px;
   }
   .shop {
-    height: 65vh;
+    height: 50vh;
   }
 
   .product {
@@ -752,7 +757,7 @@ button {
     position: relative;
     border-radius: 8px;
     box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
-    margin: 0px;
+
     width: 100%;
     max-height: 230px;
   }
@@ -768,21 +773,30 @@ button {
     justify-content: space-between;
     align-items: center;
   }
+  .product .price .containerPriceShop {
+    width: 120px;
+    margin-top: 10px;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   .product .rate i {
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 10px;
+    display: none;
   }
 
   .product h3 {
     margin-top: 0px;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 10px;
   }
   .product .product-details {
     margin-top: 10px;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 @media (max-width: 600px) {
@@ -933,7 +947,7 @@ button {
     box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
     margin: 0px;
     width: 100%;
-    max-height: 170px;
+    max-height: 240px;
   }
   .product .product-details .price button {
     font-size: 12px;
@@ -941,11 +955,11 @@ button {
     height: 22px;
   }
   .product .price .containerPriceShop {
-    width: 90px;
+    width: 130px;
     margin-top: 30px;
   }
   .shop {
-    height: 54vh;
+    height: 100vh;
   }
   .shop .product .product-details {
     margin: 0;
@@ -961,7 +975,11 @@ button {
     font-size: 8px;
     border-radius: 50px;
     color: #fff;
-    margin: 10px;
+    margin: 5px;
+  }
+  .contentWidthh .grid1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 390px) {

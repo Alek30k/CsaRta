@@ -6,7 +6,7 @@ import twitter from "./twitter.png";
 
 const Footer = () => {
   return (
-    <div className="containerFooter ">
+    <div className="containerFooter">
       <footer className="footera">
         <ul className="right-area">
           <li className="link-area">
