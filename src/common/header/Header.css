@@ -247,15 +247,14 @@ header ul li a:hover {
     position: relative;
     border-radius: 8px;
     box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
+    height: 250px;
   }
-  .productshop {
+  .productMarcas {
     background: #fff;
     padding: 9px 6px;
     position: relative;
     border-radius: 8px;
     box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
-    width: 156px;
-    height: 250px;
   }
 
   .productt {

@@ -41,7 +41,7 @@ const TopCart = () => {
         {Tdata.map((value, index) => {
           return (
             <div key={index}>
-              <div className="box product">
+              <div className="box productMarcas">
                 <div className="img">
                   <img src={value.cover} alt="" />
                 </div>
