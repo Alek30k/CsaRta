@@ -7,7 +7,7 @@ import twitter from "./twitter.png";
 const Footer = () => {
   return (
     <div className="containerFooter">
-      <footer className="footera">
+      <footer className="footera ">
         <ul className="right-area">
           <li className="link-area">
             <h1>SUPERMERCADOS</h1>

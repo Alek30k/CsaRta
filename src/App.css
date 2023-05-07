@@ -328,7 +328,6 @@ button {
 .product .product-details {
   margin: 0px;
   font-weight: 300;
-  font-size: 12px;
   max-height: 80px;
   min-height: 30px;
 }
@@ -339,6 +338,18 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.category.active {
+  left: -4px;
+  top: -10px;
+  font-size: 14px;
+  padding: 5px;
+}
+
+@keyframes categrory {
+  0% {
+    transform: translateY(-75px);
+  }
 }
 
 @media (max-width: 1024px) {
