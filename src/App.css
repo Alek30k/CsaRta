@@ -16,6 +16,10 @@ body {
   background: #f6f9fc;
   padding: 50px 0;
 }
+.backgroundb {
+  background: #f6f9fc;
+  padding: 0px;
+}
 
 .container {
   max-width: 80%;
