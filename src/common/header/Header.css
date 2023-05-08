@@ -116,6 +116,7 @@
   height: 8vh;
   margin-top: 5px;
 }
+
 .catgrories span {
   margin-right: 20px;
   font-size: 30px;
@@ -132,6 +133,7 @@
   cursor: pointer;
   color: #ff014f;
 }
+
 .categroriesMenu {
   position: absolute;
   top: 190px;
@@ -154,9 +156,10 @@ header ul li a {
   transition: 0.5s;
   font-size: 15px;
   font-weight: 400;
+  color: rgb(75, 71, 71);
 }
 header ul li a:hover {
-  color: #ff014f;
+  color: #013cff;
 }
 
 .open {
@@ -174,12 +177,60 @@ header ul li a:hover {
 }
 
 @media (max-width: 1024px) {
-  header ul {
-    padding-top: 30px;
+  .search-box {
+    width: 60%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /*padding: 10px;*/
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 80px;
   }
-
+  .search-box i {
+    width: 5%;
+    text-align: center;
+    font-size: 20px;
+    opacity: 0.5;
+    padding: 15px 20px;
+    font-size: 14px;
+  }
+  .search-box input {
+    width: 100%;
+    padding: 10px;
+  }
+  ::placeholder {
+    font-size: 12px;
+  }
+  .search-box span {
+    width: 15%;
+    opacity: 0.5;
+    border-left: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+  }
   header {
     height: 6vh;
+  }
+  header ul {
+    line-height: 8vh;
+  }
+  header ul li {
+    margin-left: 10px;
+  }
+  header ul li a {
+    transition: 0.5s;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(75, 71, 71);
+  }
+  header ul li a:hover {
+    color: #ff014f;
+  }
+
+  header .link {
+    display: flex;
   }
 
   .catgrories {
@@ -261,7 +312,7 @@ header ul li a:hover {
     position: relative;
     border-radius: 8px;
     box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
-    height: 250px;
+    height: 253px;
   }
   .productMarcas {
     background: #fff;
@@ -269,6 +320,7 @@ header ul li a:hover {
     position: relative;
     border-radius: 8px;
     box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
+    width: 94%;
   }
 
   .productt {
@@ -284,63 +336,6 @@ header ul li a:hover {
     color: #e94560;
   }
 
-  /* jhjhas */
-
-  .nav-links-MobileMenu {
-    position: absolute;
-    display: block;
-    list-style: none;
-    box-shadow: rgba(50, 50, 93, 0.23) 0px 50px 100px -20px,
-      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    left: 0;
-    top: 0;
-    transition: all 0.5s ease-in-out;
-    width: 50%;
-    height: 100vh;
-    background-color: white;
-    z-index: 888;
-  }
-  header ul li {
-    width: 100%;
-    transition: all 0.5s ease-in-out;
-    text-transform: uppercase;
-    line-height: 70px;
-  }
-  header .link {
-    display: none;
-  }
-  .close,
-  .open {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: #ff014f;
-    display: block;
-    font-size: 25px;
-    z-index: 999;
-  }
-  /* .open {
-    top: 18%;
-    right: 30px;
-  } */
-  .close {
-    right: 52%;
-  }
-  .close.home-btn {
-    background: linear-gradient(145deg, #e2e8ec, #ffffff);
-    color: #ff014f;
-    border-radius: 50%;
-    padding: 0;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-  }
-  .header.active {
-    height: 10vh;
-  }
-  /* .category {
-    width: 35%;
-  } */
   .flexi {
     max-height: 200px;
   }
@@ -376,13 +371,6 @@ header ul li a:hover {
     width: 30px;
     height: 30px;
     margin-left: 10px;
-    /* border-radius: 50%;
-    object-fit: cover;
-    margin-left: 10px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center; */
   }
 
   .search .cart span {
@@ -392,15 +380,15 @@ header ul li a:hover {
 
   .catgrories {
     background-color: #f6f9fc;
-    padding: 2px 10px 8px 10px;
-    height: 4vh;
+    padding: 2px 10px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .catgrories span {
-    margin-right: 20px;
-    font-size: 24px;
+    margin-right: 0px;
+    font-size: 20px;
   }
 }
 @media (max-width: 950px) {
@@ -409,7 +397,7 @@ header ul li a:hover {
   }
 
   header {
-    height: 6vh;
+    height: 4vh;
   }
 
   .cart-items .cart-total {
@@ -479,7 +467,7 @@ header ul li a:hover {
   .search .logo img {
     width: 150px;
     height: 50px;
-    margin-right: 10px;
+    margin-right: 50px;
   }
 
   .nav-links-MobileMenu {
@@ -553,7 +541,7 @@ header ul li a:hover {
   }
   .search .logo img {
     width: 130px;
-    height: 40px;
+    height: 45px;
     margin-top: 5px;
   }
   .search .width .icon-circle {
@@ -587,18 +575,21 @@ header ul li a:hover {
 
   .catgrories {
     background-color: #f6f9fc;
-    padding: 2px 10px 8px 10px;
-    height: 4vh;
+    padding: 0px 10px;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .catgrories span {
-    margin-right: 20px;
-    font-size: 24px;
+    margin-right: 0px;
+    font-size: 20px;
   }
 }
 @media (max-width: 560px) {
+  header {
+    height: 5vh;
+  }
   .search-box {
     width: 60%;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -632,7 +623,7 @@ header ul li a:hover {
   }
 
   .catgrories {
-    height: 45px;
+    height: 100%;
   }
 
   .search-box span {
@@ -651,61 +642,11 @@ header ul li a:hover {
     margin-right: 10px;
   }
 }
-@media (max-width: 550px) {
-  .search-box {
-    width: 60%;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    /*padding: 10px;*/
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px;
-  }
-  .search-box i {
-    opacity: 0.5;
-    padding: 10px 20px;
-    font-size: 12px;
-  }
-  .search-box input {
-    width: 100%;
-    padding: 5px;
-  }
-  ::placeholder {
-    font-size: 14px;
-  }
-  .search .search-box span {
-    width: 35%;
-    opacity: 0.5;
-    border-left: 2px solid rgba(0, 0, 0, 0.1);
-    padding: 5px 10px;
-    font-size: 12px;
-    cursor: pointer;
-  }
 
-  .catgrories {
-    height: 45px;
-  }
-
-  .search .width {
-    width: 30%;
-    position: relative;
-  }
-
-  .search .logo img {
-    width: 130px;
-    height: 40px;
-    margin-right: 10px;
-  }
-
-  .category.active {
-    left: -30px;
-    top: -22px;
-    font-size: 12px;
-    padding: 5px;
-  }
-}
 @media (max-width: 500px) {
+  header {
+    height: 5vh;
+  }
   .search-box {
     width: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -738,7 +679,7 @@ header ul li a:hover {
   }
 
   .catgrories {
-    height: 50px;
+    height: 100%;
   }
 
   .search .width {
@@ -760,6 +701,9 @@ header ul li a:hover {
   }
 }
 @media (max-width: 400px) {
+  header {
+    height: 5vh;
+  }
   .search-box {
     width: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -791,7 +735,7 @@ header ul li a:hover {
   }
 
   .catgrories {
-    height: 50px;
+    height: 100%;
   }
 
   .search .width {
@@ -814,6 +758,9 @@ header ul li a:hover {
   }
 }
 @media (max-width: 425px) {
+  header {
+    height: 5vh;
+  }
   .search-box {
     width: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -842,10 +789,6 @@ header ul li a:hover {
     padding: 2px 2px;
     font-size: 10px;
     cursor: pointer;
-  }
-
-  .catgrories {
-    height: 50px;
   }
 
   .search .width {
@@ -868,6 +811,9 @@ header ul li a:hover {
   }
 }
 @media (max-width: 414px) {
+  header {
+    height: 5vh;
+  }
   .search-box {
     width: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -899,7 +845,7 @@ header ul li a:hover {
   }
 
   .catgrories {
-    height: 40px;
+    height: 100%;
   }
 
   .search .width {
@@ -922,6 +868,9 @@ header ul li a:hover {
   }
 }
 @media (max-width: 400px) {
+  header {
+    height: 6vh;
+  }
   .search-box {
     width: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -953,7 +902,7 @@ header ul li a:hover {
   }
 
   .catgrories {
-    height: 40px;
+    height: 100%;
   }
 
   .search .width {

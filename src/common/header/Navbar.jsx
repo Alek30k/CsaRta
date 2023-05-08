@@ -30,9 +30,9 @@ const Navbar = () => {
               <li>
                 <a href="#ProductosDestacados">Productos Destacados</a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#GrandesDescuentos">Grandes Descuentos</a>
-              </li>
+              </li> */}
               <li>
                 <a href="#QuienesSomos">Quiénes Somos</a>
               </li>
@@ -55,7 +55,7 @@ const Navbar = () => {
           </div>
         </div>
       </header>
-      <div className="categroriesMenu" onClick={() => setMenu(false)}>
+      <div className=" categroriesMenu" onClick={() => setMenu(false)}>
         {Menu && <Categories />}
       </div>
     </>
