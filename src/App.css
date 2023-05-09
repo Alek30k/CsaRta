@@ -1077,9 +1077,9 @@ button {
   }
 }
 @media (max-width: 600px) {
-  .container {
+  /* .container {
     max-width: 90%;
-  }
+  } */
   .product .price {
     color: #e94560;
     position: absolute;
@@ -1209,9 +1209,9 @@ button {
   }
 }
 @media (max-width: 445px) {
-  .container {
+  /* .container {
     max-width: 90%;
-  }
+  } */
   .product .product-details {
     margin: 10px 0;
     font-weight: 300;
@@ -1275,9 +1275,9 @@ button {
   }
 }
 @media (max-width: 390px) {
-  .container {
+  /* .container {
     max-width: 90%;
-  }
+  } */
   .product .product-details {
     margin: 0;
     font-weight: 300;
