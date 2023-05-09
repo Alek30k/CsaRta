@@ -24,7 +24,7 @@ const Shop = ({ addToCart, shopItems }) => {
   return (
     <>
       <section className="shop background  categoris">
-        <div className="container d_flex">
+        <div className="containerMobile d_flex">
           <div
             className={!catOpen ? " category categorys activve" : "categoryy"}
           >

@@ -752,7 +752,7 @@ button {
     box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
     margin: 0px;
     width: 94%;
-    max-height: 220px;
+    max-height: 200px;
   }
   .shop .productImg .img {
     display: flex;
@@ -1038,6 +1038,15 @@ button {
     width: 100%;
     max-height: 230px;
   }
+  .productshop {
+    padding: 0px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
+    margin: 0px;
+    width: 94%;
+    max-height: 198px;
+  }
 
   .product-details {
     /* margin-top: 0px;
@@ -1209,9 +1218,11 @@ button {
   }
 }
 @media (max-width: 445px) {
-  /* .container {
-    max-width: 90%;
-  } */
+  .containerMobile {
+    max-width: 95%;
+    margin: auto;
+  }
+
   .product .product-details {
     margin: 10px 0;
     font-weight: 300;
@@ -1230,7 +1241,7 @@ button {
     box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
     margin: 0px;
     width: 100%;
-    max-height: 240px;
+    max-height: 210px;
   }
   .product .product-details .price button {
     font-size: 12px;
@@ -1238,7 +1249,7 @@ button {
     height: 22px;
   }
   .product .price .containerPriceShop {
-    width: 130px;
+    width: 100px;
     margin-top: 30px;
   }
   .productshop {
@@ -1248,7 +1259,7 @@ button {
     box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
     margin: 0px;
     width: 94%;
-    max-height: 220px;
+    max-height: 198px;
   }
   /* .shop {
     height: 140vh;
@@ -1304,7 +1315,7 @@ button {
     box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
     margin: 0px;
     width: 94%;
-    max-height: 220px;
+    max-height: 195px;
   }
   .discount {
     position: absolute;
@@ -1355,7 +1366,7 @@ button {
     box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
     margin: 0px;
     width: 94%;
-    max-height: 220px;
+    max-height: 190px;
   }
 }
 @media (max-width: 320px) {
