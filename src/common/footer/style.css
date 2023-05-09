@@ -120,8 +120,13 @@ h2 {
   margin-top: 20px;
   /* margin-left: 20px; */
 }
+
 .boxa li {
   display: flex;
+  cursor: pointer;
+}
+.boxa li:hover {
+  color: rgb(194, 50, 50);
 }
 .footer-bottom {
   text-align: start;

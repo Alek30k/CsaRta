@@ -12,9 +12,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
   return (
     <>
       <section className="cart-items ">
-        <div className="container  d_flex">
-          {/* if hamro cart ma kunai pani item xaina bhane no diplay */}
-
+        <div className="containerCart  d_flex">
           <div className="cart-details">
             {CartItem.length === 0 && (
               <>
@@ -23,12 +21,11 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
               </>
             )}
 
-            {/* yasma hami le cart item lai display garaaxa */}
             {CartItem.map((item) => {
               const productQty = item.price * item.qty;
 
               return (
-                <div className="cart-list product d_flex" key={item}>
+                <div className="cart-list product d_flexCart" key={item}>
                   <div className="img">
                     <img src={item.cover} alt="" />
                   </div>
@@ -49,7 +46,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
                       </button>
                     </div>
 
-                    <div className="cartControl buttons d_flex">
+                    <div className="cartControl buttons d_flexCart">
                       <button
                         className="incCart"
                         onClick={() => addToCart(item)}
@@ -71,7 +68,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
             })}
           </div>
 
-          <div className="cart-total product">
+          <div className="cart-total productCart">
             <h2>Resumen de la compra</h2>
             <div className=" d_flex total">
               <h4>Precio Total :</h4>
