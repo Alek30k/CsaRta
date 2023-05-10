@@ -74,9 +74,9 @@ const Dcard = ({ addToCart }) => {
   return (
     <>
       <Slider {...settings}>
-        {Ddata.map((value, i) => {
+        {Ddata.map((value, index) => {
           return (
-            <div key={i} onClick={() => handleOpen(i)}>
+            <div key={index} onClick={() => handleOpen(index)}>
               <div className="box product producti">
                 <div className="img">
                   <img src={value.cover} alt="" width="90%" />
