@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import { useCart } from "react-use-cart";
 
 const Cart = ({ CartItem, addToCart, decreaseQty }) => {
   // Stpe: 7   calucate total of items
@@ -7,6 +8,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
     (price, item) => price + item.qty * item.price,
     0
   );
+  const { emptyCart } = useCart();
 
   // prodcut qty total
   return (
@@ -41,7 +43,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
                       <button className="removeCart">
                         <i
                           className="fa-solid fa-xmark"
-                          onClick={() => decreaseQty(item)}
+                          onClick={() => emptyCart()}
                         ></i>
                       </button>
                     </div>

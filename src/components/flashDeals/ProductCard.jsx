@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 const Product = ({ productItems, addToCart }) => {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
+  const [selectedImg, setSelectedImg] = useState(productItems[path - 1].cover);
 
   const [slideNumber, setSlideNumber] = useState(path);
   const [count, setCount] = useState(1);
@@ -19,15 +20,28 @@ const Product = ({ productItems, addToCart }) => {
   return (
     <div className="containerr">
       <div className="leftt">
+        <div className="images">
+          <img
+            src={`.${productItems[slideNumber - 1].cover1}`}
+            alt=""
+            onClick={(e) =>
+              setSelectedImg(productItems[slideNumber - 1].cover1)
+            }
+          />
+
+          <img
+            src={`.${productItems[slideNumber - 1].cover2}`}
+            alt=""
+            onClick={(e) =>
+              setSelectedImg(productItems[slideNumber - 1].cover2)
+            }
+          />
+        </div>
         {/* <div className="imgContainer">
           <img src={productItems[slideNumber].cover} alt="" />
         </div> */}
         <div className="sliderWrapper">
-          <img
-            src={`.${productItems[slideNumber - 1].cover}`}
-            alt=""
-            className="sliderImg"
-          />
+          <img src={`.${selectedImg}`} alt="" className="sliderImg" />
         </div>
       </div>
       <div className="rightt">

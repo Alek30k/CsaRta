@@ -4,6 +4,8 @@ const Data = {
       id: 1,
       discount: 50,
       cover: "./images/flash/aaaa.png",
+      cover1: "./images/flash/merme1.jpg",
+      cover2: "./images/flash/merme2.jpg",
       name: "Productos libres de gluten",
       price: 100,
     },

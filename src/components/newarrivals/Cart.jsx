@@ -2,15 +2,6 @@ import React from "react";
 import Ndata from "./Ndata";
 
 const Cart = () => {
-  // function cambio() {
-  //   var clase = document.getElementById("resize");
-  //   if (window.screen.width < 768) {
-  //     clase.className = "grid1";
-  //   } else {
-  //     clase.className = "grid";
-  //   }
-  // }
-
   return (
     <>
       <div className="content grid productStock" id="resize">

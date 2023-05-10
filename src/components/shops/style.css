@@ -17,6 +17,7 @@
   padding: 0px;
   transition: 0.5s;
   border-radius: 5px;
+  cursor: pointer;
 }
 .shop .category img {
   width: auto;
