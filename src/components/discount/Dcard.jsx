@@ -26,7 +26,7 @@ const Dcard = ({ addToCart }) => {
       },
       {
         breakpoint: 450,
-        settings: { slidesToShow: 3, slidesToScroll: 1, infinite: false },
+        settings: { slidesToShow: 2, slidesToScroll: 1, infinite: false },
       },
       {
         breakpoint: 600,

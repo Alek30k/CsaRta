@@ -26,7 +26,7 @@ const Product = ({ productItems, addToCart }) => {
   const countTotal = productItems[slideNumber - 1].price * quantity;
 
   return (
-    <div className="containerr container">
+    <div className="containerr container containerProduct">
       <div className="leftt">
         <div className="sliderWrapper">
           <div className="images">
@@ -59,7 +59,7 @@ const Product = ({ productItems, addToCart }) => {
                     width: 377,
                     height: 370,
                   },
-                  isHintEnabled: true,
+                  // isHintEnabled: true,
                 }}
               />
             </div>
