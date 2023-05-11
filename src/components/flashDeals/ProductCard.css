@@ -1,30 +1,55 @@
 .containerr {
   height: calc(100vh - 100px);
   display: flex;
-  position: relative;
 }
 
 .images {
   flex: 1;
   position: absolute;
-  top: 110px;
-  left: 50px;
+  top: 0px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 60px 0px;
 }
+
+.sliderWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sliderImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sliderImg .imgProduct {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
 .images img {
   width: 100%;
-  height: 80px;
-  object-fit: contain;
+  height: 70px;
+  object-fit: cover;
   cursor: pointer;
   margin-bottom: 10px;
+}
+.images img.active {
+  border-radius: 10px;
+  border: 1px solid rgb(6, 6, 233);
 }
 
 .leftt {
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 30px;
-  gap: 20px;
 }
 
 .rightt {
@@ -63,6 +88,7 @@
 }
 .buttonCant button {
   padding: 10px;
+  border-radius: 5px;
   border: 1px solid gray;
 }
 
@@ -73,55 +99,257 @@
   border-bottom: 1px solid #d1411e;
 }
 
-.buttonn {
-  height: 30px;
-  margin-left: 10px;
-  background-color: #d1411e;
-  color: white;
+.buttonp {
   border: none;
-  font-weight: 500;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  background-color: #0715cf;
+  border-radius: 10px;
   cursor: pointer;
 }
-/*   
-  @media screen and (max-width: 480px) {
-    .container {
-      height: auto;
-      text-align: center;
-      flex-direction: column;
-      margin-top: 20px;
-    }
-  
-    .imgContainer {
-      width: 70vw;
-      height: 70vw;
-    }
-  
-    .title {
-      margin: 5px;
-    }
-  
-    .sizes {
-      width: 100%;
-      padding: 0px 20px;
-    }
-  
-    .ingredients {
-      flex-direction: column;
-    }
-  
-    .option {
-      margin: 10px;
-      font-size: 18px;
-    }
-  
-    .checkbox {
-      width: 25px;
-      height: 25px;
-    }
-  
-    .quantity,
-    .button {
-      height: 50px;
-      padding: 10px 20px;
-    }
-  } */
+
+@media (max-width: 1024px) {
+  .images {
+    flex: 1;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+@media (max-width: 800px) {
+  .containerr {
+    height: calc(100vh - 100px);
+    display: flex;
+  }
+
+  .images {
+    flex: 1;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .sliderImg {
+    width: 100%;
+    height: 25vh;
+    object-fit: cover;
+  }
+}
+@media (max-width: 620px) {
+  .images {
+    flex: 1;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .sliderImg {
+    width: 100%;
+    height: 35vh;
+    object-fit: cover;
+  }
+
+  .rightt {
+    flex: 1;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    margin: 80px 0px;
+    gap: 20px;
+  }
+
+  .imgContainer {
+    width: 80%;
+    height: 80%;
+    position: relative;
+  }
+
+  .precioUnidad {
+    color: rgb(172, 172, 201);
+    font-size: 16px;
+  }
+
+  .cantidad {
+    font-size: 14px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .count {
+    margin: 10px;
+  }
+
+  .buttonCant button {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+  }
+
+  .pricee {
+    color: #df3207;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #d1411e;
+  }
+}
+@media (max-width: 550px) {
+  .images {
+    flex: 1;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .sliderImg {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+  }
+
+  .rightt {
+    flex: 1;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    margin: 80px 20px;
+    gap: 10px;
+  }
+
+  .imgContainer {
+    width: 80%;
+    height: 80%;
+    position: relative;
+  }
+
+  .precioUnidad {
+    color: rgb(172, 172, 201);
+    font-size: 16px;
+  }
+
+  .cantidad {
+    font-size: 14px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .count {
+    margin: 10px;
+  }
+
+  .buttonCant button {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid gray;
+  }
+
+  .pricee {
+    color: #df3207;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #d1411e;
+  }
+}
+@media (max-width: 450px) {
+  .containerr {
+    height: calc(65vh - 100px);
+    display: flex;
+  }
+
+  .images {
+    flex: 1;
+    position: absolute;
+    top: 0px;
+    left: -50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .images img {
+    width: 80%;
+    height: 60px;
+    object-fit: contain;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  .sliderImg {
+    width: 90%;
+    height: 25vh;
+    object-fit: cover;
+  }
+
+  .rightt {
+    flex: 1;
+    display: flex;
+
+    flex-direction: column;
+    margin: auto;
+    gap: 10px;
+  }
+
+  .imgContainer {
+    width: 80%;
+    height: 80%;
+    position: relative;
+  }
+
+  .precioUnidad {
+    color: rgb(172, 172, 201);
+    font-size: 14px;
+  }
+
+  .cantidad {
+    font-size: 12px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .count {
+    margin: 10px;
+  }
+
+  .buttonCant .button {
+    padding: 5px;
+    border: 1px solid gray;
+    background-color: yellowgreen;
+    border-radius: 5px;
+  }
+
+  .pricee {
+    color: #df3207;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid #d1411e;
+  }
+}

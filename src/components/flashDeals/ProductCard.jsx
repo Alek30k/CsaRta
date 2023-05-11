@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./ProductCard.css";
 import { useLocation } from "react-router-dom";
+import ReactImageMagnify from "react-image-magnify";
 
 const Product = ({ productItems, addToCart }) => {
   const location = useLocation();
@@ -8,40 +9,61 @@ const Product = ({ productItems, addToCart }) => {
   const [selectedImg, setSelectedImg] = useState(productItems[path - 1].cover);
 
   const [slideNumber, setSlideNumber] = useState(path);
-  const [count, setCount] = useState(1);
+  const [selectedImage, setSelectedImage] = useState(false);
+  const [quantity, setQuantity] = useState(1);
 
-  const decrementCount = () => {
-    if (count === 0) return;
-    setCount(count - 1);
+  const seleted1 = () => {
+    setSelectedImg(productItems[slideNumber - 1].cover1);
+    setSelectedImage(!selectedImage);
+  };
+  const seleted2 = () => {
+    setSelectedImg(productItems[slideNumber - 1].cover2);
+    setSelectedImage(!selectedImage);
   };
 
-  const countTotal = productItems[slideNumber - 1].price * count;
+  // const imgUrl = `.${selectedImg}`
+
+  const countTotal = productItems[slideNumber - 1].price * quantity;
 
   return (
-    <div className="containerr">
+    <div className="containerr container">
       <div className="leftt">
-        <div className="images">
-          <img
-            src={`.${productItems[slideNumber - 1].cover1}`}
-            alt=""
-            onClick={(e) =>
-              setSelectedImg(productItems[slideNumber - 1].cover1)
-            }
-          />
-
-          <img
-            src={`.${productItems[slideNumber - 1].cover2}`}
-            alt=""
-            onClick={(e) =>
-              setSelectedImg(productItems[slideNumber - 1].cover2)
-            }
-          />
-        </div>
-        {/* <div className="imgContainer">
-          <img src={productItems[slideNumber].cover} alt="" />
-        </div> */}
         <div className="sliderWrapper">
-          <img src={`.${selectedImg}`} alt="" className="sliderImg" />
+          <div className="images">
+            <img
+              src={`.${productItems[slideNumber - 1].cover1}`}
+              alt=""
+              onClick={(e) => seleted1()}
+              className={!selectedImage && "active"}
+            />
+
+            <img
+              src={`.${productItems[slideNumber - 1].cover2}`}
+              alt=""
+              onClick={(e) => seleted2()}
+              className={selectedImage && "active"}
+            />
+          </div>
+          <div className="sliderImg">
+            <div className="imgProduct">
+              {/* <img src={`.${selectedImg}`} alt="" draggable={false} /> */}
+              <ReactImageMagnify
+                {...{
+                  smallImage: {
+                    alt: "Wristwatch by Ted Baker London",
+                    isFluidWidth: true,
+                    src: `.${selectedImg}`,
+                  },
+                  largeImage: {
+                    src: `.${selectedImg}`,
+                    width: 377,
+                    height: 370,
+                  },
+                  isHintEnabled: true,
+                }}
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div className="rightt">
@@ -54,18 +76,22 @@ const Product = ({ productItems, addToCart }) => {
           <div className="cantidad">
             <span>cantidad</span>
             <div className="buttonCant">
-              <button onClick={decrementCount}>
+              <button
+                onClick={() =>
+                  setQuantity((prev) => (prev === 1 ? 1 : prev - 1))
+                }
+              >
                 <i className="fa fa-minus"></i>
               </button>
-              <span className="count"> {count}</span>
-              <button onClick={() => setCount(count + 1)}>
+              <span className="count"> {quantity}</span>
+              <button onClick={() => setQuantity((prev) => prev + 1)}>
                 <i className="fa fa-plus"></i>
               </button>
             </div>
           </div>
           <button
-            className="button"
-            onClick={() => addToCart(productItems[slideNumber - 1])}
+            className="buttonp"
+            onClick={() => addToCart(productItems[slideNumber - 1], quantity)}
           >
             AGREGAR AL CARRITO
           </button>

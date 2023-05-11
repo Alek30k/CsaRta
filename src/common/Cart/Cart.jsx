@@ -4,8 +4,9 @@ import { useCart } from "react-use-cart";
 
 const Cart = ({ CartItem, addToCart, decreaseQty }) => {
   // Stpe: 7   calucate total of items
+  console.log(CartItem);
   const totalPrice = CartItem.reduce(
-    (price, item) => price + item.qty * item.price,
+    (price, item) => price + item.quantity * item.price,
     0
   );
   const { emptyCart } = useCart();
@@ -24,7 +25,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
             )}
 
             {CartItem.map((item) => {
-              const productQty = item.price * item.qty;
+              const productQty = item.price * item.quantity;
 
               return (
                 <div className="cart-list product d_flexCart" key={item}>
@@ -34,7 +35,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
                   <div className="cart-details">
                     <h3>{item.name}</h3>
                     <h4>
-                      ${item.price}.00 * {item.qty}
+                      ${item.price}.00 * {item.quantity}
                       <span>${productQty}.00</span>
                     </h4>
                   </div>
