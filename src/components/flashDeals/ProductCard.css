@@ -57,8 +57,9 @@
 .rightt {
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: start;
   flex-direction: column;
+  padding-left: 20px;
   margin: auto;
   gap: 40px;
 }
@@ -81,11 +82,15 @@
   margin-bottom: 20px;
 }
 
-.count {
-  margin: 10px;
+.addCart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .count {
+  margin: 10px;
   padding: 10px;
 }
 .buttonCant button {
@@ -103,12 +108,14 @@
 
 .buttonp {
   border: none;
-  padding: 10px;
+  padding: 20px;
   color: white;
-  font-weight: bold;
-  font-size: 12px;
+  font-weight: 700;
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
   background-color: #0715cf;
-  border-radius: 10px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
@@ -331,7 +338,7 @@
     flex: 0.5;
     border-right: none;
     border-bottom: 1px solid rgb(235, 235, 239);
-    margin: 30px auto;
+    margin: auto;
   }
 
   .sliderWrapper {
@@ -358,8 +365,8 @@
   }
 
   .sliderImg {
-    width: 80%;
-    height: 30vh;
+    width: 70%;
+    height: 20vh;
     object-fit: cover;
   }
 

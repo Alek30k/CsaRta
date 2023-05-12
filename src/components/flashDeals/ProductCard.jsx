@@ -93,7 +93,7 @@ const Product = ({ productItems, addToCart }) => {
             className="buttonp"
             onClick={() => addToCart(productItems[slideNumber - 1], quantity)}
           >
-            AGREGAR AL CARRITO
+            AGREGAR
           </button>
         </div>
       </div>
