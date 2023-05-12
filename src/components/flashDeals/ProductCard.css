@@ -418,3 +418,90 @@
     border-bottom: 1px solid #d1411e;
   }
 }
+@media (max-width: 450px) {
+  .containerProduct {
+    flex-direction: column;
+  }
+
+  .leftt {
+    flex: 0.5;
+    border-right: none;
+    border-bottom: 1px solid rgb(235, 235, 239);
+    margin: auto;
+  }
+
+  .sliderWrapper {
+    justify-content: center;
+  }
+
+  .images {
+    flex: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+  }
+  .images img {
+    width: 80%;
+    height: 50px;
+    object-fit: contain;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  .sliderImg {
+    width: 60%;
+    height: 20vh;
+    object-fit: cover;
+  }
+
+  .rightt {
+    flex: 0.5;
+    display: flex;
+
+    flex-direction: column;
+    margin: auto;
+    gap: 10px;
+  }
+
+  .imgContainer {
+    width: 80%;
+    height: 80%;
+    position: relative;
+  }
+
+  .precioUnidad {
+    color: rgb(172, 172, 201);
+    font-size: 12px;
+  }
+
+  .cantidad {
+    font-size: 12px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  .count {
+    margin: 5px;
+  }
+  .buttonp {
+    padding: 10px;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .pricee {
+    color: #df3207;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #d1411e;
+  }
+}
