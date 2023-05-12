@@ -3,6 +3,18 @@
   display: flex;
 }
 
+.descProduct {
+  font-size: 8px;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  padding: 20px 0;
+  border-top: 1px solid rgb(235, 235, 239);
+}
+.descProduct p {
+  font-size: 12px;
+}
+
 .images {
   flex: 1;
   position: absolute;
@@ -335,39 +347,42 @@
   }
 
   .leftt {
-    flex: 0.5;
-    border-right: none;
-    border-bottom: 1px solid rgb(235, 235, 239);
-    margin: auto;
+    flex: 1;
+    background-color: violet;
   }
 
   .sliderWrapper {
+    display: flex;
+    height: 100%;
+    align-items: center;
     justify-content: center;
+    position: relative;
+    margin: auto;
+    background-color: #d1411e;
   }
 
   .images {
     flex: 1;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    display: none;
+    /* margin-top: 60%;
+    margin-left: 33%; */
+    /* display: none; */
+    position: absolute;
+    bottom: 0;
+    background-color: yellow;
   }
   .images img {
     width: 80%;
     height: 50px;
     object-fit: contain;
     cursor: pointer;
-    margin-bottom: 10px;
   }
 
   .sliderImg {
     width: 70%;
     height: 20vh;
     object-fit: cover;
+    background-color: yellowgreen;
   }
 
   .rightt {
@@ -404,11 +419,8 @@
     margin: 10px;
   }
 
-  .buttonCant .button {
+  .buttonp {
     padding: 5px;
-    border: 1px solid gray;
-    background-color: yellowgreen;
-    border-radius: 5px;
   }
 
   .pricee {

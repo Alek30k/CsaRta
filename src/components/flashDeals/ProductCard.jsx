@@ -26,78 +26,84 @@ const Product = ({ productItems, addToCart }) => {
   const countTotal = productItems[slideNumber - 1].price * quantity;
 
   return (
-    <div className="containerr container containerProduct">
-      <div className="leftt">
-        <div className="sliderWrapper">
-          <div className="images">
-            <img
-              src={`.${productItems[slideNumber - 1].cover1}`}
-              alt=""
-              onClick={(e) => seleted1()}
-              className={!selectedImage && "active"}
-            />
+    <>
+      <div className="containerr container containerProduct">
+        <div className="leftt">
+          <div className="sliderWrapper">
+            <div className="images">
+              <img
+                src={`.${productItems[slideNumber - 1].cover1}`}
+                alt=""
+                onClick={(e) => seleted1()}
+                className={!selectedImage && "active"}
+              />
 
-            <img
-              src={`.${productItems[slideNumber - 1].cover2}`}
-              alt=""
-              onClick={(e) => seleted2()}
-              className={selectedImage && "active"}
-            />
-          </div>
-          <div className="sliderImg">
-            <div className="imgProduct">
-              {/* <img src={`.${selectedImg}`} alt="" draggable={false} /> */}
-              <ReactImageMagnify
-                {...{
-                  smallImage: {
-                    alt: "Wristwatch by Ted Baker London",
-                    isFluidWidth: true,
-                    src: `.${selectedImg}`,
-                  },
-                  largeImage: {
-                    src: `.${selectedImg}`,
-                    width: 377,
-                    height: 370,
-                  },
-                  // isHintEnabled: true,
-                }}
+              <img
+                src={`.${productItems[slideNumber - 1].cover2}`}
+                alt=""
+                onClick={(e) => seleted2()}
+                className={selectedImage && "active"}
               />
             </div>
-          </div>
-        </div>
-      </div>
-      <div className="rightt">
-        <h1 className="titlee">{productItems[slideNumber - 1].name}</h1>
-        <h3 className="precioUnidad">Precio por unidad</h3>
-        <span className="pricee">
-          ${productItems[slideNumber - 1].price}.00
-        </span>
-        <div className="addCart">
-          <div className="cantidad">
-            <span>cantidad</span>
-            <div className="buttonCant">
-              <button
-                onClick={() =>
-                  setQuantity((prev) => (prev === 1 ? 1 : prev - 1))
-                }
-              >
-                <i className="fa fa-minus"></i>
-              </button>
-              <span className="count"> {quantity}</span>
-              <button onClick={() => setQuantity((prev) => prev + 1)}>
-                <i className="fa fa-plus"></i>
-              </button>
+            <div className="sliderImg">
+              <div className="imgProduct">
+                {/* <img src={`.${selectedImg}`} alt="" draggable={false} /> */}
+                <ReactImageMagnify
+                  {...{
+                    smallImage: {
+                      alt: "Wristwatch by Ted Baker London",
+                      isFluidWidth: true,
+                      src: `.${selectedImg}`,
+                    },
+                    largeImage: {
+                      src: `.${selectedImg}`,
+                      width: 377,
+                      height: 370,
+                    },
+                    // isHintEnabled: true,
+                  }}
+                />
+              </div>
             </div>
           </div>
-          <button
-            className="buttonp"
-            onClick={() => addToCart(productItems[slideNumber - 1], quantity)}
-          >
-            AGREGAR
-          </button>
+        </div>
+        <div className="rightt">
+          <h1 className="titlee">{productItems[slideNumber - 1].name}</h1>
+          <h3 className="precioUnidad">Precio por unidad</h3>
+          <span className="pricee">
+            ${productItems[slideNumber - 1].price}.00
+          </span>
+          <div className="addCart">
+            <div className="cantidad">
+              <span>cantidad</span>
+              <div className="buttonCant">
+                <button
+                  onClick={() =>
+                    setQuantity((prev) => (prev === 1 ? 1 : prev - 1))
+                  }
+                >
+                  <i className="fa fa-minus"></i>
+                </button>
+                <span className="count"> {quantity}</span>
+                <button onClick={() => setQuantity((prev) => prev + 1)}>
+                  <i className="fa fa-plus"></i>
+                </button>
+              </div>
+            </div>
+            <button
+              className="buttonp"
+              onClick={() => addToCart(productItems[slideNumber - 1], quantity)}
+            >
+              AGREGAR
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+      <div className="descProduct container">
+        <h1>DESCRIPCION DEL PRODUCTO</h1>
+        <p>{productItems[slideNumber - 1].desc}</p>
+      </div>
+    </>
   );
 };
 
