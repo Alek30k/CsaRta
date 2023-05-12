@@ -392,6 +392,42 @@ button {
   height: 340px;
 }
 
+.NewArrivals .productContainer .sliderWrapper .sliderImg {
+  width: 60%;
+  height: 40vh;
+  object-fit: contain;
+}
+
+.NewArrivals .productContainer .sliderWrapper {
+  width: 50%;
+  height: 60%;
+  margin: auto;
+}
+
+.NewArrivals .productContainer .slideer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.613);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.NewArrivals .productContainer .slideer .closee {
+  position: absolute;
+  top: 135px;
+  right: 360px;
+  font-size: 30px;
+  cursor: pointer;
+  color: rgb(230, 143, 137);
+  z-index: 1;
+}
+
 @media (max-width: 1024px) {
   .background {
     padding: 30px 0;

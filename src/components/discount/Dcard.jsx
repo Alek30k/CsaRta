@@ -101,7 +101,6 @@ const Dcard = ({ addToCart }) => {
               className="arrow"
               onClick={() => handleMove("l")}
             />
-
             <div className="sliderWrapper">
               <img
                 src={`.${Ddata[slideNumber].cover}`}
