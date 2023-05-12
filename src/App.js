@@ -65,22 +65,10 @@ function App() {
     );
   };
 
-  // const ProtectedRoute = ({ children }) => {
-  //   if (!currentUser) {
-  //     return <Navigate to="/login" />;
-  //   }
-
-  //   return children;
-  // };
-
   const router = createBrowserRouter([
     {
       path: "/",
-      element: (
-        // <ProtectedRoute>
-        <Layout />
-      ),
-      // </ProtectedRoute>
+      element: <Layout />,
 
       children: [
         {
@@ -109,6 +97,7 @@ function App() {
       path: "/product/:id",
       element: (
         <ProductCard
+          shopItems={shopItems}
           CartItem={CartItem}
           productItems={productItems}
           addToCart={addToCart}

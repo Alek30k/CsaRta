@@ -5,7 +5,7 @@ import ReactImageMagnify from "react-image-magnify";
 import Footer from "../../common/footer/Footer";
 import Search from "../../common/header/Search";
 
-const Product = ({ productItems, addToCart, CartItem }) => {
+const Product = ({ productItems, addToCart, CartItem, shopItems }) => {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [selectedImg, setSelectedImg] = useState(productItems[path - 1].cover);
@@ -97,7 +97,7 @@ const Product = ({ productItems, addToCart, CartItem }) => {
             </div>
             <button
               className="buttonp"
-              onClick={() => addToCart(productItems[slideNumber - 1], quantity)}
+              onClick={() => addToCart(productItems[slideNumber - 1])}
             >
               AGREGAR
             </button>
@@ -108,6 +108,7 @@ const Product = ({ productItems, addToCart, CartItem }) => {
         <h1>DESCRIPCION DEL PRODUCTO</h1>
         <p>{productItems[slideNumber - 1].desc}</p>
       </div>
+
       <Footer />
     </>
   );
