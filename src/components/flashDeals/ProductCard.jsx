@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "./ProductCard.css";
 import { useLocation } from "react-router-dom";
 import ReactImageMagnify from "react-image-magnify";
+import Footer from "../../common/footer/Footer";
+import Search from "../../common/header/Search";
 
-const Product = ({ productItems, addToCart }) => {
+const Product = ({ productItems, addToCart, CartItem }) => {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
   const [selectedImg, setSelectedImg] = useState(productItems[path - 1].cover);
@@ -27,6 +29,9 @@ const Product = ({ productItems, addToCart }) => {
 
   return (
     <>
+      <div className="searchProduct">
+        <Search CartItem={CartItem} />
+      </div>
       <div className="containerr container containerProduct">
         <div className="leftt">
           <div className="sliderWrapper">
@@ -103,6 +108,7 @@ const Product = ({ productItems, addToCart }) => {
         <h1>DESCRIPCION DEL PRODUCTO</h1>
         <p>{productItems[slideNumber - 1].desc}</p>
       </div>
+      <Footer />
     </>
   );
 };

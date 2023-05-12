@@ -3,6 +3,10 @@
   display: flex;
 }
 
+.searchProduct {
+  box-shadow: -1px 11px 24px -11px rgba(0, 0, 0, 0.2);
+}
+
 .descProduct {
   font-size: 8px;
   display: flex;

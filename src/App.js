@@ -103,17 +103,18 @@ function App() {
             />
           ),
         },
-        {
-          path: "/product/:id",
-          element: (
-            <ProductCard
-              productItems={productItems}
-              addToCart={addToCart}
-              decreaseQty={decreaseQty}
-            />
-          ),
-        },
       ],
+    },
+    {
+      path: "/product/:id",
+      element: (
+        <ProductCard
+          CartItem={CartItem}
+          productItems={productItems}
+          addToCart={addToCart}
+          decreaseQty={decreaseQty}
+        />
+      ),
     },
     {
       path: "/login",
