@@ -87,6 +87,7 @@ function App() {
               CartItem={CartItem}
               addToCart={addToCart}
               decreaseQty={decreaseQty}
+              setCartItem={setCartItem}
             />
           ),
         },

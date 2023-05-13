@@ -3,17 +3,15 @@ import "./style.css";
 import { Link } from "react-router-dom";
 // import { useCart } from "react-use-cart";
 
-const Cart = ({ CartItem, addToCart, decreaseQty }) => {
+const Cart = ({ CartItem, addToCart, decreaseQty, setCartItem }) => {
   // Stpe: 7   calucate total of items
-
-  const [cart, setCart] = useState(CartItem);
 
   const totalPrice = CartItem.reduce(
     (price, item) => price + item.quantity * item.price,
     0
   );
   const cleartCart = () => {
-    setCart([]);
+    setCartItem([]);
   };
   // prodcut qty total
   return (
@@ -21,18 +19,18 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
       <section className="cart-items">
         <div className="containerCart  d_flex">
           <div className="cart-details">
-            {cart.length === 0 && (
+            {CartItem.length === 0 && (
               <>
                 <h1 className="no-items product">TU CARRITO ESTÁ VACÍO</h1>
                 <h4>Aún no tenes artículos en tu carrito de compra.</h4>
               </>
             )}
 
-            {cart.map((item) => {
+            {CartItem.map((item) => {
               const productQty = item.price * item.quantity;
 
               return (
-                <div className="cart-list product d_flexCart" key={item}>
+                <div className="cart-list product d_flexCart" key={item.id}>
                   <div className="img">
                     <Link to={`/product/${item.id}`}>
                       <img src={item.cover} alt="" />
@@ -73,12 +71,12 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
             <h2>Resumen de la compra</h2>
             <div className=" d_flex total">
               <h4>Precio Total :</h4>
-              <h3>${cart.length > 0 ? totalPrice : 0}.00</h3>
+              <h3>${totalPrice}.00</h3>
             </div>
           </div>
 
           <button
-            className={cart.length == 0 ? "resetNone" : "reset"}
+            className={CartItem.length == 0 ? "resetNone" : "reset"}
             onClick={() => cleartCart()}
           >
             Vaciar Carrito

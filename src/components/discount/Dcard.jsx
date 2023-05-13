@@ -82,7 +82,7 @@ const Dcard = ({ addToCart }) => {
                   <img src={value.cover} alt="" width="90%" />
                 </div>
                 <h4>{value.name}</h4>
-                <span>{value.price}</span>
+                <span>${value.price}</span>
               </div>
             </div>
           );
@@ -109,7 +109,7 @@ const Dcard = ({ addToCart }) => {
               />
               <div className="price">
                 <h3>{Ddata[slideNumber].name}</h3>
-                <h4>{Ddata[slideNumber].price}.00 </h4>
+                <h4>${Ddata[slideNumber].price}.00 </h4>
                 {/* step : 3
                      if hami le button ma click garryo bahne
                     */}
