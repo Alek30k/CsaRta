@@ -660,7 +660,7 @@ button {
   }
   .NewArrivals .productContainer .sliderWrapper {
     width: 70%;
-    height: 50%;
+    height: 60%;
     margin-top: 100px;
   }
 
@@ -672,7 +672,7 @@ button {
 
   .NewArrivals .productContainer .slideer .closee {
     position: absolute;
-    top: 170px;
+    top: 120px;
     right: 170px;
     font-size: 30px;
     cursor: pointer;
@@ -952,20 +952,29 @@ button {
     align-items: center;
   }
   .NewArrivals .productContainer .sliderWrapper {
-    width: 80%;
+    width: 90%;
     height: 40%;
+    margin: auto;
   }
 
   .NewArrivals .productContainer .sliderWrapper .sliderImg {
-    width: 50%;
-    height: 40vh;
+    width: 70%;
+    height: 30vh;
     object-fit: contain;
+  }
+
+  .NewArrivals .sliderWrapper .price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
   }
 
   .NewArrivals .productContainer .slideer .closee {
     position: absolute;
-    top: 270px;
-    right: 110px;
+    top: 340px;
+    right: 120px;
     font-size: 30px;
     cursor: pointer;
     color: rgb(230, 143, 137);
@@ -1120,6 +1129,43 @@ button {
     font-weight: 400;
     font-size: 12px;
   }
+
+  .NewArrivals .productContainer .slideer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.613);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .NewArrivals .productContainer .sliderWrapper {
+    width: 80%;
+    height: 50%;
+  }
+
+  .NewArrivals .productContainer .sliderWrapper .sliderImg {
+    width: 50%;
+    height: 40vh;
+    object-fit: contain;
+  }
+
+  .NewArrivals .productContainer .slideer .closee {
+    position: absolute;
+    top: 340px;
+    right: 120px;
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(230, 143, 137);
+  }
+
+  .NewArrivals .productContainer .slideer .closee:hover {
+    color: rgb(233, 74, 53);
+  }
 }
 @media (max-width: 768px) {
   .productshop {
@@ -1130,6 +1176,15 @@ button {
     margin: 0px;
     width: 94%;
     max-height: 220px;
+  }
+
+  .NewArrivals .productContainer .slideer .closee {
+    position: absolute;
+    top: 120px;
+    right: 160px;
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(230, 143, 137);
   }
 }
 @media (max-width: 600px) {
@@ -1217,6 +1272,15 @@ button {
     font-weight: 400;
     font-size: 14px;
   }
+
+  .NewArrivals .productContainer .slideer .closee {
+    position: absolute;
+    top: 120px;
+    right: 140px;
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(230, 143, 137);
+  }
 }
 @media (max-width: 500px) {
   .Discount .producti .img {
@@ -1262,6 +1326,40 @@ button {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 30px;
+  }
+
+  .NewArrivals .productContainer .sliderWrapper {
+    width: 70%;
+    height: 30%;
+    margin: auto;
+    flex-direction: column;
+  }
+
+  .NewArrivals .productContainer .sliderWrapper .sliderImg {
+    width: 50%;
+    height: 40vh;
+    object-fit: contain;
+  }
+
+  .NewArrivals .sliderWrapper .price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .NewArrivals .productContainer .slideer .closee {
+    position: absolute;
+    top: 330px;
+    right: 110px;
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(230, 143, 137);
+  }
+
+  .NewArrivals .productContainer .slideer .closee:hover {
+    color: rgb(233, 74, 53);
   }
 }
 @media (max-width: 445px) {
@@ -1330,6 +1428,28 @@ button {
   .contentWidthh .grid1 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .NewArrivals .productContainer .sliderWrapper {
+    width: 80%;
+    height: 40%;
+    margin: auto;
+    flex-direction: column;
+  }
+
+  .NewArrivals .productContainer .sliderWrapper .sliderImg {
+    width: 80%;
+    height: 40vh;
+    object-fit: contain;
+  }
+
+  .NewArrivals .productContainer .slideer .closee {
+    position: absolute;
+    top: 280px;
+    right: 110px;
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(230, 143, 137);
   }
 }
 @media (max-width: 390px) {
@@ -1404,6 +1524,14 @@ button {
     margin: 0;
     max-height: 180px;
   }
+  .NewArrivals .productContainer .slideer .closee {
+    position: absolute;
+    top: 265px;
+    right: 110px;
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(230, 143, 137);
+  }
 }
 @media (max-width: 375px) {
   .productshop {
@@ -1414,6 +1542,20 @@ button {
     margin: 0px;
     width: 94%;
     max-height: 190px;
+  }
+  .NewArrivals .productContainer .sliderWrapper {
+    width: 100%;
+    height: 45%;
+    margin: auto;
+  }
+
+  .NewArrivals .productContainer .slideer .closee {
+    position: absolute;
+    top: 245px;
+    right: 100px;
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(230, 143, 137);
   }
 }
 @media (max-width: 320px) {
