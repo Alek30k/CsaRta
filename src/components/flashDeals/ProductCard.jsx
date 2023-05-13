@@ -40,14 +40,14 @@ const Product = ({ productItems, addToCart, CartItem, shopItems }) => {
                 src={`.${productItems[slideNumber - 1].cover1}`}
                 alt=""
                 onClick={(e) => seleted1()}
-                className={!selectedImage && "active"}
+                className={!selectedImage ? "active" : "actuve"}
               />
 
               <img
                 src={`.${productItems[slideNumber - 1].cover2}`}
                 alt=""
                 onClick={(e) => seleted2()}
-                className={selectedImage && "active"}
+                className={selectedImage ? "active" : "actuve"}
               />
             </div>
             <div className="sliderImg">

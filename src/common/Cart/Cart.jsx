@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
+import { Link } from "react-router-dom";
 // import { useCart } from "react-use-cart";
 
 const Cart = ({ CartItem, addToCart, decreaseQty }) => {
@@ -33,7 +34,10 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
               return (
                 <div className="cart-list product d_flexCart" key={item}>
                   <div className="img">
-                    <img src={item.cover} alt="" />
+                    <Link to={`/product/${item.id}`}>
+                      <img src={item.cover} alt="" />
+                      <div className="ver">Ver Producto</div>
+                    </Link>
                   </div>
                   <div className="conteinerDetailsCart">
                     <div className="cart-details">
@@ -72,13 +76,14 @@ const Cart = ({ CartItem, addToCart, decreaseQty }) => {
               <h3>${cart.length > 0 ? totalPrice : 0}.00</h3>
             </div>
           </div>
+
+          <button
+            className={cart.length == 0 ? "resetNone" : "reset"}
+            onClick={() => cleartCart()}
+          >
+            Vaciar Carrito
+          </button>
         </div>
-        <button
-          className={cart.length == 0 ? "resetNone" : "reset"}
-          onClick={() => cleartCart()}
-        >
-          Vaciar Carrito
-        </button>
       </section>
     </>
   );
