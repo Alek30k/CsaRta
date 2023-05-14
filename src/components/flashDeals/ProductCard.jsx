@@ -8,6 +8,7 @@ import Search from "../../common/header/Search";
 const Product = ({ productItems, addToCart, CartItem, shopItems }) => {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
+  console.log(path);
   const [selectedImg, setSelectedImg] = useState(productItems[path - 1].cover);
 
   const [slideNumber, setSlideNumber] = useState(path);
@@ -62,8 +63,8 @@ const Product = ({ productItems, addToCart, CartItem, shopItems }) => {
                     },
                     largeImage: {
                       src: `.${selectedImg}`,
-                      width: 377,
-                      height: 370,
+                      width: 877,
+                      height: 870,
                     },
                     // isHintEnabled: true,
                   }}

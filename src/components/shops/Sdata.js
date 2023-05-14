@@ -1,15 +1,17 @@
 const Sdata = {
   shopItems: [
     {
-      id: 17,
+      id: 16,
       cover: "./images/shops/apple22.jpg",
       name: "Apple iPhone 13 Pro Max",
+      cover1: "./images/shops/apple22.jpg",
+      cover2: "./images/flash/yerba.png",
       price: "300",
       discount: "20",
       cateName: "apple",
     },
     {
-      id: 7,
+      id: 17,
       cover: "./images/shops/shops-1.png",
       name: "Mapple Earphones",
       price: "180",
@@ -26,7 +28,7 @@ const Sdata = {
     },
 
     {
-      id: 9,
+      id: 19,
       cover: "./images/shops/samsung2.jpg",
       name: "Samsung Galaxy A33",
       price: "20",
@@ -34,7 +36,7 @@ const Sdata = {
       cateName: "samsung",
     },
     {
-      id: 10,
+      id: 20,
       cover: "./images/shops/redmi.jpg",
       name: "Xiaomi Redmi Note 10 Pro",
       price: "999",
@@ -42,7 +44,7 @@ const Sdata = {
       cateName: "redmi",
     },
     {
-      id: 11,
+      id: 21,
       cover: "./images/shops/shops-5.png",
       name: "Ceats wireless earphone",
       price: "80",
@@ -50,7 +52,7 @@ const Sdata = {
       cateName: "opo",
     },
     {
-      id: 12,
+      id: 22,
       cover: "./images/shops/shops-7.png",
       name: "Redmi Phone",
       price: "400",
@@ -58,7 +60,7 @@ const Sdata = {
       cateName: "redmi",
     },
     {
-      id: 13,
+      id: 23,
       cover: "./images/shops/redmi3.jpg",
       name: "Redmi 10C",
       price: "60",
@@ -66,7 +68,7 @@ const Sdata = {
       cateName: "redmi",
     },
     {
-      id: 14,
+      id: 24,
       cover: "./images/shops/samsung1.jpg",
       name: "Samsung A52s",
       price: "180",
@@ -74,7 +76,7 @@ const Sdata = {
       cateName: "samsung",
     },
     {
-      id: 15,
+      id: 25,
       cover: "./images/shops/apple3.jpg",
       name: "Apple Watch SE GPS",
       price: "5",
@@ -82,7 +84,7 @@ const Sdata = {
       cateName: "apple",
     },
     {
-      id: 16,
+      id: 26,
       cover: "./images/shops/apple11.jpg",
       name: "Apple AirPods",
       price: "80",
@@ -90,7 +92,7 @@ const Sdata = {
       cateName: "apple",
     },
     {
-      id: 17,
+      id: 27,
       cover: "./images/shops/apple9.jpeg",
       name: "Apple iPhone 13",
       price: "80",
@@ -98,7 +100,7 @@ const Sdata = {
       cateName: "apple",
     },
     {
-      id: 8,
+      id: 28,
       cover: "./images/shops/shops-2.png",
       name: "Vivo android one",
       price: "120",
@@ -106,7 +108,7 @@ const Sdata = {
       cateName: "vivo",
     },
     {
-      id: 18,
+      id: 29,
       cover: "./images/shops/opo.jpg",
       name: "OPPO A74",
       price: "120",
