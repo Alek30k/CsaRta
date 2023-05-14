@@ -14,6 +14,7 @@
   flex-direction: column;
   padding: 20px 0;
   border-top: 1px solid rgb(235, 235, 239);
+  margin-top: 20px;
 }
 
 .descProduct h1 {
@@ -24,6 +25,7 @@
   font-size: 12px;
   color: rgb(106, 104, 101);
   margin-bottom: 10px;
+  z-index: 1;
 }
 
 .images {
@@ -35,7 +37,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  z-index: 1;
   /* margin: 60px 0px; */
 }
 
@@ -56,7 +57,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 90%;
 }
 
 .images img {
@@ -150,8 +151,8 @@
     height: calc(70vh - 100px);
   }
   .sliderImg {
-    width: 80%;
-    height: 40vh;
+    width: 60%;
+    height: 50vh;
     object-fit: contain;
   }
 
@@ -391,7 +392,7 @@
   }
 
   .sliderImg {
-    width: 70%;
+    width: 50%;
     height: 20vh;
     object-fit: cover;
   }
