@@ -35,7 +35,7 @@ const Product = ({ productItems, addToCart, CartItem, shopItems }) => {
       </div>
       <div className="containerr container containerProduct">
         <div className="leftt">
-          <div className="sliderWrapper">
+          <div className="sliderWrapper container">
             <div className="images ">
               <img
                 src={`.${productItems[slideNumber - 1].cover1}`}
