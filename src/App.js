@@ -80,17 +80,6 @@ function App() {
             />
           ),
         },
-        {
-          path: "/cart",
-          element: (
-            <Cart
-              CartItem={CartItem}
-              addToCart={addToCart}
-              decreaseQty={decreaseQty}
-              setCartItem={setCartItem}
-            />
-          ),
-        },
       ],
     },
     {
@@ -102,6 +91,17 @@ function App() {
           productItems={productItems}
           addToCart={addToCart}
           decreaseQty={decreaseQty}
+        />
+      ),
+    },
+    {
+      path: "/cart",
+      element: (
+        <Cart
+          CartItem={CartItem}
+          addToCart={addToCart}
+          decreaseQty={decreaseQty}
+          setCartItem={setCartItem}
         />
       ),
     },

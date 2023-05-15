@@ -72,7 +72,7 @@ const Navbar = () => {
         onClick={() => setMenu(false)}
       >
         {Menu && (
-          <div className="containerTotal" onClick={() => setMenu(false)}>
+          <div className="containerTotal">
             <Categories />
           </div>
         )}

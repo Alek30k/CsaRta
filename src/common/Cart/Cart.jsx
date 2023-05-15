@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
-// import { useCart } from "react-use-cart";
+import Footer from "../../common/footer/Footer";
+import Search from "../../common/header/Search";
 
 const Cart = ({ CartItem, addToCart, decreaseQty, setCartItem }) => {
   // Stpe: 7   calucate total of items
@@ -16,6 +17,9 @@ const Cart = ({ CartItem, addToCart, decreaseQty, setCartItem }) => {
   // prodcut qty total
   return (
     <>
+      <div className="searchProduct">
+        <Search CartItem={CartItem} />
+      </div>
       <section className="cart-items">
         <div className="containerCart  d_flex">
           <div className="cart-details">
@@ -83,6 +87,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty, setCartItem }) => {
           </button>
         </div>
       </section>
+      <Footer />
     </>
   );
 };
