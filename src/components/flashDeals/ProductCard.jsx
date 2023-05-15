@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ProductCard.css";
 import { useLocation } from "react-router-dom";
-import ReactImageMagnify from "react-image-magnify";
+// import ReactImageMagnify from "react-image-magnify";
 import Footer from "../../common/footer/Footer";
 import Search from "../../common/header/Search";
 
@@ -53,14 +53,13 @@ const Product = ({ productItems, addToCart, CartItem, shopItems }) => {
             </div>
             <div className="sliderImg">
               <div className="imgProduct">
-                {/* <img src={`.${selectedImg}`} alt="" draggable={false} /> */}
-                <ReactImageMagnify
+                <img src={`.${selectedImg}`} alt="" draggable={false} />
+                {/* <ReactImageMagnify
                   {...{
                     smallImage: {
                       alt: "Wristwatch by Ted Baker London",
                       isFluidWidth: true,
                       src: `.${selectedImg}`,
-                      srcSet,
                       sizes:
                         "(min-width: 1000px) 33.5vw, (min-width: 415px) 50vw, 100vw",
                     },
@@ -71,7 +70,7 @@ const Product = ({ productItems, addToCart, CartItem, shopItems }) => {
                     },
                     // isHintEnabled: true,
                   }}
-                />
+                /> */}
               </div>
             </div>
           </div>
