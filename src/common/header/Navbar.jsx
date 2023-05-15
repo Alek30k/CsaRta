@@ -6,11 +6,22 @@ const Navbar = () => {
   const [MobileMenu, setMobileMenu] = useState(false);
   const [Menu, setMenu] = useState(false);
 
+  const handleHover = () => {
+    setMenu(true);
+  };
+  const handleHoverr = () => {
+    setMenu(!true);
+  };
+
   return (
     <>
       <header className="header">
         <div className="container d_flex">
-          <div className="catgrories d_flex" onClick={() => setMenu(!Menu)}>
+          <div
+            className="catgrories d_flex"
+            onClick={() => setMenu(false)}
+            onMouseOver={handleHover}
+          >
             <span className="fa-solid fa-border-all"></span>
             <h4>
               Categorias
@@ -55,8 +66,16 @@ const Navbar = () => {
           </div>
         </div>
       </header>
-      <div className=" categroriesMenu" onClick={() => setMenu(false)}>
-        {Menu && <Categories />}
+
+      <div
+        className={Menu ? "categroriesMenu" : "menuCate"}
+        onClick={() => setMenu(false)}
+      >
+        {Menu && (
+          <div className="containerTotal" onClick={() => setMenu(false)}>
+            <Categories />
+          </div>
+        )}
       </div>
     </>
   );
