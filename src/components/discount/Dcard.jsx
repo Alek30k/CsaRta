@@ -92,16 +92,16 @@ const Dcard = ({ addToCart }) => {
         <div className="productContainer">
           <div className="slideer">
             <FontAwesomeIcon
-              icon={faCircleXmark}
-              className="closee"
-              onClick={() => setOpen(false)}
-            />
-            <FontAwesomeIcon
               icon={faCircleArrowLeft}
               className="arrow"
               onClick={() => handleMove("l")}
             />
             <div className="sliderWrapper">
+              <FontAwesomeIcon
+                icon={faCircleXmark}
+                className="closee"
+                onClick={() => setOpen(false)}
+              />
               <img
                 src={`.${Ddata[slideNumber].cover}`}
                 alt=""

@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className="container d_flex">
           <div
             className="catgrories d_flex"
-            onClick={() => setMenu(false)}
+            onClick={() => setMenu(true)}
             onMouseOver={handleHover}
           >
             <span className="fa-solid fa-border-all"></span>

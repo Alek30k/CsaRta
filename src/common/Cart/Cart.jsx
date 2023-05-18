@@ -70,21 +70,21 @@ const Cart = ({ CartItem, addToCart, decreaseQty, setCartItem }) => {
                 </div>
               );
             })}
+
+            <button
+              className={CartItem.length == 0 ? "resetNone" : "reset"}
+              onClick={() => cleartCart()}
+            >
+              Vaciar Carrito
+            </button>
           </div>
           <div className="cart-total productCart">
             <h2>Resumen de la compra</h2>
             <div className=" d_flex total">
-              <h4>Precio Total :</h4>
+              <h4>Precio Total:</h4>
               <h3>${totalPrice}.00</h3>
             </div>
           </div>
-
-          <button
-            className={CartItem.length == 0 ? "resetNone" : "reset"}
-            onClick={() => cleartCart()}
-          >
-            Vaciar Carrito
-          </button>
         </div>
       </section>
       <Footer />

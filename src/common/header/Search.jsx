@@ -36,7 +36,7 @@ const Search = ({ CartItem }) => {
   return (
     <>
       <section className="search">
-        <div className="container c_flex">
+        <div className="containerSearch c_flex">
           <div className="logo  ">
             <Link to="/">
               <img src={logo} alt="" />

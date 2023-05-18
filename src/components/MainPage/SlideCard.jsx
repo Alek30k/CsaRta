@@ -15,7 +15,7 @@ const SlideCard = () => {
     responsive: [
       {
         breakpoint: 500,
-        settings: { dots: false },
+        settings: { dots: false, arrows: false },
       },
     ],
 
@@ -30,10 +30,6 @@ const SlideCard = () => {
           return (
             <div key={index}>
               <div className="box d_flex topSLider flexi ">
-                {/* <div className="leftSlider">
-                  <h1>{value.title}</h1>
-                  <p>{value.desc}</p>
-                </div> */}
                 <div className="rightSlider">
                   <img className="rightImg" src={value.cover} alt="" />
                 </div>

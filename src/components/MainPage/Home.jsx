@@ -8,7 +8,6 @@ const Home = () => {
     <>
       <section className="home ">
         <div className=" d_flex">
-          {/* <Categories /> */}
           <SliderHome />
         </div>
       </section>

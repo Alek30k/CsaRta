@@ -392,7 +392,7 @@
   }
 
   .sliderImg {
-    width: 50%;
+    width: 135%;
     height: 20vh;
     object-fit: cover;
   }
@@ -453,10 +453,15 @@
     margin-bottom: 30px;
   }
 
-  .leftt .sliderImg {
+  /* .leftt .sliderImg {
     width: 45%;
     height: 20vh;
     object-fit: contain;
+  } */
+  .sliderImg {
+    width: 185%;
+    height: 20vh;
+    object-fit: cover;
   }
 
   .sliderWrapper {
@@ -488,12 +493,6 @@
     gap: 10px;
   }
 
-  .sliderImg {
-    width: 60%;
-    height: 20vh;
-    object-fit: contain;
-  }
-
   .buttonCant button {
     padding: 6px;
     border-radius: 10px;
@@ -518,7 +517,7 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    margin-bottom: 2px;
+    margin-bottom: 20px;
   }
 
   .count {
@@ -527,7 +526,6 @@
   .buttonp {
     padding: 8px;
     font-size: 12px;
-    margin-bottom: 30px;
   }
 
   .pricee {

@@ -40,7 +40,7 @@
   background-color: yellow;
 } */
 
-.NewArrivals .slideer {
+/* .NewArrivals .slideer {
   position: fixed;
   top: 85px;
   left: 0;
@@ -52,7 +52,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .NewArrivals .sliderWrapper {
   width: 80%;
@@ -64,6 +64,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   margin-bottom: 100px;
+  position: relative;
 }
 
 .sliderImg {
@@ -78,17 +79,18 @@
   align-items: center;
 }
 
-.closee {
+/* .slideer .closee {
   position: absolute;
-  top: 35px;
+  top: 0;
   right: 170px;
   font-size: 30px;
   cursor: pointer;
   color: rgb(226, 141, 141);
-}
-.closee:hover {
+  background-color: yellowgreen;
+} */
+/* .closee:hover {
   color: rgb(211, 71, 71);
-}
+} */
 
 .arrow {
   margin: 20px;

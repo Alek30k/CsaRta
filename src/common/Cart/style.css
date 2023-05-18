@@ -6,12 +6,12 @@
 
 .cart-items .cart-details {
   flex: 1;
+  position: relative;
 }
 
 .containerCart {
   max-width: 80%;
   margin: auto;
-  position: relative;
 }
 
 .conteinerDetailsCart {
@@ -22,8 +22,8 @@
   background-color: transparent;
   color: #e94560;
   position: absolute;
-  top: 10px;
-  left: 48%;
+  top: 6px;
+  right: 10px;
   cursor: pointer;
 }
 
@@ -224,6 +224,8 @@
   }
   .cart-total .total {
     align-items: center;
+    display: flex;
+    gap: 20px;
   }
   .cart-total h4 {
     font-size: 12px;
@@ -247,20 +249,8 @@
     margin-top: 30px;
     height: 130px;
   }
-
-  .reset {
-    background-color: transparent;
-    color: #e94560;
-    position: absolute;
-    top: 10px;
-    left: 42%;
-    cursor: pointer;
-  }
 }
 @media (max-width: 950px) {
-  /* .container {
-    max-width: 95%;
-  } */
   .productCart {
     background: #fff;
     padding: 9px 6px;
@@ -268,16 +258,6 @@
     border-radius: 8px;
     box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
     height: 253px;
-  }
-
-  .reset {
-    background-color: transparent;
-    color: #e94560;
-    position: absolute;
-    top: 0%;
-    left: 40%;
-    cursor: pointer;
-    width: 100px;
   }
 
   .cart-items {
@@ -386,16 +366,6 @@
     flex-direction: column-reverse;
   }
 
-  .reset {
-    background-color: transparent;
-    color: #e94560;
-    position: absolute;
-    top: 12%;
-    left: 85%;
-    cursor: pointer;
-    width: 100px;
-  }
-
   .cart-items {
     background: #f6f9fc;
     height: auto;
@@ -486,12 +456,12 @@
     font-weight: 400;
   }
   .cart-total h3 {
-    font-size: 20px;
+    font-size: 14px;
     font-weight: 500;
     color: #e94560;
   }
   .cart-total h2 {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 20px;
     border-bottom: 1px solid rgb(3 0 71 / 9%);
     padding-bottom: 10px;
@@ -517,16 +487,5 @@
     border-radius: 8px;
     box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
     height: 253px;
-  }
-}
-@media (max-width: 450px) {
-  .reset {
-    background-color: transparent;
-    color: #e94560;
-    position: absolute;
-    top: 38%;
-    left: 70%;
-    cursor: pointer;
-    width: 100px;
   }
 }
