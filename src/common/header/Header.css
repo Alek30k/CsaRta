@@ -474,6 +474,21 @@ header ul li a:hover {
     margin-right: 10px;
   }
 
+  /* .nav-links-MobileMenu {
+    position: absolute;
+    display: block;
+    list-style: none;
+    box-shadow: rgba(50, 50, 93, 0.23) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    left: 0;
+    top: 0;
+    transition: all 0.5s ease-in-out;
+    width: 50%;
+    height: 100vh;
+    background-color: white;
+    z-index: 888;
+  } */
+
   .nav-links-MobileMenu {
     position: absolute;
     display: block;
@@ -488,6 +503,11 @@ header ul li a:hover {
     background-color: white;
     z-index: 888;
   }
+
+  /* .nav-links-MobileMenu.active {
+    left: 0;
+  } */
+
   header ul li {
     width: 100%;
     transition: all 0.5s ease-in-out;

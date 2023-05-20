@@ -1334,6 +1334,11 @@ button {
     grid-gap: 30px;
   }
 
+  .contentWidthh .grid1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .NewArrivals .productContainer .sliderWrapper {
     width: 70%;
     height: 30%;

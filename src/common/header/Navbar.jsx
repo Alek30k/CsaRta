@@ -13,6 +13,16 @@ const Navbar = () => {
     setMenu(!true);
   };
 
+  // window.onscroll = () => {
+  //   const mobileMenu = document.querySelector(".capitalize");
+  //   mobileMenu.classList.remove(".nav-links-MobileMenu");
+  // };
+
+  // window.addEventListener("scroll", function () {
+  //   const mobileMenu = document.querySelector(".nav-links-MobileMenu");
+  //   mobileMenu.classList.toggle("active", window.scrollY > 100);
+  // });
+
   return (
     <>
       <header className="header">
@@ -62,6 +72,7 @@ const Navbar = () => {
               ) : (
                 <i className="fas fa-bars open"></i>
               )}
+              {/* {!MobileMenu && <i className="fas fa-bars open"></i>} */}
             </button>
           </div>
         </div>
