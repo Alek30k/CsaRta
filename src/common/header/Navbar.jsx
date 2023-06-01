@@ -68,7 +68,7 @@ const Navbar = ({ setCatFiltered, productItems }) => {
             }
             onClick={() => setMobileMenu(false)}
           >
-            {/*<ul className='link f_flex uppercase {MobileMenu ? "nav-links-MobileMenu" : "nav-links"} onClick={() => setMobileMenu(false)}'>*/}
+            {/*<ul className='link f_flex uppercase {MobileMenu ? "nav-links-MobileMenu" : "nav-links"} onClick={() => setMobileMenu(false)} test'>*/}
 
             <li>
               <a href="#ProductosDestacados">Productos Destacados</a>
