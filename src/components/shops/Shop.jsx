@@ -5,7 +5,7 @@ import "./style.css";
 
 const Shop = ({ addToCart, shopItems }) => {
   const allMarcas = [
-    "all",
+    // "Todo",
     ...new Set(shopItems.map((producto) => producto.cateName)),
   ];
 
@@ -14,10 +14,10 @@ const Shop = ({ addToCart, shopItems }) => {
   const [catOpen, setCatOpen] = useState(true);
 
   const filterMarcas = (marca) => {
-    if (marca === "all") {
-      setProducts(shopItems);
-      return;
-    }
+    // if (marca === "Todo") {
+    //   setProducts(shopItems);
+    //   return;
+    // }
     const filteredProduct = shopItems.filter((p) => p.cateName === marca);
     setProducts(filteredProduct);
   };

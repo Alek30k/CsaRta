@@ -1,6 +1,6 @@
 import React from "react";
 
-const Head = () => {
+const Head = ({ cambiarTheme }) => {
   return (
     <>
       <section className="head ">
@@ -11,6 +11,7 @@ const Head = () => {
           </div>
           <div className="right row RText">
             <label>Theme FAQ"s</label>
+            {/* <input type="checkbox" onClick={cambiarTheme} /> */}
 
             {/* <span>🏳️‍⚧️</span>
             <label>EN</label>

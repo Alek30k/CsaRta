@@ -12,6 +12,10 @@
   gap: 5px;
   position: relative;
 }
+.NewArrivals .discount {
+  margin-right: 20px;
+  background-color: yellowgreen;
+}
 .NewArrivals .boxNew {
   display: flex;
   flex-direction: column;

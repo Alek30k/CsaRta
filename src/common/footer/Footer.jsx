@@ -44,14 +44,14 @@ const Footer = () => {
             <h2>SEGUINOS</h2>
             <div className="socials">
               <a
-                href="https://www.facebook.com/"
+                href="https://www.facebook.com/profile.php?id=100063773911536"
                 target="_blank"
                 rel="noreferrer"
               >
                 <img src={logo} alt="" />
               </a>
               <a
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/supermercadosantarita/"
                 target="_blank"
                 rel="noreferrer"
               >

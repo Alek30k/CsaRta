@@ -7,10 +7,18 @@ import Discount from "../components/discount/Discount";
 import Shop from "../components/shops/Shop";
 import Annocument from "../components/annocument/Annocument";
 import Wrapper from "../components/wrapper/Wrapper";
+import Navbar from "../common/header/Navbar";
 
-const Pages = ({ productItems, addToCart, CartItem, shopItems }) => {
+const Pages = ({
+  productItems,
+  addToCart,
+  CartItem,
+  shopItems,
+  setCatFiltered,
+}) => {
   return (
     <div>
+      <Navbar setCatFiltered={setCatFiltered} productItems={productItems} />
       <Home CartItem={CartItem} />
       <FlashDeals productItems={productItems} addToCart={addToCart} />
       <TopCate />

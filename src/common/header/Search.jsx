@@ -2,10 +2,21 @@ import React, { useContext, useState } from "react";
 import logo from "../../components/assets/images/logo2.png";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
+import Data from "../../components/Data";
 
-const Search = ({ CartItem }) => {
+const Search = ({ CartItem, setCatFilteredSearch }) => {
   const [avatarOpen, setAvatarOpen] = useState(false);
   const [avatarOpenIngresar, setAvatarOpenIngresar] = useState(false);
+
+  const { productItems } = Data;
+
+  const [query, setQuery] = useState("");
+
+  // const [input, setInput] = useState("");
+
+  // const handleSubmit = () => {
+  //   navigate(`/products/${query}`);
+  // };
 
   const navigate = useNavigate();
 
@@ -33,6 +44,28 @@ const Search = ({ CartItem }) => {
     }
   };
 
+  const handleSearch = () => {
+    const searchProduct = productItems.filter(
+      (product) =>
+        product.name.toLowerCase().includes(query) ||
+        product.catCat.toLowerCase().includes(query) ||
+        product.subCategory.toLowerCase().includes(query)
+    );
+    setCatFilteredSearch(searchProduct);
+    navigate(`/products/search/${query}`);
+  };
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (query.length === 0) {
+      return alert("Please write a product");
+    } else if (!query) return alert();
+    else {
+      handleSearch();
+      setQuery("");
+    }
+  }
+
   return (
     <>
       <section className="search">
@@ -45,8 +78,13 @@ const Search = ({ CartItem }) => {
 
           <div className="search-box f_flex">
             <i className="fa fa-search"></i>
-            <input type="text" placeholder="Buscar..." />
-            <span>Buscar</span>
+            <input
+              type="text"
+              placeholder="Buscar..."
+              onKeyPress={(e) => e.key === "Enter" && handleSubmit(e)}
+              onChange={(e) => setQuery(e.target.value.toLowerCase())}
+            />
+            <span onClick={handleSearch}>Buscar</span>
           </div>
 
           <div className="icon f_flex width">

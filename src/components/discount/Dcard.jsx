@@ -10,10 +10,11 @@ import {
   faCircleArrowRight,
   faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Dcard = ({ addToCart }) => {
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     slidesToShow: 6,
     slidesToScroll: 1,
@@ -102,20 +103,20 @@ const Dcard = ({ addToCart }) => {
                 className="closee"
                 onClick={() => setOpen(false)}
               />
-              <img
-                src={`.${Ddata[slideNumber].cover}`}
-                alt=""
-                className="sliderImg"
-              />
+              <Link to={`/product/${Ddata[slideNumber].id}`}>
+                <img
+                  src={`.${Ddata[slideNumber].cover}`}
+                  alt=""
+                  className="sliderImg"
+                />
+              </Link>
               <div className="price">
                 <h3>{Ddata[slideNumber].name}</h3>
                 <h4>${Ddata[slideNumber].price}.00 </h4>
-                {/* step : 3
-                     if hami le button ma click garryo bahne
-                    */}
-                <button onClick={() => addToCart(Ddata[slideNumber])}>
+
+                {/* <button onClick={() => addToCart(Ddata[slideNumber])}>
                   <i className="fa fa-plus"></i>
-                </button>
+                </button> */}
               </div>
             </div>
             {

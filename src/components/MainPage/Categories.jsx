@@ -1,63 +1,80 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Categories = () => {
+const Categories = ({ setCatFiltered, productItems }) => {
   const data = [
     {
+      id: 1,
       cateImg: "./images/category/almacen.png",
-      cateName: "Almacén",
+      cateName: "almacen",
     },
     {
-      cateImg: "./images/category/celiacos.png",
-      cateName: "Celíacos",
-    },
-    {
+      id: 3,
       cateImg: "./images/category/congelados.png",
-      cateName: "Congelados",
+      cateName: "congelados",
     },
     {
+      id: 4,
       cateImg: "./images/category/electro.png",
-      cateName: "Electro",
+      cateName: "electro",
     },
     {
+      id: 5,
       cateImg: "./images/category/pan.png",
-      cateName: "Panificados",
+      cateName: "panaderia",
     },
     {
+      id: 6,
       cateImg: "./images/category/limpieza.png",
-      cateName: "Limpieza",
+      cateName: "limpieza",
     },
     {
-      cateImg: "./images/category/mascotas.png",
-      cateName: "Mascotas",
+      id: 7,
+      cateImg: "./images/category/telefono.png",
+      cateName: "telefonos",
     },
     {
+      id: 8,
       cateImg: "./images/category/cafe.png",
-      cateName: "Café",
+      cateName: "cafe",
     },
     {
-      cateImg: "./images/category/moto.png",
-      cateName: "Motos",
+      id: 9,
+      cateImg: "./images/category/hogar.png",
+      cateName: "hogar",
     },
     {
-      cateImg: "./images/category/regalo.png",
-      cateName: "Regalos",
+      id: 10,
+      cateImg: "./images/category/queso.png",
+      cateName: "lacteos",
     },
 
     {
+      id: 11,
       cateImg: "./images/category/vino.png",
-      cateName: "Vinos",
+      cateName: "bebidas",
     },
   ];
+
+  const filterMarcas = (value) => {
+    const filteredProduct = productItems.filter(
+      (p) => p.catCat.toLowerCase() === value.cateName
+    );
+    setCatFiltered(filteredProduct);
+  };
 
   return (
     <>
       <div className="category active ">
         {data.map((value, index) => {
           return (
-            <div className="box f_flex" key={index}>
-              <img src={value.cateImg} alt="" />
-              <span>{value.cateName}</span>
-            </div>
+            <Link to={`/products/${value.cateName}`} key={index}>
+              <div className="box  f_flex" onClick={() => filterMarcas(value)}>
+                <img src={value.cateImg} alt="" />
+
+                <span>{value.cateName}</span>
+              </div>
+            </Link>
           );
         })}
       </div>

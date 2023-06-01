@@ -15,6 +15,13 @@
 /*------search-----------*/
 .search {
   padding: 5px 0;
+  /* box-shadow: -1px 15px 17px -8px rgba(0, 0, 0, 0.1); */
+  /* border: 1px solid rgb(240, 238, 238); */
+}
+
+.search form {
+  margin: 0;
+  padding: 0;
 }
 
 .containerSearch {
@@ -124,6 +131,7 @@
   border-radius: 5px;
   height: 8vh;
   margin-top: 5px;
+  z-index: 1;
 }
 
 .catgrories span {
@@ -154,8 +162,8 @@
 
 .categroriesMenu {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: -100%;
+  left: -50%;
   margin: auto;
   width: 100vw;
   height: 100vh;
@@ -165,8 +173,8 @@
 
 .containerTotal {
   position: absolute;
-  top: 185px;
-  left: 70px;
+  top: 34%;
+  left: 4%;
   width: 100%;
   z-index: 1;
 }
@@ -239,6 +247,7 @@ header ul li a:hover {
     cursor: pointer;
     font-size: 14px;
   }
+
   header {
     height: 6vh;
   }
@@ -283,7 +292,6 @@ header ul li a:hover {
     margin-right: 10px;
   }
 
-  /* hjksdf */
   .icon-circle {
     width: 40px;
     height: 40px;
@@ -421,6 +429,12 @@ header ul li a:hover {
     margin-right: 0px;
     font-size: 20px;
   }
+  .d_flexCat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0px;
+  }
 }
 @media (max-width: 950px) {
   header ul {
@@ -434,6 +448,15 @@ header ul li a:hover {
   .catgrories {
     height: 6vh;
   }
+
+  .containerTotal {
+    position: absolute;
+    top: 10%;
+    left: 8%;
+    width: 100%;
+    z-index: 1;
+  }
+
   .search-box {
     width: 100%;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -617,6 +640,32 @@ header ul li a:hover {
     font-size: 20px;
   }
 }
+@media (max-width: 850px) {
+  .containerTotal {
+    position: absolute;
+    top: 8%;
+    left: 15%;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .cateBanner img {
+    display: none;
+  }
+}
+@media (max-width: 810px) {
+  .categroriesMenu .containerTotal {
+    position: absolute;
+    top: 9%;
+    left: 16%;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .cateBanner img {
+    display: none;
+  }
+}
 @media (max-width: 560px) {
   header {
     height: 7vh;
@@ -674,6 +723,13 @@ header ul li a:hover {
     width: 120px;
     height: 45px;
     margin-right: 10px;
+  }
+  .containerTotal {
+    position: absolute;
+    top: 11.5%;
+    left: 30%;
+    width: 100%;
+    z-index: 1;
   }
 }
 
@@ -738,81 +794,27 @@ header ul li a:hover {
     padding: 8px 0px;
     width: 40%;
   }
-}
-@media (max-width: 400px) {
-  header {
-    height: 7vh;
-  }
-  .containerSearch {
-    max-width: 95%;
-    margin: auto;
-  }
-
-  .search-box {
-    width: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 0px;
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0px;
-  }
-  .search .search-box i {
-    display: none;
-  }
-  .search-box input {
-    width: 50%;
-    padding: 1px;
-  }
-
-  ::placeholder {
-    font-size: 10px;
-  }
-  .search .search-box span {
-    width: 40%;
-    opacity: 0.5;
-    border-left: 2px solid rgba(0, 0, 0, 0.1);
-    padding: 2px 2px;
-    font-size: 10px;
-    cursor: pointer;
-  }
-
-  .containerTotal {
+  .categroriesMenu .containerTotal {
     position: absolute;
-    top: 160px;
-    left: 84px;
+    top: 13%;
+    left: 29%;
     width: 100%;
     z-index: 1;
-  }
-
-  .catgrories {
-    height: 100%;
-  }
-
-  .search .width {
-    width: 35%;
-    position: relative;
-  }
-
-  .search .logo img {
-    width: 95px;
-    height: 30px;
-    margin-right: 10px;
-  }
-
-  .category.active {
-    left: -45px;
-    top: -2px;
-    font-size: 12px;
-    padding: 8px 0px;
-    width: 45%;
   }
 }
 @media (max-width: 425px) {
   header {
     height: 7vh;
   }
+
+  /* .categroriesMenu .containerTotal {
+    position: absolute;
+    top: 15%;
+    left: 22%;
+    width: 100%;
+    z-index: 1;
+  } */
+
   .search-box {
     width: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -822,7 +824,6 @@ header ul li a:hover {
     justify-content: center;
     align-items: center;
     margin: 0px;
-    background-color: transparent;
   }
   .search .search-box i {
     display: none;
@@ -831,6 +832,7 @@ header ul li a:hover {
     width: 50%;
     padding: 1px;
   }
+
   ::placeholder {
     font-size: 10px;
   }
@@ -866,12 +868,29 @@ header ul li a:hover {
   header {
     height: 6vh;
   }
-  .d_flex {
+  .d_flexCat {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     gap: 0px;
   }
 
+  .contentWidthCat .grid1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cateBanner img {
+    display: none;
+  }
+
+  .categroriesMenu .containerTotal {
+    position: absolute;
+    top: 12%;
+    left: 32%;
+    width: 100%;
+    z-index: 1;
+  }
   .search-box {
     width: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -930,5 +949,98 @@ header ul li a:hover {
     align-items: center;
     padding: 7px;
     font-size: 12px;
+  }
+}
+@media (max-width: 400px) {
+  header {
+    height: 7vh;
+  }
+  .containerSearch {
+    max-width: 95%;
+    margin: auto;
+  }
+
+  .search-box {
+    width: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    /* background-color: transparent; */
+  }
+  .search .search-box i {
+    display: none;
+  }
+  .search-box input {
+    width: 50%;
+    padding: 1px;
+  }
+  ::placeholder {
+    font-size: 10px;
+  }
+  .search .search-box span {
+    width: 40%;
+    opacity: 0.5;
+    border-left: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 2px 2px;
+    font-size: 10px;
+    cursor: pointer;
+  }
+
+  .categroriesMenu .containerTotal {
+    position: absolute;
+    top: 11%;
+    left: 32.5%;
+    width: 100%;
+    z-index: 1;
+  }
+  .catgrories {
+    height: 100%;
+  }
+
+  .search .width {
+    width: 35%;
+    position: relative;
+  }
+
+  .search .logo img {
+    width: 95px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  .category.active {
+    left: -45px;
+    top: -2px;
+    font-size: 12px;
+  }
+}
+@media (max-width: 384px) {
+  .categroriesMenu .containerTotal {
+    position: absolute;
+    top: 12%;
+    left: 33%;
+    width: 100%;
+    z-index: 1;
+  }
+}
+@media (max-width: 375px) {
+  .categroriesMenu .containerTotal {
+    position: absolute;
+    top: 13%;
+    left: 34%;
+    width: 100%;
+    z-index: 1;
+  }
+}
+@media (max-width: 360px) {
+  .categroriesMenu .containerTotal {
+    position: absolute;
+    top: 13%;
+    left: 36%;
+    width: 100%;
+    z-index: 1;
   }
 }

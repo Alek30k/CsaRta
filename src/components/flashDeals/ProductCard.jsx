@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import "./ProductCard.css";
 import { useLocation } from "react-router-dom";
 import ReactImageMagnify from "react-image-magnify";
-import Footer from "../../common/footer/Footer";
-import Search from "../../common/header/Search";
+// import Footer from "../../common/footer/Footer";
+// import Search from "../../common/header/Search";
 
-const Product = ({ productItems, addToCart, CartItem, shopItems }) => {
+const Product = ({ productItems, CartItem }) => {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
-  console.log(path);
-  const [selectedImg, setSelectedImg] = useState(productItems[path - 1].cover);
+
+  const [selectedImg, setSelectedImg] = useState(productItems[path - 1].cover1);
 
   const [slideNumber, setSlideNumber] = useState(path);
   const [selectedImage, setSelectedImage] = useState(false);
@@ -30,9 +30,10 @@ const Product = ({ productItems, addToCart, CartItem, shopItems }) => {
 
   return (
     <>
-      <div className="searchProduct">
+      {/* <Head cambiarTheme={cambiarTheme} /> */}
+      {/* <div className="searchProduct">
         <Search CartItem={CartItem} />
-      </div>
+      </div> */}
       <div className="containerr container containerProduct">
         <div className="leftt">
           <div className="sliderWrapper container">
@@ -77,11 +78,11 @@ const Product = ({ productItems, addToCart, CartItem, shopItems }) => {
         </div>
         <div className="rightt">
           <h1 className="titlee">{productItems[slideNumber - 1].name}</h1>
-          <h3 className="precioUnidad">Precio por unidad</h3>
-          <span className="pricee">
+          {/* <h3 className="precioUnidad">Precio por unidad</h3> */}
+          {/* <span className="pricee">
             ${productItems[slideNumber - 1].price}.00
-          </span>
-          <div className="addCart">
+          </span> */}
+          {/* <div className="addCart">
             <div className="cantidad">
               <span>cantidad</span>
               <div className="buttonCant">
@@ -104,15 +105,15 @@ const Product = ({ productItems, addToCart, CartItem, shopItems }) => {
             >
               AGREGAR
             </button>
+          </div> */}
+          <div className="descProduct container">
+            <h1>DESCRIPCION DEL PRODUCTO</h1>
+            <p>{productItems[slideNumber - 1].desc}</p>
           </div>
         </div>
       </div>
-      <div className="descProduct container">
-        <h1>DESCRIPCION DEL PRODUCTO</h1>
-        <p>{productItems[slideNumber - 1].desc}</p>
-      </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

@@ -11,6 +11,11 @@ import Login from "./pages/login/Login";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Register from "./pages/register/Register";
 import ProductCard from "./components/flashDeals/ProductCard";
+import ProductList from "./pages/productList/ProductList";
+import { Dark, Light } from "./styles/Themes";
+import styled, { ThemeProvider } from "styled-components";
+import Head from "./common/header/Head";
+import ProductListproduct from "./pages/productList/ProductListproduct";
 
 function App() {
   const { productItems } = Data;
@@ -50,16 +55,50 @@ function App() {
     }
   };
 
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false,
+      },
+    },
+  });
+
+  const [catFiltered, setCatFiltered] = useState([]);
+  const [catFilteredSearch, setCatFilteredSearch] = useState([]);
+
+  console.log(catFilteredSearch);
+
+  const ThemeContext = React.createContext(null);
+  const [theme, setTheme] = useState("Dark");
+  const themeStyle = theme === "light" ? Light : Dark;
+
+  const cambiarTheme = () => {
+    setTheme((theme) => (theme === "light" ? "dark" : "light"));
+  };
 
   const Layout = () => {
     return (
-      <div className="app ">
-        <QueryClientProvider client={queryClient}>
-          <Header CartItem={CartItem} />
-          <Outlet />
-          <Footer />
-        </QueryClientProvider>
+      <div className="App">
+        <ThemeContext.Provider value={{ theme, setTheme }}>
+          {/* <ThemeProvider theme={themeStyle}>
+            <QueryClientProvider client={queryClient}> */}
+          <Container>
+            <Head />
+            <Header
+              CartItem={CartItem}
+              setCatFiltered={setCatFiltered}
+              setCatFilteredSearch={setCatFilteredSearch}
+              productItems={productItems}
+              cambiarTheme={cambiarTheme}
+              theme={theme}
+              setTheme={setTheme}
+            />
+            <Outlet />
+            <Footer />
+          </Container>
+          {/* </QueryClientProvider>
+          </ThemeProvider> */}
+        </ThemeContext.Provider>
       </div>
     );
   };
@@ -77,34 +116,76 @@ function App() {
               productItems={productItems}
               addToCart={addToCart}
               shopItems={shopItems}
+              cambiarTheme={cambiarTheme}
+              Container={Container}
+              setCatFiltered={setCatFiltered}
+            />
+          ),
+        },
+
+        {
+          path: "/products/search/:product",
+          element: (
+            <ProductListproduct
+              catFilteredSearch={catFilteredSearch}
+              productItems={productItems}
+              setCatFilteredSearch={setCatFilteredSearch}
+              setCatFiltered={setCatFiltered}
+            />
+          ),
+        },
+        {
+          path: "/products/:category",
+          element: (
+            // <ThemeProvider theme={themeStyle}>
+            //   <QueryClientProvider client={queryClient}>
+            //     <Container>
+            <ProductList
+              addToCart={addToCart}
+              shopItems={shopItems}
+              CartItem={CartItem}
+              catFiltered={catFiltered}
+              productItems={productItems}
+              setCatFiltered={setCatFiltered}
+            />
+            //     </Container>
+            //   </QueryClientProvider>
+            // </ThemeProvider>
+          ),
+        },
+        {
+          path: "/product/:id",
+          element: (
+            // <ThemeProvider theme={themeStyle}>
+            <QueryClientProvider client={queryClient}>
+              <Container>
+                <ProductCard
+                  shopItems={shopItems}
+                  CartItem={CartItem}
+                  productItems={productItems}
+                  addToCart={addToCart}
+                  decreaseQty={decreaseQty}
+                  cambiarTheme={cambiarTheme}
+                />
+              </Container>
+            </QueryClientProvider>
+            // </ThemeProvider>
+          ),
+        },
+        {
+          path: "/cart",
+          element: (
+            <Cart
+              CartItem={CartItem}
+              addToCart={addToCart}
+              decreaseQty={decreaseQty}
+              setCartItem={setCartItem}
             />
           ),
         },
       ],
     },
-    {
-      path: "/product/:id",
-      element: (
-        <ProductCard
-          shopItems={shopItems}
-          CartItem={CartItem}
-          productItems={productItems}
-          addToCart={addToCart}
-          decreaseQty={decreaseQty}
-        />
-      ),
-    },
-    {
-      path: "/cart",
-      element: (
-        <Cart
-          CartItem={CartItem}
-          addToCart={addToCart}
-          decreaseQty={decreaseQty}
-          setCartItem={setCartItem}
-        />
-      ),
-    },
+
     {
       path: "/login",
       element: <Login />,
@@ -118,33 +199,9 @@ function App() {
   return <RouterProvider router={router} />;
 }
 
-//   return (
-//     <div>
-//       <Router>
-//         <Header CartItem={CartItem} />
-//         <Switch>
-//           <Route path="/" exact>
-//             <Pages
-//               productItems={productItems}
-//               addToCart={addToCart}
-//               shopItems={shopItems}
-//             />
-//           </Route>
-//           <Route path="/cart" exact>
-//             <Cart
-//               CartItem={CartItem}
-//               addToCart={addToCart}
-//               decreaseQty={decreaseQty}
-//             />
-//           </Route>
-//           <Route path="/login" exact>
-//             <Login />
-//           </Route>
-//         </Switch>
-//         <Footer />
-//       </Router>
-//     </div>
-//   );
-// }
+const Container = styled.div`
+  background-color: ${({ theme }) => theme.body};
+  color: ${({ theme }) => theme.text};
+`;
 
 export default App;

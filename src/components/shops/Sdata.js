@@ -10,14 +10,7 @@ const Sdata = {
       discount: "20",
       cateName: "apple",
     },
-    {
-      id: 17,
-      cover: "./images/shops/shops-1.png",
-      name: "Mapple Earphones",
-      price: "180",
-      discount: "25",
-      cateName: "opo",
-    },
+
     {
       id: 18,
       cover: "./images/shops/apple8.jpeg",
@@ -43,14 +36,7 @@ const Sdata = {
       discount: "10 ",
       cateName: "redmi",
     },
-    {
-      id: 21,
-      cover: "./images/shops/shops-5.png",
-      name: "Ceats wireless earphone",
-      price: "80",
-      discount: "20 ",
-      cateName: "opo",
-    },
+
     {
       id: 22,
       cover: "./images/shops/shops-7.png",
@@ -114,6 +100,22 @@ const Sdata = {
       price: "120",
       discount: "10",
       cateName: "opo",
+    },
+    {
+      id: 21,
+      cover: "./images/shops/shops-5.png",
+      name: "Ceats wireless earphone",
+      price: "80",
+      discount: "20 ",
+      cateName: "Otros",
+    },
+    {
+      id: 17,
+      cover: "./images/shops/shops-1.png",
+      name: "Mapple Earphones",
+      price: "180",
+      discount: "25",
+      cateName: "Otros",
     },
   ],
 };
