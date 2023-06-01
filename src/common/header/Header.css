@@ -1068,4 +1068,18 @@ header ul li a:hover {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
   }
+  .search .icon .heart {
+    display: none;
+  }
+  .head {
+    background-color: #0410b3;
+    padding: 10px 0;
+    color: #fff;
+  }
+
+  .leftHead {
+    display: flex;
+    width: 100%;
+    margin-left: 10px;
+  }
 }

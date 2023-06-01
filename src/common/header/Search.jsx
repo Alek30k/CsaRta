@@ -88,7 +88,7 @@ const Search = ({ CartItem, setCatFilteredSearch }) => {
           </div>
 
           <div className="icon f_flex width">
-            <i className="fa-solid fa-heart icon-circle"></i>
+            <i className="fa-solid fa-heart icon-circle heart"></i>
             {currentUser === "User has been logged out." ? (
               <i
                 className="fa fa-user icon-circle"

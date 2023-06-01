@@ -5,9 +5,9 @@ const Head = ({ cambiarTheme }) => {
     <>
       <section className="head ">
         <div className="container d_flex">
-          <div className="left row">
+          <div className="leftHead row">
             <i className="fa fa-phone"></i>
-            <label> +88012 3456 7894</label>
+            <label>+880 3456 789</label>
           </div>
           <div className="right row RText">
             <label>Theme FAQ"s</label>
