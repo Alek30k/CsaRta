@@ -1044,3 +1044,28 @@ header ul li a:hover {
     z-index: 1;
   }
 }
+@media (max-width: 320px) {
+  .categroriesMenu .containerTotal {
+    position: absolute;
+    top: 16%;
+    left: 46%;
+    width: 100%;
+    z-index: 1;
+  }
+  header {
+    height: 9vh;
+  }
+  .catgrories {
+    background-color: #f6f9fc;
+    padding: 0px px;
+    border-radius: 5px;
+    height: 6vh;
+    margin-top: 2px;
+    z-index: 1;
+  }
+
+  .contentWidthCat .grid1 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

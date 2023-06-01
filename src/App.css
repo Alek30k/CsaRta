@@ -35,6 +35,11 @@ body {
   margin: auto;
 }
 
+.containerSlider {
+  max-width: 80%;
+  margin: auto;
+}
+
 .containerHeader {
   max-width: 100%;
   margin: auto;
@@ -1815,6 +1820,22 @@ button {
     width: 105px;
     display: flex;
     justify-content: space-between;
+  }
+  .category .box {
+    transition: 0.5s;
+    padding: 0 9px;
+  }
+  .shop .shopi {
+    padding: 0px 10px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
+    margin: 0;
+    max-height: 206px;
+  }
+  .containerSlider {
+    max-width: 100%;
+    margin: auto;
   }
 }
 @media (max-width: 305px) {
