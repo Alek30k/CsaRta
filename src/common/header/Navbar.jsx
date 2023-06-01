@@ -34,13 +34,9 @@ const Navbar = ({ setCatFiltered, productItems }) => {
     <header className="header">
       <div className="container d_flex">
         <div className="cat">
-          <div
-            className="catgrories d_flex"
-            onClick={() => setMenu(true)}
-            onMouseOver={handleHover}
-          >
+          <div className="catgrories d_flex" onClick={() => setMenu(true)}>
             <span className="fa-solid fa-border-all"></span>
-            <h4>
+            <h4 onMouseOver={handleHover}>
               Categorias
               <i className="fa fa-chevron-down"></i>
             </h4>

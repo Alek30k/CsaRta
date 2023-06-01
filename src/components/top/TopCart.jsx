@@ -8,26 +8,26 @@ const TopCart = () => {
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
     responsive: [
       {
         breakpoint: 320,
-        settings: { slidesToShow: 2, slidesToScroll: 1, infinite: false },
+        settings: { slidesToShow: 2, slidesToScroll: 1 },
       },
       {
         breakpoint: 600,
-        settings: { slidesToShow: 3, slidesToScroll: 2, infinite: false },
+        settings: { slidesToShow: 3, slidesToScroll: 1 },
       },
       {
         breakpoint: 768,
-        settings: { slidesToShow: 3, slidesToScroll: 2, infinite: false },
+        settings: { slidesToShow: 3, slidesToScroll: 2 },
       },
       {
         breakpoint: 991,
-        settings: { slidesToShow: 4, slidesToScroll: 3, infinite: false },
+        settings: { slidesToShow: 4, slidesToScroll: 3 },
       },
       {
         breakpoint: 1024,

@@ -23,31 +23,31 @@ const Dcard = ({ addToCart }) => {
     responsive: [
       {
         breakpoint: 384,
-        settings: { slidesToShow: 2, slidesToScroll: 1, infinite: false },
+        settings: { slidesToShow: 2, slidesToScroll: 1 },
       },
       {
         breakpoint: 450,
-        settings: { slidesToShow: 2, slidesToScroll: 1, infinite: false },
+        settings: { slidesToShow: 2, slidesToScroll: 1 },
       },
       {
         breakpoint: 600,
-        settings: { slidesToShow: 3, slidesToScroll: 2, infinite: false },
+        settings: { slidesToShow: 3, slidesToScroll: 2 },
       },
       {
         breakpoint: 768,
-        settings: { slidesToShow: 4, slidesToScroll: 2, infinite: false },
+        settings: { slidesToShow: 4, slidesToScroll: 2 },
       },
       {
         breakpoint: 991,
-        settings: { slidesToShow: 4, slidesToScroll: 3, infinite: false },
+        settings: { slidesToShow: 4, slidesToScroll: 3 },
       },
       {
         breakpoint: 1024,
-        settings: { slidesToShow: 4, slidesToScroll: 3, infinite: false },
+        settings: { slidesToShow: 4, slidesToScroll: 3 },
       },
       {
         breakpoint: 1100,
-        settings: { slidesToShow: 6, slidesToScroll: 3, infinite: false },
+        settings: { slidesToShow: 6, slidesToScroll: 3 },
       },
     ],
   };
