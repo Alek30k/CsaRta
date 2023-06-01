@@ -1079,7 +1079,11 @@ header ul li a:hover {
 
   .leftHead {
     display: flex;
-    width: 98%;
+    width: 80%;
     margin-left: 10px;
+  }
+
+  .head label {
+    font-size: 9px;
   }
 }

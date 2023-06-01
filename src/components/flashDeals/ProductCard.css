@@ -795,3 +795,23 @@
     z-index: 1;
   }
 }
+
+@media (max-width: 320px) {
+  .containerr {
+    height: calc(100% - 100px);
+  }
+
+  .sliderWrapper {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 301px;
+  }
+  .sliderImg {
+    width: 75%;
+    height: 30vh;
+    object-fit: cover;
+  }
+}
