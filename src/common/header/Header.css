@@ -802,10 +802,9 @@ header ul li a:hover {
     z-index: 1;
   }
 
-  .homeSlide .topSLider .rightSlider {
-    width: 180%;
-    height: 150%;
-    background-color: yellowgreen;
+  .containerSlider {
+    max-width: 100%;
+    margin: auto;
   }
 }
 @media (max-width: 425px) {
