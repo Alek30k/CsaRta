@@ -45,6 +45,14 @@ const FlashCard = ({ productItems, addToCart }) => {
         settings: { slidesToShow: 1, slidesToScroll: 1, infinite: false },
       },
       {
+        breakpoint: 320,
+        settings: { slidesToShow: 1, slidesToScroll: 1, infinite: false },
+      },
+      {
+        breakpoint: 305,
+        settings: { slidesToShow: 1, slidesToScroll: 1, infinite: false },
+      },
+      {
         breakpoint: 400,
         settings: { slidesToShow: 2, slidesToScroll: 1, infinite: false },
       },

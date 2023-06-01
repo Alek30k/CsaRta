@@ -1837,6 +1837,15 @@ button {
     max-width: 100%;
     margin: auto;
   }
+  .productshop {
+    padding: 0px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: rgb(3 0 71 / 9%) 0px 1px 3px;
+    margin: 0px;
+    width: 94%;
+    max-height: 240px;
+  }
 }
 @media (max-width: 305px) {
   .productshop {
