@@ -889,10 +889,10 @@ button {
     /* background-color: yellow; */
   }
 
-  .homeSlide .rightSlider .rightImg {
+  /* .homeSlide .rightSlider .rightImg {
     width: 100%;
     height: 100%;
-  }
+  } */
 }
 @media (max-width: 850px) {
   .background {
@@ -1211,10 +1211,10 @@ button {
     /* background-color: yellow; */
   }
 
-  .homeSlide .rightSlider .rightImg {
+  /* .homeSlide .rightSlider .rightImg {
     width: 100%;
     height: 100%;
-  }
+  } */
 }
 @media (max-width: 800px) {
   .product .price {

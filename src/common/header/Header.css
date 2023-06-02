@@ -162,7 +162,7 @@
 
 .categroriesMenu {
   position: absolute;
-  top: -100%;
+  top: -148%;
   left: -50%;
   margin: auto;
   width: 100vw;
@@ -325,9 +325,13 @@ header ul li a:hover {
     justify-content: center;
   }
 
+  .homeSlide .rightSlider {
+    width: 100%;
+    height: 300px;
+  }
   .homeSlide .rightSlider .rightImg {
-    max-width: 100%;
-    height: 100%;
+    object-fit: cover;
+    width: 100%;
   }
 
   .product .product-details h3 {
@@ -435,6 +439,19 @@ header ul li a:hover {
     justify-content: space-between;
     gap: 0px;
   }
+  .TopCate .productMarcas img {
+    width: 99%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: none;
+  }
+  .categroriesMenu .containerTotal {
+    position: absolute;
+    top: 28%;
+    left: 7%;
+    width: 100%;
+    z-index: 1;
+  }
 }
 @media (max-width: 950px) {
   header ul {
@@ -449,9 +466,9 @@ header ul li a:hover {
     height: 6vh;
   }
 
-  .containerTotal {
+  .categroriesMenu .containerTotal {
     position: absolute;
-    top: 10%;
+    top: 16%;
     left: 8%;
     width: 100%;
     z-index: 1;
@@ -641,9 +658,9 @@ header ul li a:hover {
   }
 }
 @media (max-width: 850px) {
-  .containerTotal {
+  .categroriesMenu .containerTotal {
     position: absolute;
-    top: 8%;
+    top: 14%;
     left: 15%;
     width: 100%;
     z-index: 1;
@@ -656,7 +673,7 @@ header ul li a:hover {
 @media (max-width: 810px) {
   .categroriesMenu .containerTotal {
     position: absolute;
-    top: 9%;
+    top: 11%;
     left: 16%;
     width: 100%;
     z-index: 1;
@@ -724,10 +741,10 @@ header ul li a:hover {
     height: 45px;
     margin-right: 10px;
   }
-  .containerTotal {
+  .categroriesMenu .containerTotal {
     position: absolute;
-    top: 11.5%;
-    left: 30%;
+    top: 14%;
+    left: 22.5%;
     width: 100%;
     z-index: 1;
   }
@@ -796,8 +813,8 @@ header ul li a:hover {
   }
   .categroriesMenu .containerTotal {
     position: absolute;
-    top: 13%;
-    left: 29%;
+    top: 16%;
+    left: 30%;
     width: 100%;
     z-index: 1;
   }
@@ -811,14 +828,6 @@ header ul li a:hover {
   header {
     height: 7vh;
   }
-
-  /* .categroriesMenu .containerTotal {
-    position: absolute;
-    top: 15%;
-    left: 22%;
-    width: 100%;
-    z-index: 1;
-  } */
 
   .search-box {
     width: 50%;
@@ -868,6 +877,13 @@ header ul li a:hover {
     padding: 8px 0px;
     width: 45%;
   }
+  .categroriesMenu .containerTotal {
+    position: absolute;
+    top: 17%;
+    left: 34%;
+    width: 100%;
+    z-index: 1;
+  }
 }
 @media (max-width: 414px) {
   header {
@@ -891,7 +907,7 @@ header ul li a:hover {
 
   .categroriesMenu .containerTotal {
     position: absolute;
-    top: 12%;
+    top: 14%;
     left: 32%;
     width: 100%;
     z-index: 1;
@@ -996,7 +1012,7 @@ header ul li a:hover {
 
   .categroriesMenu .containerTotal {
     position: absolute;
-    top: 11%;
+    top: 13%;
     left: 32.5%;
     width: 100%;
     z-index: 1;
@@ -1025,7 +1041,7 @@ header ul li a:hover {
 @media (max-width: 384px) {
   .categroriesMenu .containerTotal {
     position: absolute;
-    top: 12%;
+    top: 14%;
     left: 33%;
     width: 100%;
     z-index: 1;
@@ -1034,7 +1050,7 @@ header ul li a:hover {
 @media (max-width: 375px) {
   .categroriesMenu .containerTotal {
     position: absolute;
-    top: 13%;
+    top: 15%;
     left: 34%;
     width: 100%;
     z-index: 1;
@@ -1043,7 +1059,7 @@ header ul li a:hover {
 @media (max-width: 360px) {
   .categroriesMenu .containerTotal {
     position: absolute;
-    top: 13%;
+    top: 16%;
     left: 36%;
     width: 100%;
     z-index: 1;
