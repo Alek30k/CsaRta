@@ -36,7 +36,7 @@ const Navbar = ({ setCatFiltered, productItems }) => {
         <div className="cat">
           <div className="catgrories d_flex" onClick={() => setMenu(!Menu)}>
             <span className="fa-solid fa-border-all"></span>
-            <h4 onMouseOver={handleHover}>
+            <h4>
               Categorias
               <i className="fa fa-chevron-down"></i>
             </h4>
