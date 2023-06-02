@@ -1068,7 +1068,7 @@ header ul li a:hover {
 @media (max-width: 320px) {
   .categroriesMenu .containerTotal {
     position: absolute;
-    top: 16%;
+    top: 19%;
     left: 46%;
     width: 100%;
     z-index: 1;
