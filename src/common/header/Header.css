@@ -325,10 +325,10 @@ header ul li a:hover {
     justify-content: center;
   }
 
-  .homeSlide .rightSlider {
+  /* .homeSlide .rightSlider {
     width: 100%;
     height: 300px;
-  }
+  } */
   .homeSlide .rightSlider .rightImg {
     object-fit: cover;
     width: 100%;

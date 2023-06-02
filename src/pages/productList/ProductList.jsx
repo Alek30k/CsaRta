@@ -14,6 +14,7 @@ const ProductList = ({
   productItems,
 }) => {
   const [products, setProducts] = useState(shopItems);
+  const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
   const cat = location.pathname.split("/")[2];
 
@@ -63,17 +64,21 @@ const ProductList = ({
             </div>
           </div>
           <div className="contentWidthCat container">
-            <div className="cateBanner">
-              {DataCategory.map((value) => {
-                return (
-                  <div key={value.id}>
-                    {cat === value.name.toLowerCase() && (
-                      <img src={value.img} alt="" />
-                    )}
-                  </div>
-                );
-              })}
-            </div>
+            {isLoading ? (
+              "Loading..."
+            ) : (
+              <div className="cateBanner">
+                {DataCategory.map((value) => {
+                  return (
+                    <div key={value.id}>
+                      {cat === value.name.toLowerCase() && (
+                        <img src={value.img} alt="" />
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
 
             {catFiltered == 0 ? (
               "No hay productos con la SubCategoría seleccionada"
