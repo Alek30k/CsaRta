@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./style.css";
 // import newRequest from "../../utils/newRequest";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
 import { useDispatch } from "react-redux";
 import { loginFailure, loginStart, loginSuccess } from "../../redux/userSlice";
@@ -102,8 +102,9 @@ function Login() {
           <button onClick={handleLogin} className="button">
             Iniciar Sesión
           </button>
-
-          <div className="registrate">Registrate</div>
+          <Link to="/register">
+            <div className="registrate">Registrate</div>
+          </Link>
         </form>
       </div>
     </div>
