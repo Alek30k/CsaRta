@@ -1,37 +1,37 @@
-import axios from "axios";
-import { createContext, useEffect, useState } from "react";
+// import axios from "axios";
+// import { createContext, useEffect, useState } from "react";
 
-export const AuthContext = createContext();
+// export const AuthContext = createContext();
 
-export const AuthContextProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(
-    JSON.parse(localStorage.getItem("currentUser")) || null
-  );
+// export const AuthContextProvider = ({ children }) => {
+//   const [currentUser, setCurrentUser] = useState(
+//     JSON.parse(localStorage.getItem("currentUser")) || null
+//   );
 
-  const login = async (inputs) => {
-    const res = await axios.post(
-      "https://csarta.onrender.com/api/auth/login",
-      inputs
-      // {
-      //   withCredentials: true,
-      // }
-    );
+//   const login = async (inputs) => {
+//     const res = await axios.post(
+//       "https://csarta.onrender.com/api/auth/login",
+//       inputs
+//       // {
+//       //   withCredentials: true,
+//       // }
+//     );
 
-    setCurrentUser(res.data);
-  };
-  const logout = async () => {
-    const res = await axios.post("https://csarta.onrender.com/api/auth/logout");
+//     setCurrentUser(res.data);
+//   };
+//   const logout = async () => {
+//     const res = await axios.post("https://csarta.onrender.com/api/auth/logout");
 
-    setCurrentUser(res.data);
-  };
+//     setCurrentUser(res.data);
+//   };
 
-  useEffect(() => {
-    localStorage.setItem("currentUser", JSON.stringify(currentUser));
-  }, [currentUser]);
+//   useEffect(() => {
+//     localStorage.setItem("currentUser", JSON.stringify(currentUser));
+//   }, [currentUser]);
 
-  return (
-    <AuthContext.Provider value={{ currentUser, login, logout }}>
-      {children}
-    </AuthContext.Provider>
-  );
-};
+//   return (
+//     <AuthContext.Provider value={{ currentUser, login, logout }}>
+//       {children}
+//     </AuthContext.Provider>
+//   );
+// };

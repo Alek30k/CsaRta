@@ -424,6 +424,32 @@ button {
   gap: 10px;
   text-transform: capitalize;
 }
+.header .listCat {
+  display: flex;
+  flex-direction: column;
+  margin: 12px;
+  gap: 0px;
+  text-transform: capitalize;
+}
+.header .saludo {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #1355ee;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+.header .filter {
+  color: lightslategray;
+  padding: 0 10px;
+}
+.header .listCat span {
+  display: flex;
+  font-size: 14px;
+  color: rgb(58, 57, 57);
+  border-bottom: 1px solid #e9eaeb;
+  width: 100%;
+}
 .filterCat .listItem input {
   margin-right: 10px;
 }

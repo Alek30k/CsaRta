@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Categories from "../../components/MainPage/Categories";
+import Data from "../../components/Data";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+// import { AuthContext } from "../../context/authContext";
 
 const Navbar = ({ setCatFiltered, productItems }) => {
   // Toogle Menu
@@ -29,6 +33,10 @@ const Navbar = ({ setCatFiltered, productItems }) => {
   //   const mobileMenu = document.querySelector(".nav-links-MobileMenu");
   //   mobileMenu.classList.toggle("active", window.scrollY > 100);
   // });
+
+  const { dataCat } = Data;
+
+  const { currentUser } = useSelector((state) => state.user);
 
   return (
     <header className="header">
@@ -64,18 +72,17 @@ const Navbar = ({ setCatFiltered, productItems }) => {
             }
             onClick={() => setMobileMenu(false)}
           >
-            {/* 
             <li>
               <a href="#ProductosDestacados">Productos Destacados</a>
             </li>
-          
+
             <li>
               <a href="#QuienesSomos">Quiénes Somos</a>
             </li>
 
             <li>
               <a href="#QuienesSomos">Contactos</a>
-            </li> */}
+            </li>
           </ul>
 
           <button className="toggle" onClick={() => setMobileMenu(!MobileMenu)}>
@@ -111,21 +118,29 @@ const Navbar = ({ setCatFiltered, productItems }) => {
               }
               onClick={() => setMobileMenu(false)}
             >
-              {/*<ul className='link f_flex uppercase {MobileMenu ? "nav-links-MobileMenu" : "nav-links"} onClick={() => setMobileMenu(false)}'>*/}
-
-              <li>
-                <a href="#ProductosDestacados">Productos Destacados</a>
-              </li>
-              {/* <li>
-                <a href="#GrandesDescuentos">Grandes Descuentos</a>
-              </li> */}
-              <li>
-                <a href="#QuienesSomos">Quiénes Somos</a>
-              </li>
-
-              <li>
-                <a href="#QuienesSomos">Contactos</a>
-              </li>
+              {!currentUser && (
+                <div className="saludo">
+                  <span>¡Hola!</span>
+                  <span>Ingresa a tu cuenta</span>
+                </div>
+              )}
+              <div className="filter">
+                <h4>Categorías </h4>
+              </div>
+              <div className="listCat">
+                {dataCat.map((value, index) => {
+                  return (
+                    <Link to={`/products/${value.cateName}`} key={index}>
+                      <div
+                        className="box  f_flex"
+                        // onClick={() => filterMarcas(value)}
+                      >
+                        <span>{value.cateName}</span>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
             </ul>
 
             <button

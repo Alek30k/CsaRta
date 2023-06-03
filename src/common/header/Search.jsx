@@ -1,12 +1,15 @@
 import React, { useContext, useState } from "react";
 import logo from "../../components/assets/images/logo2.png";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/authContext";
+// import { AuthContext } from "../../context/authContext";
 import Data from "../../components/Data";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../redux/userSlice";
 
 const Search = ({ CartItem, setCatFilteredSearch }) => {
   const [avatarOpen, setAvatarOpen] = useState(false);
   const [avatarOpenIngresar, setAvatarOpenIngresar] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   const { productItems } = Data;
 
@@ -25,23 +28,12 @@ const Search = ({ CartItem, setCatFilteredSearch }) => {
     search.classList.toggle("active", window.scrollY > 100);
   });
 
-  const { currentUser } = useContext(AuthContext);
-  const { logout } = useContext(AuthContext);
+  const dispatch = useDispatch();
 
-  const handleLogout = async (e) => {
-    try {
-      await logout();
-      setAvatarOpen(false);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-  const handleLogin = async (e) => {
-    try {
-      navigate("/login");
-    } catch (err) {
-      console.log(err);
-    }
+  const handleClick = () => {
+    dispatch(logout());
+    setOpenModal(!openModal);
+    navigate("/");
   };
 
   const handleSearch = () => {
@@ -66,6 +58,8 @@ const Search = ({ CartItem, setCatFilteredSearch }) => {
     }
   }
 
+  const { currentUser } = useSelector((state) => state.user);
+
   return (
     <>
       <section className="search">
@@ -89,37 +83,43 @@ const Search = ({ CartItem, setCatFilteredSearch }) => {
 
           <div className="icon f_flex width">
             <i className="fa-solid fa-heart icon-circle heart"></i>
-            {currentUser === "User has been logged out." ? (
+
+            {currentUser ? (
+              <div>
+                <div onClick={() => setOpenModal(!openModal)}>
+                  <img
+                    src={
+                      currentUser?.img ||
+                      "https://i.ibb.co/MBtjqXQ/no-avatar.gif"
+                    }
+                    className="user"
+                    alt=""
+                  />
+                </div>
+                {openModal && (
+                  <div className="menuAvatar">
+                    <div className="buttonLogout">
+                      <button onClick={handleClick}>Cerrar Sesión</button>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ) : (
               <i
                 className="fa fa-user icon-circle"
                 onClick={() => setAvatarOpenIngresar(!avatarOpenIngresar)}
               ></i>
-            ) : (
-              <div onClick={() => setAvatarOpen(!avatarOpen)}>
-                <img
-                  src={
-                    currentUser?.img || "https://i.ibb.co/MBtjqXQ/no-avatar.gif"
-                  }
-                  className="user"
-                  alt=""
-                />
-              </div>
-            )}
-
-            {avatarOpen && (
-              <div className="menuAvatar">
-                <div className="buttonLogout">
-                  <button onClick={handleLogout}>Cerrar Sesión</button>
-                </div>
-              </div>
             )}
             {avatarOpenIngresar && (
               <div className="menuAvatar">
                 <div className="buttonLogout">
-                  <button onClick={handleLogin}>Iniciar Sesion</button>
+                  <Link to="login" style={{ textDecoration: "none" }}>
+                    <span>Iniciar Sesion</span>
+                  </Link>
                 </div>
               </div>
             )}
+
             <div className="cart">
               <Link to="/cart">
                 <i className="fa fa-shopping-bag icon-circle"></i>

@@ -60,7 +60,12 @@
   padding: 10px;
   cursor: pointer;
   display: flex;
+
   gap: 5px;
+}
+.menuAvatar span {
+  color: #0a0db9;
+  font-size: 12px;
 }
 .menuAvatar .buttonLogout {
   border: none;
@@ -252,7 +257,7 @@ header ul li a:hover {
     height: 6vh;
   }
   header ul {
-    line-height: 8vh;
+    line-height: 5vh;
   }
   header ul li {
     margin-left: 10px;
