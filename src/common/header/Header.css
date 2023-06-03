@@ -178,7 +178,7 @@
 
 .containerTotal {
   position: absolute;
-  top: 34%;
+  top: 23%;
   left: 4%;
   width: 100%;
   z-index: 1;
@@ -452,7 +452,7 @@ header ul li a:hover {
   }
   .categroriesMenu .containerTotal {
     position: absolute;
-    top: 28%;
+    top: 16%;
     left: 7%;
     width: 100%;
     z-index: 1;
@@ -464,11 +464,12 @@ header ul li a:hover {
   }
 
   header {
-    height: 7vh;
+    height: 0vh;
   }
 
   .catgrories {
     height: 6vh;
+    display: none;
   }
 
   .categroriesMenu .containerTotal {
@@ -611,6 +612,18 @@ header ul li a:hover {
     margin: 0px;
   }
 
+  .cat {
+    display: none;
+    background-color: yellowgreen;
+  }
+
+  .catgrories span {
+    display: none;
+  }
+  .catgrories h4 {
+    display: none;
+  }
+
   .search.active {
     height: 8vh;
     position: static;
@@ -678,7 +691,7 @@ header ul li a:hover {
 @media (max-width: 810px) {
   .categroriesMenu .containerTotal {
     position: absolute;
-    top: 11%;
+    top: 13%;
     left: 16%;
     width: 100%;
     z-index: 1;
@@ -689,9 +702,6 @@ header ul li a:hover {
   }
 }
 @media (max-width: 560px) {
-  header {
-    height: 7vh;
-  }
   .head label {
     font-size: 11px;
   }
@@ -756,9 +766,6 @@ header ul li a:hover {
 }
 
 @media (max-width: 500px) {
-  header {
-    height: 7vh;
-  }
   .containerSearch {
     max-width: 90%;
     margin: auto;
@@ -818,8 +825,8 @@ header ul li a:hover {
   }
   .categroriesMenu .containerTotal {
     position: absolute;
-    top: 16%;
-    left: 30%;
+    top: 15%;
+    left: 26%;
     width: 100%;
     z-index: 1;
   }
@@ -830,10 +837,6 @@ header ul li a:hover {
   }
 }
 @media (max-width: 425px) {
-  header {
-    height: 7vh;
-  }
-
   .search-box {
     width: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -884,16 +887,13 @@ header ul li a:hover {
   }
   .categroriesMenu .containerTotal {
     position: absolute;
-    top: 17%;
+    top: 16%;
     left: 34%;
     width: 100%;
     z-index: 1;
   }
 }
 @media (max-width: 414px) {
-  header {
-    height: 6vh;
-  }
   .d_flexCat {
     display: flex;
     flex-direction: column;
@@ -912,8 +912,8 @@ header ul li a:hover {
 
   .categroriesMenu .containerTotal {
     position: absolute;
-    top: 14%;
-    left: 32%;
+    top: 12%;
+    left: 31%;
     width: 100%;
     z-index: 1;
   }
@@ -978,9 +978,6 @@ header ul li a:hover {
   }
 }
 @media (max-width: 400px) {
-  header {
-    height: 7vh;
-  }
   .containerSearch {
     max-width: 95%;
     margin: auto;
@@ -1017,7 +1014,7 @@ header ul li a:hover {
 
   .categroriesMenu .containerTotal {
     position: absolute;
-    top: 13%;
+    top: 10%;
     left: 32.5%;
     width: 100%;
     z-index: 1;
@@ -1046,7 +1043,7 @@ header ul li a:hover {
 @media (max-width: 384px) {
   .categroriesMenu .containerTotal {
     position: absolute;
-    top: 14%;
+    top: 11%;
     left: 33%;
     width: 100%;
     z-index: 1;
@@ -1055,7 +1052,7 @@ header ul li a:hover {
 @media (max-width: 375px) {
   .categroriesMenu .containerTotal {
     position: absolute;
-    top: 15%;
+    top: 10%;
     left: 34%;
     width: 100%;
     z-index: 1;
@@ -1064,7 +1061,7 @@ header ul li a:hover {
 @media (max-width: 360px) {
   .categroriesMenu .containerTotal {
     position: absolute;
-    top: 16%;
+    top: 10.5%;
     left: 36%;
     width: 100%;
     z-index: 1;
@@ -1073,14 +1070,12 @@ header ul li a:hover {
 @media (max-width: 320px) {
   .categroriesMenu .containerTotal {
     position: absolute;
-    top: 19%;
-    left: 46%;
+    top: 14%;
+    left: 40%;
     width: 100%;
     z-index: 1;
   }
-  header {
-    height: 9vh;
-  }
+
   .catgrories {
     background-color: #f6f9fc;
     padding: 0px px;

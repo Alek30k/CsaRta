@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 // import { AuthContext } from "../../context/authContext";
 
-const Navbar = ({ setCatFiltered, productItems, setCatFilteredModal }) => {
+const Navbar = ({ setCatFiltered, productItems }) => {
   // Toogle Menu
   const [MobileMenu, setMobileMenu] = useState(false);
   const [Menu, setMenu] = useState(false);
@@ -44,9 +44,9 @@ const Navbar = ({ setCatFiltered, productItems, setCatFilteredModal }) => {
   //   );
   //   setCatFiltered(filteredProduct);
   // };
-  const filterMarcass = (cat) => {
+  const filterMarcass = (value) => {
     const filteredProduct = productItems.filter(
-      (p) => p.subCategory === cat.name
+      (p) => p.catCat.toLowerCase() === value.cateName
     );
     setCatFiltered(filteredProduct);
   };
@@ -76,6 +76,13 @@ const Navbar = ({ setCatFiltered, productItems, setCatFilteredModal }) => {
             )}
           </div>
         </div>
+        <button className="toggle" onClick={() => setMobileMenu(!MobileMenu)}>
+          {MobileMenu ? (
+            <i className="fas fa-times close home-btn"></i>
+          ) : (
+            <i className="fas fa-bars open"></i>
+          )}
+        </button>
         <div className="navlink">
           <ul
             className={
@@ -97,15 +104,6 @@ const Navbar = ({ setCatFiltered, productItems, setCatFilteredModal }) => {
               <a href="#QuienesSomos">Contactos</a>
             </li>
           </ul>
-
-          <button className="toggle" onClick={() => setMobileMenu(!MobileMenu)}>
-            {MobileMenu ? (
-              <i className="fas fa-times close home-btn"></i>
-            ) : (
-              <i className="fas fa-bars open"></i>
-            )}
-            {/* {!MobileMenu && <i className="fas fa-bars open"></i>} */}
-          </button>
 
           {MobileMenu && (
             <div className="navlink">
