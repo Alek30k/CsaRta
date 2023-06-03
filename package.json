@@ -61,5 +61,5 @@
   "engines": {
     "node": "16.x"
   },
-  "proxy": "http://localhost:8800/api/"
+  "proxy": "https://csarta.onrender.com/api/"
 }

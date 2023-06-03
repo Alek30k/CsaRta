@@ -116,10 +116,12 @@ const Navbar = ({ setCatFiltered, productItems }) => {
                 onClick={() => setMobileMenu(false)}
               >
                 {!currentUser && (
-                  <div className="saludo">
-                    <span>¡Hola!</span>
-                    <span>Ingresa a tu cuenta</span>
-                  </div>
+                  <Link to="login" style={{ textDecoration: "none" }}>
+                    <div className="saludo">
+                      <span>¡Hola!</span>
+                      <span>Ingresa a tu cuenta</span>
+                    </div>
+                  </Link>
                 )}
                 <div className="filter">
                   <h4>Categorías </h4>
@@ -149,7 +151,6 @@ const Navbar = ({ setCatFiltered, productItems }) => {
                 ) : (
                   <i className="fas fa-bars open"></i>
                 )}
-                {/* {!MobileMenu && <i className="fas fa-bars open"></i>} */}
               </button>
             </div>
           )}
