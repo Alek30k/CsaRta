@@ -94,67 +94,54 @@ const Navbar = ({ setCatFiltered, productItems }) => {
             {/* {!MobileMenu && <i className="fas fa-bars open"></i>} */}
           </button>
 
-          {/* <div
-              className={Menu ? "categroriesMenu" : "catNoneMenu"}
-              onClick={() => setMenu(false)}
-            >
-              {Menu && (
-                <div className="containerTotal">
-                  <Categories
-                    setCatFiltered={setCatFiltered}
-                    productItems={productItems}
-                  />
+          {MobileMenu && (
+            <div className="navlink">
+              <ul
+                className={
+                  MobileMenu
+                    ? "nav-links-MobileMenu active"
+                    : "link f_flex capitalize"
+                }
+                onClick={() => setMobileMenu(false)}
+              >
+                {!currentUser && (
+                  <div className="saludo">
+                    <span>¡Hola!</span>
+                    <span>Ingresa a tu cuenta</span>
+                  </div>
+                )}
+                <div className="filter">
+                  <h4>Categorías </h4>
                 </div>
-              )}
+                <div className="listCat">
+                  {dataCat.map((value, index) => {
+                    return (
+                      <Link to={`/products/${value.cateName}`} key={index}>
+                        <div
+                          className="box  f_flex"
+                          // onClick={() => filterMarcas(value)}
+                        >
+                          <span>{value.cateName}</span>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </ul>
+
+              <button
+                className="toggle"
+                onClick={() => setMobileMenu(!MobileMenu)}
+              >
+                {MobileMenu ? (
+                  <i className="fas fa-times close home-btn"></i>
+                ) : (
+                  <i className="fas fa-bars open"></i>
+                )}
+                {/* {!MobileMenu && <i className="fas fa-bars open"></i>} */}
+              </button>
             </div>
-          </div> */}
-
-          <div className="navlink">
-            <ul
-              className={
-                MobileMenu
-                  ? "nav-links-MobileMenu active"
-                  : "link f_flex capitalize"
-              }
-              onClick={() => setMobileMenu(false)}
-            >
-              {!currentUser && (
-                <div className="saludo">
-                  <span>¡Hola!</span>
-                  <span>Ingresa a tu cuenta</span>
-                </div>
-              )}
-              <div className="filter">
-                <h4>Categorías </h4>
-              </div>
-              <div className="listCat">
-                {dataCat.map((value, index) => {
-                  return (
-                    <Link to={`/products/${value.cateName}`} key={index}>
-                      <div
-                        className="box  f_flex"
-                        // onClick={() => filterMarcas(value)}
-                      >
-                        <span>{value.cateName}</span>
-                      </div>
-                    </Link>
-                  );
-                })}
-              </div>
-            </ul>
-
-            <button
-              className="toggle"
-              onClick={() => setMobileMenu(!MobileMenu)}
-            >
-              {MobileMenu ? (
-                <i className="fas fa-times close home-btn"></i>
-              ) : (
-                <i className="fas fa-bars open"></i>
-              )}
-              {/* {!MobileMenu && <i className="fas fa-bars open"></i>} */}
-            </button>
-          </div>
+          )}
         </div>
       </div>
     </header>
