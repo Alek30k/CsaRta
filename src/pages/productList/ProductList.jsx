@@ -12,6 +12,7 @@ const ProductList = ({
   catFiltered,
   setCatFiltered,
   productItems,
+  catFilteredModal,
 }) => {
   const [products, setProducts] = useState(shopItems);
   const [isLoading, setIsLoading] = useState(false);
@@ -89,6 +90,7 @@ const ProductList = ({
                   shopItems={shopItems}
                   products={products}
                   catFiltered={catFiltered}
+                  catFilteredModal={catFilteredModal}
                 />
               </div>
             )}

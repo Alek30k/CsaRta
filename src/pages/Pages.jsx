@@ -15,10 +15,15 @@ const Pages = ({
   CartItem,
   shopItems,
   setCatFiltered,
+  setCatFilteredModal,
 }) => {
   return (
     <div>
-      <Navbar setCatFiltered={setCatFiltered} productItems={productItems} />
+      <Navbar
+        setCatFiltered={setCatFiltered}
+        productItems={productItems}
+        setCatFilteredModal={setCatFilteredModal}
+      />
       <Home CartItem={CartItem} />
       <FlashDeals productItems={productItems} addToCart={addToCart} />
       <TopCate />

@@ -64,9 +64,8 @@ function App() {
   });
 
   const [catFiltered, setCatFiltered] = useState([]);
+  const [catFilteredModal, setCatFilteredModal] = useState([]);
   const [catFilteredSearch, setCatFilteredSearch] = useState([]);
-
-  console.log(catFilteredSearch);
 
   const ThemeContext = React.createContext(null);
   const [theme, setTheme] = useState("Dark");
@@ -119,6 +118,8 @@ function App() {
               cambiarTheme={cambiarTheme}
               Container={Container}
               setCatFiltered={setCatFiltered}
+              catFilteredModal={setCatFilteredModal}
+              setCatFilteredModal={setCatFilteredModal}
             />
           ),
         },
@@ -147,6 +148,7 @@ function App() {
               catFiltered={catFiltered}
               productItems={productItems}
               setCatFiltered={setCatFiltered}
+              catFilteredModal={catFilteredModal}
             />
             //     </Container>
             //   </QueryClientProvider>

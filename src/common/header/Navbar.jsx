@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 // import { AuthContext } from "../../context/authContext";
 
-const Navbar = ({ setCatFiltered, productItems }) => {
+const Navbar = ({ setCatFiltered, productItems, setCatFilteredModal }) => {
   // Toogle Menu
   const [MobileMenu, setMobileMenu] = useState(false);
   const [Menu, setMenu] = useState(false);
@@ -37,6 +37,19 @@ const Navbar = ({ setCatFiltered, productItems }) => {
   const { dataCat } = Data;
 
   const { currentUser } = useSelector((state) => state.user);
+
+  // const filterMarcas = (cat) => {
+  //   const filteredProduct = productItems.filter(
+  //     (p) => p.subCategory === cat.name
+  //   );
+  //   setCatFiltered(filteredProduct);
+  // };
+  const filterMarcass = (cat) => {
+    const filteredProduct = productItems.filter(
+      (p) => p.subCategory === cat.name
+    );
+    setCatFiltered(filteredProduct);
+  };
 
   return (
     <header className="header">
@@ -119,7 +132,7 @@ const Navbar = ({ setCatFiltered, productItems }) => {
                       <Link to={`/products/${value.cateName}`} key={index}>
                         <div
                           className="box  f_flex"
-                          // onClick={() => filterMarcas(value)}
+                          onClick={() => filterMarcass(value)}
                         >
                           <span>{value.cateName}</span>
                         </div>
