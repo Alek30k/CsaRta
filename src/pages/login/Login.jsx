@@ -30,10 +30,13 @@ function Login() {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post("http://localhost:8800/api/auth/signin", {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://csarta.onrender.com/api/auth/signin",
+        {
+          email,
+          password,
+        }
+      );
       dispatch(loginSuccess(res.data));
       navigate("/");
     } catch (error) {
