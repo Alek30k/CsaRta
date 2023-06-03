@@ -48,10 +48,13 @@ function Login() {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post("http://localhost:8800/api/auth/signup", {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://csarta.onrender.com/api/auth/signup",
+        {
+          email,
+          password,
+        }
+      );
       dispatch(loginSuccess(res.data));
       navigate("/");
     } catch (error) {
