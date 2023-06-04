@@ -218,6 +218,10 @@ header ul li a:hover {
   transition: 0.5s;
 }
 
+.cartMobile {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .search-box {
     width: 60%;
@@ -838,7 +842,7 @@ header ul li a:hover {
 }
 @media (max-width: 425px) {
   .search-box {
-    width: 50%;
+    width: 60%;
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 0px;
     border-radius: 50px;
@@ -851,7 +855,7 @@ header ul li a:hover {
     display: none;
   }
   .search-box input {
-    width: 50%;
+    width: 67%;
     padding: 1px;
   }
 
@@ -859,7 +863,7 @@ header ul li a:hover {
     font-size: 10px;
   }
   .search .search-box span {
-    width: 40%;
+    width: 24%;
     opacity: 0.5;
     border-left: 2px solid rgba(0, 0, 0, 0.1);
     padding: 2px 2px;
@@ -867,9 +871,12 @@ header ul li a:hover {
     cursor: pointer;
   }
 
-  .search .width {
+  /* .search .width {
     width: 35%;
     position: relative;
+  } */
+  .search .width {
+    display: none;
   }
 
   .search .logo img {
@@ -891,6 +898,10 @@ header ul li a:hover {
     left: 34%;
     width: 100%;
     z-index: 1;
+  }
+
+  .cartMobile {
+    display: flex;
   }
 }
 @media (max-width: 414px) {

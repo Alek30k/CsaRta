@@ -127,6 +127,12 @@ const Search = ({ CartItem, setCatFilteredSearch }) => {
               </Link>
             </div>
           </div>
+          <div className="cartMobile">
+            <Link to="/cart">
+              <i className="fa fa-shopping-bag icon-circle"></i>
+              <span>{CartItem.length === 0 ? "" : CartItem.length}</span>
+            </Link>
+          </div>
         </div>
       </section>
     </>
