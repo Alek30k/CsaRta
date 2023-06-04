@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const Dcard = ({ addToCart }) => {
+const Dcard = () => {
   const settings = {
     dots: true,
     infinite: true,
