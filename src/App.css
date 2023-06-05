@@ -598,6 +598,14 @@ button {
   color: rgb(211, 71, 71);
 }
 
+/* .head .logoHead img {
+  display: none;
+} */
+
+.logoRadius {
+  display: none;
+}
+
 @media (max-width: 1024px) {
   .background {
     padding: 30px 0;
@@ -1709,6 +1717,22 @@ button {
     font-size: 30px;
     cursor: pointer;
     color: rgb(230, 143, 137);
+  }
+  /* .head .logoHead img {
+    display: flex;
+    width: 140px;
+    height: 45px;
+    margin-top: 5px;
+  } */
+
+  .logoRadius {
+    display: flex;
+  }
+
+  .logoRadius img {
+    width: 45px;
+    height: 45px;
+    margin-top: 5px;
   }
 }
 @media (max-width: 390px) {

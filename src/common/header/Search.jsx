@@ -74,7 +74,7 @@ const Search = ({ CartItem, setCatFilteredSearch }) => {
             <i className="fa fa-search"></i>
             <input
               type="text"
-              placeholder="Buscar..."
+              placeholder="¿Qué estás buscando?"
               onKeyPress={(e) => e.key === "Enter" && handleSubmit(e)}
               onChange={(e) => setQuery(e.target.value.toLowerCase())}
             />
@@ -133,6 +133,73 @@ const Search = ({ CartItem, setCatFilteredSearch }) => {
               <span>{CartItem.length === 0 ? "" : CartItem.length}</span>
             </Link>
           </div>
+        </div>
+        <div className="containerSearchMobile c_flex containerMobile">
+          <div className="logo  ">
+            <Link to="/">
+              <img src={logo} alt="" />
+            </Link>
+          </div>
+
+          <div className="icon f_flex width">
+            <i className="fa-solid fa-heart icon-circle heart"></i>
+
+            {currentUser ? (
+              <div>
+                <div onClick={() => setOpenModal(!openModal)}>
+                  <img
+                    src={
+                      currentUser?.img ||
+                      "https://i.ibb.co/MBtjqXQ/no-avatar.gif"
+                    }
+                    className="user"
+                    alt=""
+                  />
+                </div>
+                {openModal && (
+                  <div className="menuAvatar">
+                    <div className="buttonLogout">
+                      <button onClick={handleClick}>Cerrar Sesión</button>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <i
+                className="fa fa-user icon-circle user"
+                onClick={() => setAvatarOpenIngresar(!avatarOpenIngresar)}
+              ></i>
+            )}
+            {avatarOpenIngresar && (
+              <div className="menuAvatar">
+                <div className="buttonLogout">
+                  <Link to="login" style={{ textDecoration: "none" }}>
+                    <span>Iniciar Sesion</span>
+                  </Link>
+                </div>
+              </div>
+            )}
+
+            <div className="cart">
+              <Link to="/cart">
+                <i className="fa fa-shopping-bag icon-circle"></i>
+                <span>{CartItem.length === 0 ? "" : CartItem.length}</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="search-boxMobile f_flex">
+          <i className="fa fa-search"></i>
+          <input
+            type="text"
+            placeholder="¿Qué estás buscando?"
+            onKeyPress={(e) => e.key === "Enter" && handleSubmit(e)}
+            onChange={(e) => setQuery(e.target.value.toLowerCase())}
+          />
+
+          <span onClick={handleSearch}>
+            <i className="fa fa-search lupa"></i>
+          </span>
         </div>
       </section>
     </>
