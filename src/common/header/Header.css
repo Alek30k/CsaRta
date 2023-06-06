@@ -878,7 +878,7 @@ header ul li a:hover {
 
   .open {
     position: absolute;
-    top: 8%;
+    top: 15%;
     left: 30px;
     color: #ff014f;
     display: block;
@@ -1305,16 +1305,5 @@ header ul li a:hover {
     width: 150px;
     height: 50px;
     margin-right: 2px;
-  }
-}
-@media (max-width: 305px) {
-  .open {
-    position: absolute;
-    top: 15%;
-    left: 26px;
-    color: #ff014f;
-    display: block;
-    font-size: 25px;
-    z-index: 999;
   }
 }
