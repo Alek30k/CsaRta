@@ -130,6 +130,9 @@ const ProductListproduct = ({
             </div>
 
             <div className="listCat">
+              <div className="filter">
+                <h4>Categorías </h4>
+              </div>
               {data.map((value, index) => {
                 return (
                   <Link to={`/products/${value.cateName}`} key={index}>

@@ -34,7 +34,6 @@ const ProductList = ({
         <div className="containerMobile containerCat d_flexCat">
           <div className="filterCat ">
             <div className=" f_flex">
-              {/* <h2>{cat.toLocaleUpperCase()}</h2> */}
               <h2>{cat}</h2>
             </div>
             <div className="filter">
