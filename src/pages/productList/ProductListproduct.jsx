@@ -2,20 +2,18 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Data from "../../components/Data";
 import ShopCartCatproduct from "./ShopCartCatproduct";
+import CatgSearch from "./CatgSearch";
 
 const ProductListproduct = ({
-  addToCart,
   shopItems,
   catFilteredSearch,
   setCatFiltered,
-  setCatFilteredSearch,
   productItems,
 }) => {
   const [products, setProducts] = useState(shopItems);
+
   const location = useLocation();
   const cat = location.pathname.split("/")[3];
-
-  const { DataCategory } = Data;
 
   const filterMarcas = (value) => {
     const filteredProduct = productItems.filter(
@@ -78,6 +76,16 @@ const ProductListproduct = ({
     },
   ];
 
+  const allMarcas = [
+    // "Todo",
+    ...new Set(data.map((producto) => producto.cateName)),
+  ];
+
+  const [cateName, setCateName] = useState(allMarcas);
+  const [catOpen, setCatOpen] = useState(true);
+
+  const { DataCategory } = Data;
+
   // const filterCat = (value) => {
   //   const filteredProduct = productItems.filter(
   //     (p) => p.catCat.toLowerCase() === value.cateName
@@ -85,17 +93,42 @@ const ProductListproduct = ({
   //   setCatFiltered(filteredProduct);
   // };
 
+  const [productsSearch, setProductsSearch] = useState(data);
+  // const [openFiltro, setOpenFiltro] = useState(false);
+
   return (
     <div>
-      <section className=" shop backgroundd categoris">
+      <section className=" shop backgroundd categoris catFilterSearch">
+        <div className="filterCatTitle container">
+          <div className=" f_flex">
+            <h2>{cat}</h2>
+          </div>
+        </div>
+        <button className="buttonFiltrar" onClick={() => setCatOpen(!catOpen)}>
+          Filtrar
+        </button>
+        <div
+          className={
+            !catOpen ? " categoryList categorySearch activve" : "categoryy"
+          }
+        >
+          <CatgSearch
+            cateName={cateName}
+            filterMarcas={filterMarcas}
+            shopItems={shopItems}
+            setProductsSearch={setProductsSearch}
+            catOpen={catOpen}
+            setCatOpen={setCatOpen}
+            setCatFiltered={setCatFiltered}
+          />
+        </div>
+
         <div className="containerMobile containerCat d_flexCat">
-          <div className="filterCat ">
+          <div className="filterCat filterMobile">
             <div className=" f_flex">
               <h2>{cat}</h2>
             </div>
-            <div className="filter">
-              <h4>Categorías </h4>
-            </div>
+
             <div className="listCat">
               {data.map((value, index) => {
                 return (
@@ -111,6 +144,7 @@ const ProductListproduct = ({
               })}
             </div>
           </div>
+
           <div className="contentWidthCat container">
             <div className="cateBanner">
               {DataCategory.map((value) => {

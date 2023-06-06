@@ -132,6 +132,7 @@ function App() {
               productItems={productItems}
               setCatFilteredSearch={setCatFilteredSearch}
               setCatFiltered={setCatFiltered}
+              shopItems={shopItems}
             />
           ),
         },
