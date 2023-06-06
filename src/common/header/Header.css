@@ -1307,3 +1307,14 @@ header ul li a:hover {
     margin-right: 2px;
   }
 }
+@media (max-width: 305px) {
+  .open {
+    position: absolute;
+    top: 15%;
+    left: 26px;
+    color: #ff014f;
+    display: block;
+    font-size: 25px;
+    z-index: 999;
+  }
+}
