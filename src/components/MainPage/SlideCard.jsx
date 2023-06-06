@@ -3,6 +3,7 @@ import Sdata from "./Sdata";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Sdata2 from "./Sdata2";
 
 const SlideCard = () => {
   const settings = {
@@ -14,7 +15,7 @@ const SlideCard = () => {
     arrows: true,
     responsive: [
       {
-        breakpoint: 500,
+        breakpoint: 300,
         settings: { dots: false, arrows: false },
       },
     ],
@@ -25,8 +26,22 @@ const SlideCard = () => {
   };
   return (
     <>
-      <Slider {...settings}>
+      <Slider {...settings} className="banerOne">
         {Sdata.map((value, index) => {
+          return (
+            <div key={index}>
+              <div className="box d_flex topSLider flexi ">
+                <div className="rightSlider">
+                  <img className="rightImg" src={value.cover} alt="" />
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </Slider>
+
+      <Slider {...settings} className="banerTwo">
+        {Sdata2.map((value, index) => {
           return (
             <div key={index}>
               <div className="box d_flex topSLider flexi ">
