@@ -40,11 +40,11 @@ const SlideCard = () => {
         })}
       </Slider>
 
-      <Slider {...settings} className="banerTwo">
+      <Slider {...settings} className="banerTwo container">
         {Sdata2.map((value, index) => {
           return (
             <div key={index}>
-              <div className="box d_flex topSLider flexi ">
+              <div className="box d_flex topSLider flexi">
                 <div className="rightSlider">
                   <img className="rightImg" src={value.cover} alt="" />
                 </div>
