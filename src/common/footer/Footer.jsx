@@ -58,7 +58,7 @@ const Footer = () => {
                 <img src={insta} alt="" />
               </a>
               <a
-                href="https://www.instagram.com/"
+                href="https://www.twitter.com/"
                 target="_blank"
                 rel="noreferrer"
               >
