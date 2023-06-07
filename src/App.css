@@ -1668,6 +1668,11 @@ button {
     height: 300px;
   }
 
+  .containerB {
+    max-width: 100%;
+    margin: auto;
+  }
+
   .homeSlide .rightSlider img {
     object-fit: cover;
   }

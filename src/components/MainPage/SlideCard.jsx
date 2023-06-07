@@ -40,7 +40,7 @@ const SlideCard = () => {
         })}
       </Slider>
 
-      <Slider {...settings} className="banerTwo container">
+      <Slider {...settings} className="banerTwo containerB">
         {Sdata2.map((value, index) => {
           return (
             <div key={index}>
