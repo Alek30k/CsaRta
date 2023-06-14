@@ -15,6 +15,25 @@ const Register = () => {
   const navigate = useNavigate();
   const [err, setErr] = useState(null);
 
+  // const handleSignup = async (e) => {
+  //   e.preventDefault();
+  //   dispatch(loginStart());
+  //   try {
+  //     const res = await axios.post(
+  //       "https://csarta.onrender.com/api/auth/signup",
+  //       {
+  //         name,
+  //         email,
+  //         password,
+  //       }
+  //     );
+  //     dispatch(loginSuccess(res.data));
+  //     navigate("/");
+  //   } catch (error) {
+  //     dispatch(loginFailure());
+  //   }
+  // };
+
   const handleSignup = async (e) => {
     e.preventDefault();
     dispatch(loginStart());
@@ -30,7 +49,6 @@ const Register = () => {
       dispatch(loginSuccess(res.data));
       navigate("/");
     } catch (error) {
-      console.log("erroooooor");
       dispatch(loginFailure());
     }
   };
