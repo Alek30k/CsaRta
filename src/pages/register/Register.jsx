@@ -30,6 +30,7 @@ const Register = () => {
       dispatch(loginSuccess(res.data));
       navigate("/");
     } catch (error) {
+      console.log("erroooooor");
       dispatch(loginFailure());
     }
   };
