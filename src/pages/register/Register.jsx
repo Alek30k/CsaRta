@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 import axios from "axios";
 import newRequest from "../../utils/newRequest";
+import upload from "../../utils/upload";
 // import upload from "../../utils/upload";
 // import { useDispatch } from "react-redux";
 // import { loginFailure, loginStart, loginSuccess } from "../../redux/userSlice";
@@ -11,7 +12,7 @@ const Register = () => {
   // const [name, setName] = useState("");
   // const [email, setEmail] = useState("");
   // const [password, setPassword] = useState("");
-
+  const [file, setFile] = useState(null);
   const [user, setUser] = useState({
     username: "",
     email: "",
@@ -31,34 +32,17 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const url = await upload(file);
     try {
       await newRequest.post("/auth/signup", {
         ...user,
+        img: url,
       });
       navigate("/login");
     } catch (err) {
       console.log(err);
     }
   };
-
-  // const handleSignup = async (e) => {
-  //   e.preventDefault();
-  //   dispatch(loginStart());
-  //   try {
-  //     const res = await axios.post(
-  //       "https://csarta.onrender.com/api/auth/signup",
-  //       {
-  //         name,
-  //         email,
-  //         password,
-  //       }
-  //     );
-  //     dispatch(loginSuccess(res.data));
-  //     navigate("/");
-  //   } catch (error) {
-  //     dispatch(loginFailure());
-  //   }
-  // };
 
   return (
     <div className="register">
@@ -84,6 +68,8 @@ const Register = () => {
               name="password"
               onChange={handleChange}
             />
+            <label htmlFor="">Foto de perfil </label>
+            <input type="file" onChange={(e) => setFile(e.target.files[0])} />
 
             {err && err}
             <button className="button" type="submit">
