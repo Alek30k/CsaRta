@@ -2,9 +2,10 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
 import axios from "axios";
+import newRequest from "../../utils/newRequest";
 // import upload from "../../utils/upload";
-import { useDispatch } from "react-redux";
-import { loginFailure, loginStart, loginSuccess } from "../../redux/userSlice";
+// import { useDispatch } from "react-redux";
+// import { loginFailure, loginStart, loginSuccess } from "../../redux/userSlice";
 
 const Register = () => {
   // const [name, setName] = useState("");
@@ -17,7 +18,7 @@ const Register = () => {
     password: "",
   });
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const navigate = useNavigate();
   const [err, setErr] = useState(null);
 
@@ -31,12 +32,9 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post(
-        "https://csarta.onrender.com/api/auth/signup",
-        {
-          ...user,
-        }
-      );
+      await newRequest.post("/auth/signup", {
+        ...user,
+      });
       navigate("/login");
     } catch (err) {
       console.log(err);
