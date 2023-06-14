@@ -13,7 +13,7 @@ const Register = () => {
   // const [password, setPassword] = useState("");
 
   const [user, setUser] = useState({
-    name: "",
+    username: "",
     email: "",
     password: "",
   });
@@ -72,7 +72,7 @@ const Register = () => {
             <input
               type="text"
               placeholder="Nombre"
-              name="name"
+              name="username"
               onChange={handleChange}
             />
             <input
