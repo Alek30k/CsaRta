@@ -30,16 +30,13 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("submiteaste");
 
     try {
       await newRequest.post("/auth/signup", {
         ...user,
       });
-      console.log("submiteaste  éxitos");
       navigate("/login");
     } catch (err) {
-      console.log("submiteaste  error");
       console.log(err);
     }
   };
