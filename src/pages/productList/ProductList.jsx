@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 // import Search from "../../common/header/Search";
 // import Footer from "../../common/footer/Footer";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import ShopCartCat from "./ShopCartCat";
 import Data from "../../components/Data";
-// import flecha from "./flecha-correcta.png";
+import proximo from "./proximo.png";
 
 const ProductList = ({
   addToCart,
@@ -19,6 +19,9 @@ const ProductList = ({
   const location = useLocation();
   const cat = location.pathname.split("/")[2];
 
+  // const [productSelect, setProductSelect] = useState("");
+
+  // console.log(productSelect);
   const { DataCategory } = Data;
 
   const filterMarcas = (cat) => {
@@ -27,6 +30,11 @@ const ProductList = ({
     );
     setCatFiltered(filteredProduct);
   };
+
+  // const filterRuta = (cat) => {
+  //   console.log(cat);
+  //   setProductSelect(cat[0].name);
+  // };
 
   return (
     <div>
@@ -46,15 +54,17 @@ const ProductList = ({
                     <div>
                       {value.subCat.map((cat) => (
                         // <Link to={`/products/${cat.name}`}>
+
                         <div
-                          className="subCat"
                           key={cat.id}
+                          className="subCat"
                           onClick={() => filterMarcas(cat)}
                         >
                           {/* <input type="checkbox" /> */}
                           <label>{cat.name}</label>
                           {/* <img src={flecha} alt="" /> */}
                         </div>
+
                         // </Link>
                       ))}
                     </div>
@@ -65,7 +75,7 @@ const ProductList = ({
           </div>
           <div className="contentWidthCat container">
             {isLoading ? (
-              "Loading..."
+              "Cargando..."
             ) : (
               <div className="cateBanner">
                 {DataCategory.map((value) => {

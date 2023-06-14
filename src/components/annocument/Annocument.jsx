@@ -61,7 +61,12 @@ const Annocument = () => {
         </div>
         <div className="galeriaNew container">
           {Bdata.map((val, index) => (
-            <img src={val.cover} alt="" onClick={() => handleOpen(index)} />
+            <img
+              src={val.cover}
+              alt=""
+              onClick={() => handleOpen(index)}
+              key={index}
+            />
           ))}
         </div>
         {open && (

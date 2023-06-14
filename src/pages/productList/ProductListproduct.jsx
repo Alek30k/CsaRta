@@ -130,9 +130,9 @@ const ProductListproduct = ({
             </div>
 
             <div className="listCat">
-              <div className="filter">
-                <h4>Categorías </h4>
-              </div>
+              {/* <div className="filter">
+                <h4>Sub-Categorías</h4>
+              </div> */}
               {data.map((value, index) => {
                 return (
                   <Link to={`/products/${value.cateName}`} key={index}>
@@ -162,7 +162,20 @@ const ProductListproduct = ({
             </div>
 
             {catFilteredSearch == 0 ? (
-              "No existen el producto que buscas"
+              <div className="container noFound">
+                <div className="left">OOPS!</div>
+                <div className="right">
+                  <h2>"No hay productos que coincidan con tu búsqueda."</h2>
+                  <p>Te recomendamos que:</p>
+
+                  <ul>
+                    <li>• Revises la ortografía.</li>
+                    <li>• Intentes utilizar una sola palabra.</li>
+                    <li>• Pruebes con algún sinónimo.</li>
+                    <li>• Hagas una búsqueda más genérica.</li>
+                  </ul>
+                </div>
+              </div>
             ) : (
               <div className="product-content grid1">
                 <ShopCartCatproduct catFilteredSearch={catFilteredSearch} />
