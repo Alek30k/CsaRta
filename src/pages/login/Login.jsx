@@ -44,23 +44,23 @@ function Login() {
     }
   };
 
-  const handleSignup = async (e) => {
-    e.preventDefault();
-    dispatch(loginStart());
-    try {
-      const res = await axios.post(
-        "https://csarta.onrender.com/api/auth/signup",
-        {
-          email,
-          password,
-        }
-      );
-      dispatch(loginSuccess(res.data));
-      navigate("/");
-    } catch (error) {
-      dispatch(loginFailure());
-    }
-  };
+  // const handleSignup = async (e) => {
+  //   e.preventDefault();
+  //   dispatch(loginStart());
+  //   try {
+  //     const res = await axios.post(
+  //       "https://csarta.onrender.com/api/auth/signup",
+  //       {
+  //         email,
+  //         password,
+  //       }
+  //     );
+  //     dispatch(loginSuccess(res.data));
+  //     navigate("/");
+  //   } catch (error) {
+  //     dispatch(loginFailure());
+  //   }
+  // };
 
   // const handleLogin = async (e) => {
   //   e.preventDefault();

@@ -43,19 +43,19 @@ const Register = () => {
             <input
               type="text"
               placeholder="Nombre"
-              name="name"
+              // name="name"
               onChange={(e) => setName(e.target.value)}
             />
             <input
               type="email"
               placeholder="Email"
-              name="email"
+              // name="email"
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
               type="password"
               placeholder="Contraseña"
-              name="password"
+              // name="password"
               onChange={(e) => setPassword(e.target.value)}
             />
             {/* <input
@@ -72,7 +72,7 @@ const Register = () => {
               onChange={(e) => setFile(e.target.files[0])}
             /> */}
             {err && err}
-            <button type="submit" className="button" onClick={handleSignup}>
+            <button className="button" onClick={handleSignup}>
               Registrarse
             </button>
             <span>¿Tiene usted una cuenta?</span>
