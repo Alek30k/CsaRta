@@ -148,7 +148,7 @@ const ProductListproduct = ({
             </div>
           </div>
 
-          <div className="contentWidthCat ">
+          <div className="contentWidthCat container">
             <div className="cateBanner">
               {DataCategory.map((value) => {
                 return (
