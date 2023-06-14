@@ -455,7 +455,6 @@ header ul li a:hover {
   }
   .d_flexCat {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
     gap: 0px;
   }

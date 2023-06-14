@@ -5,6 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import ShopCartCat from "./ShopCartCat";
 import Data from "../../components/Data";
 import proximo from "./proximo.png";
+import CatgFilter from "./CatgFilter";
 
 const ProductList = ({
   addToCart,
@@ -18,6 +19,7 @@ const ProductList = ({
   const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
   const cat = location.pathname.split("/")[2];
+  const [catOpen, setCatOpen] = useState(true);
 
   // const [productSelect, setProductSelect] = useState("");
 
@@ -89,11 +91,30 @@ const ProductList = ({
                 })}
               </div>
             )}
+            <button
+              className="buttonFiltrar"
+              onClick={() => setCatOpen(!catOpen)}
+            >
+              Filtrar
+            </button>
+            <div
+              className={
+                !catOpen ? " categoryList categorySearch activve" : "categoryy"
+              }
+            >
+              <CatgFilter
+                filterMarcas={filterMarcas}
+                shopItems={shopItems}
+                catOpen={catOpen}
+                setCatOpen={setCatOpen}
+                setCatFiltered={setCatFiltered}
+              />
+            </div>
 
             {catFiltered == 0 ? (
               "No hay productos con la SubCategoría seleccionada"
             ) : (
-              <div className="product-content grid1">
+              <div className="product-content grid1 shopCartCatFilter">
                 <ShopCartCat
                   addToCart={addToCart}
                   shopItems={shopItems}
