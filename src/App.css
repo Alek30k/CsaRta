@@ -473,7 +473,6 @@ button {
   flex-direction: column;
   gap: 20px;
   height: 100vh;
-  justify-content: space-between;
 }
 
 .contentWidthCat .grid1 {
