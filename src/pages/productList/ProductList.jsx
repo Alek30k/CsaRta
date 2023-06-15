@@ -122,7 +122,7 @@ const ProductList = ({
               </div>
             ) : (
               <div className="product-content grid1 shopCartCatFilter">
-                <ShopCartCatS
+                <ShopCartCat
                   addToCart={addToCart}
                   shopItems={shopItems}
                   products={products}
