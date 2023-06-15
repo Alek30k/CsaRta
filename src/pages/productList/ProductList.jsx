@@ -112,10 +112,17 @@ const ProductList = ({
             </div>
 
             {catFiltered == 0 ? (
-              "No hay productos con la SubCategoría seleccionada"
+              <div className="container noFound">
+                <div className="left">OOPS!</div>
+                <div className="right">
+                  <h2>
+                    "No hay productos que coincidan con la opción seleccionada"
+                  </h2>
+                </div>
+              </div>
             ) : (
               <div className="product-content grid1 shopCartCatFilter">
-                <ShopCartCat
+                <ShopCartCatS
                   addToCart={addToCart}
                   shopItems={shopItems}
                   products={products}
