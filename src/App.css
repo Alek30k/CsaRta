@@ -472,13 +472,16 @@ button {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  height: 100vh;
 }
 
 .contentWidthCat .grid1 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
+/* .cateBanner {
+  position: absolute;
+  top: 0;
+} */
 
 .cateBanner img {
   max-height: 200px;
