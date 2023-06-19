@@ -12,10 +12,10 @@ const SlideCard = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    arrows: true,
+    arrows: false,
     responsive: [
       {
-        breakpoint: 300,
+        breakpoint: 500,
         settings: { dots: false, arrows: false },
       },
     ],
