@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
 import "./style.css";
-// import newRequest from "../../utils/newRequest";
 import { Link, useNavigate } from "react-router-dom";
-import { AuthContext } from "../../context/authContext";
+// import { AuthContext } from "../../context/authContext";
 import { useDispatch } from "react-redux";
-import { loginFailure, loginStart, loginSuccess } from "../../redux/userSlice";
+// import { loginFailure, loginStart, loginSuccess } from "../../redux/userSlice";
 import axios from "axios";
+// import newRequest from "../../utils/newRequest";
 
 function Login() {
   // const [inputs, setInputs] = useState({
@@ -13,7 +13,8 @@ function Login() {
   //   password: "",
   // });
 
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const [err, setErr] = useState(null);
@@ -26,71 +27,57 @@ function Login() {
 
   const dispatch = useDispatch();
 
-  const handleLogin = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Click en login");
-    dispatch(loginStart());
     try {
-      const res = await axios.post(
-        "https://csarta.onrender.com/api/auth/signin",
-        {
-          email,
-          password,
-        }
-      );
-      console.log("Entro");
-      dispatch(loginSuccess(res.data));
+      const res = await axios.post("/auth/login", { username, password });
+      localStorage.setItem("currentUser", JSON.stringify(res.data));
       navigate("/");
-    } catch (error) {
-      dispatch(loginFailure());
-      console.log("No entro");
+    } catch (err) {
+      // setError(err.response.data);
+      console.log(err);
     }
   };
 
-  // const handleSignup = async (e) => {
+  // const handleLogin = async (e) => {
   //   e.preventDefault();
+  //   console.log("Click en login");
   //   dispatch(loginStart());
   //   try {
   //     const res = await axios.post(
-  //       "https://csarta.onrender.com/api/auth/signup",
+  //       "https://csarta.onrender.com/api/auth/signin",
   //       {
   //         email,
   //         password,
   //       }
   //     );
+  //     console.log("Entro");
   //     dispatch(loginSuccess(res.data));
   //     navigate("/");
   //   } catch (error) {
   //     dispatch(loginFailure());
+  //     console.log("No entro");
   //   }
-  // };
-
-  // const handleLogin = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     await login(inputs);
-  //     navigate("/");
-  //   } catch (err) {
-  //     setErr(err.response.data);
-  //   }
-  // };
-
-  // const handleRegister = () => {
-  //   navigate("/register");
   // };
 
   return (
     <div className="login">
       <div className="cardlogin">
-        <form>
+        <form onSubmit={handleSubmit}>
           <h1>Iniciar sesión</h1>
           <label htmlFor="">Nombre de usuario</label>
-          <input
+          {/* <input
             name="email"
             type="email"
             placeholder="ej. nombre@gmail.com"
             className="input"
             onChange={(e) => setEmail(e.target.value)}
+          /> */}
+          <input
+            name="username"
+            type="text"
+            placeholder="johndoe"
+            onChange={(e) => setUsername(e.target.value)}
           />
 
           <label htmlFor="">Contraseña</label>
@@ -101,10 +88,10 @@ function Login() {
             className="input"
             onChange={(e) => setPassword(e.target.value)}
           />
-          {err && err}
-          <button onClick={handleLogin} className="button">
+          <button type="submit" className="button">
             Iniciar Sesión
           </button>
+          {err && err}
           <Link to="/register">
             <div className="registrate">Registrate</div>
           </Link>
