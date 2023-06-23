@@ -24,16 +24,10 @@ const Product = ({ productItems, CartItem }) => {
     setSelectedImage(!selectedImage);
   };
 
-  // const imgUrl = `.${selectedImg}`
-
   const countTotal = productItems[slideNumber - 1].price * quantity;
 
   return (
     <>
-      {/* <Head cambiarTheme={cambiarTheme} /> */}
-      {/* <div className="searchProduct">
-        <Search CartItem={CartItem} />
-      </div> */}
       <div className="containerr container containerProduct">
         <div className="leftt">
           <div className="sliderWrapper container">

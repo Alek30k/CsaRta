@@ -14,8 +14,8 @@ function Login() {
   //   password: "",
   // });
 
-  // const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  // const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const [err, setErr] = useState(null);
@@ -31,7 +31,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await newRequest.post("/auth/login", { username, password });
+      const res = await newRequest.post("/auth/login", { email, password });
       localStorage.setItem("currentUser", JSON.stringify(res.data));
       navigate("/");
     } catch (err) {
@@ -75,11 +75,11 @@ function Login() {
             onChange={(e) => setEmail(e.target.value)}
           /> */}
           <input
-            name="username"
-            type="text"
+            name="email"
+            type="email"
             className="input"
-            placeholder="johndoe"
-            onChange={(e) => setUsername(e.target.value)}
+            placeholder="ej. nombre@gmail.com"
+            onChange={(e) => setEmail(e.target.value)}
           />
 
           <label htmlFor="">Contraseña</label>

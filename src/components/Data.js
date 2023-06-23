@@ -5,6 +5,7 @@ const Data = {
       discount: 50,
       cover:
         "https://github.com/Alek30k/CsaRta/assets/101005998/c6e9ceb0-e4b4-447d-b2b1-900364ac1039",
+
       cover1: "./images/flash/aaaa.png",
       cover2: "./images/flash/dulce2.png",
       name: "Productos libres de gluten",
