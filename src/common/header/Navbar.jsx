@@ -36,7 +36,8 @@ const Navbar = ({ setCatFiltered, productItems }) => {
 
   const { dataCat } = Data;
 
-  const { currentUser } = useSelector((state) => state.user);
+  // const { currentUser } = useSelector((state) => state.user);
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
   // const filterMarcas = (cat) => {
   //   const filteredProduct = productItems.filter(
