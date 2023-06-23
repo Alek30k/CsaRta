@@ -34,7 +34,7 @@ const Register = () => {
 
     const url = await upload(file);
     try {
-      await newRequest.post("/auth/signup", {
+      await newRequest.post("/auth/register", {
         ...user,
         img: url,
       });
