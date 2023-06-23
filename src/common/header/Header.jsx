@@ -4,11 +4,15 @@ import "./Header.css";
 import Search from "./Search";
 // import Navbar from "./Navbar";
 
-const Header = ({ CartItem, setCatFilteredSearch }) => {
+const Header = ({ CartItem, setCatFilteredSearch, setCatFiltered }) => {
   return (
     <div className="containerHeader">
       {/* <Head cambiarTheme={cambiarTheme} /> */}
-      <Search CartItem={CartItem} setCatFilteredSearch={setCatFilteredSearch} />
+      <Search
+        CartItem={CartItem}
+        setCatFilteredSearch={setCatFilteredSearch}
+        setCatFiltered={setCatFiltered}
+      />
       {/* <Navbar setCatFiltered={setCatFiltered} productItems={productItems} /> */}
     </div>
   );

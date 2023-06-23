@@ -1103,7 +1103,7 @@ header ul li a:hover {
   }
   .open {
     position: absolute;
-    top: 12%;
+    top: 8%;
     left: 26px;
     color: #ff014f;
     display: block;
@@ -1169,8 +1169,8 @@ header ul li a:hover {
 
   .open {
     position: absolute;
-    top: 11%;
-    left: 26px;
+    top: 12%;
+    left: 14px;
     color: #ff014f;
     display: block;
     font-size: 25px;
@@ -1194,7 +1194,7 @@ header ul li a:hover {
 
   .open {
     position: absolute;
-    top: 11%;
+    top: 13%;
     left: 26px;
     color: #ff014f;
     display: block;
