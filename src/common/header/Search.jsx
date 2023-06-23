@@ -5,6 +5,9 @@ import { Link, useNavigate } from "react-router-dom";
 import Data from "../../components/Data";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/userSlice";
+import axios from "axios";
+import newRequest from "../../utils/newRequest";
+// import newRequest from "../../utils/newRequest";
 
 const Search = ({ CartItem, setCatFilteredSearch }) => {
   const [avatarOpen, setAvatarOpen] = useState(false);
@@ -30,10 +33,20 @@ const Search = ({ CartItem, setCatFilteredSearch }) => {
 
   const dispatch = useDispatch();
 
-  const handleClick = () => {
-    dispatch(logout());
-    setOpenModal(!openModal);
-    navigate("/");
+  // const handleClick = () => {
+  //   dispatch(logout());
+  //   setOpenModal(!openModal);
+  //   navigate("/");
+  // };
+
+  const handleLogout = async () => {
+    try {
+      await newRequest.post("/auth/logout");
+      localStorage.setItem("currentUser", null);
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleSearch = () => {
@@ -58,7 +71,8 @@ const Search = ({ CartItem, setCatFilteredSearch }) => {
     }
   }
 
-  const { currentUser } = useSelector((state) => state.user);
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  // const { currentUser } = useSelector((state) => state.user);
 
   return (
     <>
@@ -99,7 +113,7 @@ const Search = ({ CartItem, setCatFilteredSearch }) => {
                 {openModal && (
                   <div className="menuAvatar">
                     <div className="buttonLogout">
-                      <button onClick={handleClick}>Cerrar Sesión</button>
+                      <button onClick={handleLogout}>Cerrar Sesión</button>
                     </div>
                   </div>
                 )}
@@ -159,7 +173,7 @@ const Search = ({ CartItem, setCatFilteredSearch }) => {
                 {openModal && (
                   <div className="menuAvatar">
                     <div className="buttonLogout">
-                      <button onClick={handleClick}>Cerrar Sesión</button>
+                      <button onClick={handleLogout}>Cerrar Sesión</button>
                     </div>
                   </div>
                 )}

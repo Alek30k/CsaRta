@@ -60,6 +60,5 @@
   },
   "engines": {
     "node": "16.x"
-  },
-  "proxy": "https://csarta.onrender.com/api/"
+  }
 }
