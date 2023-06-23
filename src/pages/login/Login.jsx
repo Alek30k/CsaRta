@@ -28,6 +28,7 @@ function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    console.log("Click en login");
     dispatch(loginStart());
     try {
       const res = await axios.post(
@@ -37,10 +38,12 @@ function Login() {
           password,
         }
       );
+      console.log("Entro");
       dispatch(loginSuccess(res.data));
       navigate("/");
     } catch (error) {
       dispatch(loginFailure());
+      console.log("No entro");
     }
   };
 

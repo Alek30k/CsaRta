@@ -36,4 +36,5 @@ const Sdata2 = [
     cover: "./images/SlideCard/ban60.jpg",
   },
 ];
+
 export default Sdata2;
