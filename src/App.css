@@ -777,7 +777,7 @@ button {
   height: 360px;
   margin-right: auto;
   margin-left: auto;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .bg-white {
