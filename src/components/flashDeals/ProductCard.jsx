@@ -54,6 +54,8 @@ const Product = ({ productItems, CartItem }) => {
       : "kjahdskjah"
   }`;
 
+  const imgUrl = "./images/flash/aaaa.png";
+
   return (
     <>
       <main className="bg-secundary">
@@ -62,26 +64,23 @@ const Product = ({ productItems, CartItem }) => {
             <div className="product-s bg-white grid">
               <div className="product-s-img">
                 <div className="img-preview py-5">
-                  <div className="img-preview-zoom">
+                  <div className="img-preview-zoom ">
                     <ReactImageMagnify
                       {...{
                         smallImage: {
                           alt: "Wristwatch by Ted Baker London",
                           isFluidWidth: true,
                           src: imageUrl,
-                          sizes:
-                            "(min-width: 1000px) 33.5vw, (min-width: 415px) 50vw, 100vw",
+                          width: 877,
+                          height: 870,
                         },
                         largeImage: {
-                          src: `.${
-                            productItems[slideNumber - 1]
-                              ? productItems[slideNumber - 1].img[previewImg]
-                                ? productItems[slideNumber - 1].img[previewImg]
-                                : "asdads"
-                              : "kjahdskjah"
-                          }`,
+                          src: imageUrl,
                           width: 800,
-                          height: 800,
+                          height: 600,
+                        },
+                        enlargedImageContainerStyle: {
+                          zIndex: "1",
                         },
                         // isHintEnabled: true,
                       }}
