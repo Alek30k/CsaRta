@@ -82,6 +82,7 @@ const Product = ({ productItems, CartItem }) => {
                         enlargedImageContainerStyle: {
                           zIndex: "1",
                         },
+
                         // isHintEnabled: true,
                       }}
                     />

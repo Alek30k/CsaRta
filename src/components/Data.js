@@ -347,8 +347,6 @@ const Data = {
         "https://i.dummyjson.com/data/products/18/1.jpg",
         "https://i.dummyjson.com/data/products/18/2.jpg",
         "https://i.dummyjson.com/data/products/18/3.jpg",
-        "https://i.dummyjson.com/data/products/18/4.jpg",
-        "https://i.dummyjson.com/data/products/18/thumbn,ail.jpg",
       ],
       price: "80",
       // cover1: "./images/shops/apple8.jpeg",
