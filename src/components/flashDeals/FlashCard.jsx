@@ -83,7 +83,7 @@ const FlashCard = ({ productItems, addToCart }) => {
             <div key={i}>
               <div className="box">
                 <div className="product mtop productshop">
-                  <div className="img">
+                  <div className="imgFlash">
                     <span className="discount">
                       {productItems.discount}% Off
                     </span>
