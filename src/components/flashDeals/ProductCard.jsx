@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import ReactImageMagnify from "react-image-magnify";
 import { calculateDiscountedPrice, formatPrice } from "../../utils/helpers";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-import { AuthContext } from "../../context/authContext";
+// import { AuthContext } from "../../context/authContext";
 
 const Product = ({ productItems, CartItem }) => {
   const location = useLocation();
@@ -46,6 +46,14 @@ const Product = ({ productItems, CartItem }) => {
     });
   };
 
+  const imageUrl = `${
+    productItems[slideNumber - 1]
+      ? productItems[slideNumber - 1].img[previewImg]
+        ? productItems[slideNumber - 1].img[previewImg]
+        : "asdads"
+      : "kjahdskjah"
+  }`;
+
   return (
     <>
       <main className="bg-secundary">
@@ -55,7 +63,31 @@ const Product = ({ productItems, CartItem }) => {
               <div className="product-s-img">
                 <div className="img-preview py-5">
                   <div className="img-preview-zoom">
-                    <img
+                    <ReactImageMagnify
+                      {...{
+                        smallImage: {
+                          alt: "Wristwatch by Ted Baker London",
+                          isFluidWidth: true,
+                          src: imageUrl,
+                          sizes:
+                            "(min-width: 1000px) 33.5vw, (min-width: 415px) 50vw, 100vw",
+                        },
+                        largeImage: {
+                          src: `.${
+                            productItems[slideNumber - 1]
+                              ? productItems[slideNumber - 1].img[previewImg]
+                                ? productItems[slideNumber - 1].img[previewImg]
+                                : "asdads"
+                              : "kjahdskjah"
+                          }`,
+                          width: 800,
+                          height: 800,
+                        },
+                        // isHintEnabled: true,
+                      }}
+                    />
+
+                    {/* <img
                       src={
                         productItems[slideNumber - 1]
                           ? productItems[slideNumber - 1].img[previewImg]
@@ -66,7 +98,7 @@ const Product = ({ productItems, CartItem }) => {
                       alt=""
                       className="img-cover"
                       draggable={false}
-                    />
+                    /> */}
                   </div>
                   <div className="img-preview-collection flex justify-center">
                     {productItems[slideNumber - 1].img?.map((image, idx) => {
