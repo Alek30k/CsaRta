@@ -6,25 +6,14 @@ import { useDispatch } from "react-redux";
 // import { loginFailure, loginStart, loginSuccess } from "../../redux/userSlice";
 import axios from "axios";
 import newRequest from "../../utils/newRequest";
-// import newRequest from "../../utils/newRequest";
 
 function Login() {
-  // const [inputs, setInputs] = useState({
-  //   email: "",
-  //   password: "",
-  // });
-
   const [email, setEmail] = useState("");
-  // const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const [err, setErr] = useState(null);
 
   const navigate = useNavigate();
-
-  // const handleChange = (e) => {
-  //   setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  // };
 
   const dispatch = useDispatch();
 
@@ -39,27 +28,6 @@ function Login() {
       console.log(err);
     }
   };
-
-  // const handleLogin = async (e) => {
-  //   e.preventDefault();
-  //   console.log("Click en login");
-  //   dispatch(loginStart());
-  //   try {
-  //     const res = await axios.post(
-  //       "https://csarta.onrender.com/api/auth/signin",
-  //       {
-  //         email,
-  //         password,
-  //       }
-  //     );
-  //     console.log("Entro");
-  //     dispatch(loginSuccess(res.data));
-  //     navigate("/");
-  //   } catch (error) {
-  //     dispatch(loginFailure());
-  //     console.log("No entro");
-  //   }
-  // };
 
   return (
     <div className="login">

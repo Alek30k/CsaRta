@@ -71,13 +71,11 @@ const Product = ({ productItems, CartItem }) => {
                           alt: "Wristwatch by Ted Baker London",
                           isFluidWidth: true,
                           src: imageUrl,
-                          width: 877,
-                          height: 870,
                         },
                         largeImage: {
                           src: imageUrl,
-                          width: 800,
-                          height: 600,
+                          width: 1000,
+                          height: 1000,
                         },
                         enlargedImageContainerStyle: {
                           zIndex: "1",
