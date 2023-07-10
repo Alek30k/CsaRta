@@ -790,7 +790,7 @@ const Data = {
       name: "Heladera WHIRLPOOL",
       stock: 200,
       catCat: "Electro",
-      subCategory: "Heladeras y Freezzesr",
+      subCategory: "Heladeras y Frezzers",
       img: [
         "https://github.com/Alek30k/CsaRta/assets/101005998/c41bf0c0-faf6-4634-b449-5468af61c118",
         "https://i.dummyjson.com/data/products/30/1.jpg",
@@ -880,7 +880,7 @@ const Data = {
         },
         {
           id: 6,
-          name: "Heladeras y Frezzesr",
+          name: "Heladeras y Frezzers",
         },
         {
           id: 7,
