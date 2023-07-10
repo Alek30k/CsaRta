@@ -105,7 +105,7 @@ const Dcard = () => {
               />
               <Link to={`/product/${Ddata[slideNumber].id}`}>
                 <img
-                  src={`.${Ddata[slideNumber].cover}`}
+                  src={`${Ddata[slideNumber].cover}`}
                   alt=""
                   className="sliderImg"
                 />

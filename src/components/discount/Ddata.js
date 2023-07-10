@@ -1,12 +1,12 @@
 const Ddata = [
   {
-    id: 38,
+    id: 7,
     cover:
-      "https://github.com/Alek30k/CsaRta/assets/101005998/02b81a9b-3fb8-4f7c-a304-84fc1ea55d0d",
+      "https://github.com/Alek30k/CsaRta/assets/101005998/ab190601-50ad-4c5e-b276-a38fc77fb6fd",
     name: "Monitor HP 19.5”",
     price: "250",
     img: [
-      "https://github.com/Alek30k/CsaRta/assets/101005998/02b81a9b-3fb8-4f7c-a304-84fc1ea55d0d",
+      "https://github.com/Alek30k/CsaRta/assets/101005998/ab190601-50ad-4c5e-b276-a38fc77fb6fd",
       "https://i.dummyjson.com/data/products/30/1.jpg",
       "https://i.dummyjson.com/data/products/30/2.jpg",
       "https://i.dummyjson.com/data/products/30/3.jpg",
@@ -16,12 +16,12 @@ const Ddata = [
     desc: "Sé el primero en valorar “YERBA ORGANICA ROAPIPO SUAVE X 500 G”",
   },
   {
-    id: 39,
+    id: 8,
     cover:
-      "https://github.com/Alek30k/CsaRta/assets/101005998/cc5b29d5-97ec-4333-8000-9d2dbce36538",
+      "https://github.com/Alek30k/CsaRta/assets/101005998/4d8ba837-1ef8-440e-88e7-2b5a2d2c530e",
     name: "Smart TV 32”",
     img: [
-      "https://github.com/Alek30k/CsaRta/assets/101005998/cc5b29d5-97ec-4333-8000-9d2dbce36538",
+      "https://github.com/Alek30k/CsaRta/assets/101005998/4d8ba837-1ef8-440e-88e7-2b5a2d2c530e",
       "https://i.dummyjson.com/data/products/30/1.jpg",
       "https://i.dummyjson.com/data/products/30/2.jpg",
       "https://i.dummyjson.com/data/products/30/3.jpg",
@@ -32,14 +32,14 @@ const Ddata = [
     desc: "Sé el primero en valorar “YERBA ORGANICA ROAPIPO SUAVE X 500 G”",
   },
   {
-    id: 40,
+    id: 9,
     cover:
-      "https://github.com/Alek30k/CsaRta/assets/101005998/3fc3f18e-55d1-4842-80f8-1831c0601cac",
+      "https://github.com/Alek30k/CsaRta/assets/101005998/8b0a1ed2-4b87-4fe9-aec5-f0a6959bd107",
     name: "Butacas",
     cover1: "./images/discount/desc3.jpg",
     cover2: "./images/flash/yerba.png",
     img: [
-      "https://github.com/Alek30k/CsaRta/assets/101005998/3fc3f18e-55d1-4842-80f8-1831c0601cac",
+      "https://github.com/Alek30k/CsaRta/assets/101005998/8b0a1ed2-4b87-4fe9-aec5-f0a6959bd107",
       "https://i.dummyjson.com/data/products/30/1.jpg",
       "https://i.dummyjson.com/data/products/30/2.jpg",
       "https://i.dummyjson.com/data/products/30/3.jpg",
@@ -48,12 +48,12 @@ const Ddata = [
     desc: "Sé el primero en valorar “YERBA ORGANICA ROAPIPO SUAVE X 500 G”",
   },
   {
-    id: 41,
+    id: 10,
     cover:
-      "https://github.com/Alek30k/CsaRta/assets/101005998/82df2610-42a0-456e-96df-9e97ce7e68da",
+      "https://github.com/Alek30k/CsaRta/assets/101005998/1f3ffd8c-e933-473f-a657-329abf72c0a1",
     name: "Moto Triciclo",
     img: [
-      "https://github.com/Alek30k/CsaRta/assets/101005998/82df2610-42a0-456e-96df-9e97ce7e68da",
+      "https://github.com/Alek30k/CsaRta/assets/101005998/1f3ffd8c-e933-473f-a657-329abf72c0a1",
       "https://i.dummyjson.com/data/products/30/1.jpg",
       "https://i.dummyjson.com/data/products/30/2.jpg",
       "https://i.dummyjson.com/data/products/30/3.jpg",
@@ -64,12 +64,12 @@ const Ddata = [
     desc: "Sé el primero en valorar “YERBA ORGANICA ROAPIPO SUAVE X 500 G”",
   },
   {
-    id: 42,
+    id: 11,
     cover:
-      "https://github.com/Alek30k/CsaRta/assets/101005998/565854df-8d36-4b5d-ade7-6c60de4cde49",
+      "https://github.com/Alek30k/CsaRta/assets/101005998/fa41eab9-6247-4142-8cf1-124f23ad0f35",
     name: "Bicicleta Philco",
     img: [
-      "https://github.com/Alek30k/CsaRta/assets/101005998/565854df-8d36-4b5d-ade7-6c60de4cde49",
+      "https://github.com/Alek30k/CsaRta/assets/101005998/fa41eab9-6247-4142-8cf1-124f23ad0f35",
       "https://i.dummyjson.com/data/products/30/1.jpg",
       "https://i.dummyjson.com/data/products/30/2.jpg",
       "https://i.dummyjson.com/data/products/30/3.jpg",
@@ -80,12 +80,12 @@ const Ddata = [
     desc: "Sé el primero en valorar “YERBA ORGANICA ROAPIPO SUAVE X 500 G”",
   },
   {
-    id: 43,
+    id: 12,
     cover:
-      "https://github.com/Alek30k/CsaRta/assets/101005998/c0807828-ca45-4d41-bc20-d333e860f44b",
+      "https://github.com/Alek30k/CsaRta/assets/101005998/441cfb5a-9155-4c48-a985-1a0ea56d9d70",
     name: "Bicicletas R12",
     img: [
-      "https://github.com/Alek30k/CsaRta/assets/101005998/c0807828-ca45-4d41-bc20-d333e860f44b",
+      "https://github.com/Alek30k/CsaRta/assets/101005998/441cfb5a-9155-4c48-a985-1a0ea56d9d70",
       "https://i.dummyjson.com/data/products/30/1.jpg",
       "https://i.dummyjson.com/data/products/30/2.jpg",
       "https://i.dummyjson.com/data/products/30/3.jpg",
@@ -96,12 +96,12 @@ const Ddata = [
     desc: "Sé el primero en valorar “YERBA ORGANICA ROAPIPO SUAVE X 500 G”",
   },
   {
-    id: 44,
+    id: 13,
     cover:
-      "https://github.com/Alek30k/CsaRta/assets/101005998/8389b692-e163-4e8a-9ec6-85584b12771c",
+      "https://github.com/Alek30k/CsaRta/assets/101005998/04dbd888-cdac-47bf-b7e1-3a22c0d3f001",
     name: "Cochecito",
     img: [
-      "https://github.com/Alek30k/CsaRta/assets/101005998/8389b692-e163-4e8a-9ec6-85584b12771c",
+      "https://github.com/Alek30k/CsaRta/assets/101005998/04dbd888-cdac-47bf-b7e1-3a22c0d3f001",
       "https://i.dummyjson.com/data/products/30/1.jpg",
       "https://i.dummyjson.com/data/products/30/2.jpg",
       "https://i.dummyjson.com/data/products/30/3.jpg",
@@ -112,12 +112,12 @@ const Ddata = [
     desc: "Sé el primero en valorar “YERBA ORGANICA ROAPIPO SUAVE X 500 G”",
   },
   {
-    id: 45,
+    id: 14,
     cover:
-      "https://github.com/Alek30k/CsaRta/assets/101005998/ec493e85-9aa3-4f23-bfe1-25db8eb92799",
+      "https://github.com/Alek30k/CsaRta/assets/101005998/7b768995-5253-4391-add3-9234beee29ea",
     name: "Horno Eléctrico",
     img: [
-      "https://github.com/Alek30k/CsaRta/assets/101005998/ec493e85-9aa3-4f23-bfe1-25db8eb92799",
+      "https://github.com/Alek30k/CsaRta/assets/101005998/7b768995-5253-4391-add3-9234beee29ea",
       "https://i.dummyjson.com/data/products/30/1.jpg",
       "https://i.dummyjson.com/data/products/30/2.jpg",
       "https://i.dummyjson.com/data/products/30/3.jpg",
@@ -128,12 +128,12 @@ const Ddata = [
     desc: "Sé el primero en valorar “YERBA ORGANICA ROAPIPO SUAVE X 500 G”",
   },
   {
-    id: 46,
+    id: 15,
     cover:
-      "https://github.com/Alek30k/CsaRta/assets/101005998/5b6175d3-6e39-4d5b-8e91-084b3690d8c8",
+      "https://github.com/Alek30k/CsaRta/assets/101005998/57e689de-70c7-43de-848d-eaac019ec14f",
     name: "Secarropas",
     img: [
-      "https://github.com/Alek30k/CsaRta/assets/101005998/5b6175d3-6e39-4d5b-8e91-084b3690d8c8",
+      "https://github.com/Alek30k/CsaRta/assets/101005998/57e689de-70c7-43de-848d-eaac019ec14f",
       "https://i.dummyjson.com/data/products/30/1.jpg",
       "https://i.dummyjson.com/data/products/30/2.jpg",
       "https://i.dummyjson.com/data/products/30/3.jpg",
