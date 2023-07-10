@@ -16,6 +16,7 @@ import { Dark, Light } from "./styles/Themes";
 import styled, { ThemeProvider } from "styled-components";
 import Head from "./common/header/Head";
 import ProductListproduct from "./pages/productList/ProductListproduct";
+import ProductListFilter from "./components/flashDeals/ProductListFilter";
 
 function App() {
   const { productItems } = Data;
@@ -64,6 +65,9 @@ function App() {
   });
 
   const [catFiltered, setCatFiltered] = useState([]);
+  const [listFiltered, setListFiltered] = useState([]);
+
+  console.log(listFiltered);
   const [catFilteredModal, setCatFilteredModal] = useState([]);
   const [catFilteredSearch, setCatFilteredSearch] = useState([]);
 
@@ -120,6 +124,7 @@ function App() {
               setCatFiltered={setCatFiltered}
               catFilteredModal={setCatFilteredModal}
               setCatFilteredModal={setCatFilteredModal}
+              setListFiltered={setListFiltered}
             />
           ),
         },
@@ -154,6 +159,19 @@ function App() {
             //     </Container>
             //   </QueryClientProvider>
             // </ThemeProvider>
+          ),
+        },
+        {
+          path: "/productlist/:category",
+          element: (
+            <QueryClientProvider client={queryClient}>
+              <Container>
+                <ProductListFilter
+                  productItems={productItems}
+                  listFiltered={listFiltered}
+                />
+              </Container>
+            </QueryClientProvider>
           ),
         },
         {

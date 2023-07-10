@@ -1022,6 +1022,140 @@ button {
   color: white;
 }
 
+.products .product-list .product-item-img {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-discount {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  background-color: yellow;
+  color: white;
+  font-size: 11px;
+  padding: 0 6px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.product-discount span {
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 4px;
+  vertical-align: baseline;
+}
+
+.productsFilter {
+  background-color: #f8f8f8;
+  padding-bottom: 40px;
+}
+
+.productsFilter .product-list.gridview {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.productsFilter .product-list .product-item {
+  margin: 20px 0;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: rgba(99, 99, 99, 0.06) 0px 2px 8px 0px;
+}
+.productsFilter .product-list .product-item:hover {
+  border: 1px solid #2938df;
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.products .product-list .product-item-body .product-price span:first-child {
+  margin-right: 6px;
+  font-weight: 700;
+  color: #b1322b;
+  display: block;
+  margin-bottom: 6px;
+  position: relative;
+}
+
+.products .product-list .product-item-body {
+  padding: 10px 18px 14px 18px;
+}
+
+.products .product-list .product-item-body .product-category {
+  display: inline-block;
+  background-color: #cf363b;
+  font-size: 11px;
+  text-transform: capitalize;
+  color: #fff;
+  border-radius: 3px;
+  padding: 1px 6px;
+  margin-right: 8px;
+}
+
+.products .product-list .product-item-body .product-price {
+  font-size: 12px;
+  line-height: 1.2;
+  margin-top: 6px;
+}
+
+.products .product-list .product-item-body .product-price span:first-child {
+  margin-right: 6px;
+  font-weight: 700;
+  color: #ffa40c;
+  display: block;
+  margin-bottom: 6px;
+  position: relative;
+}
+
+.products .product-list .product-item-body .product-title {
+  font-size: 12.5px;
+}
+
+.sc-title h3 {
+  position: relative;
+  display: inline-block;
+  font-size: 28px;
+  margin: 20px 0;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.sc-title h3::before {
+  content: "";
+  position: absolute;
+  right: calc(100% + 20px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.sc-title h3::after {
+  content: "";
+  position: absolute;
+  left: calc(100% + 20px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 @media (max-width: 1024px) {
   .background {
     padding: 30px 0;

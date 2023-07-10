@@ -1,0 +1,6 @@
+.productListFilter .product-item {
+  background-color: rgb(174, 37, 37);
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: rgba(99, 99, 99, 0.06) 0px 2px 8px 0px;
+}

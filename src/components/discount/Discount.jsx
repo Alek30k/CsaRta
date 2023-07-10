@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import Dcard from "./Dcard";
+import Ddata from "./Ddata";
+import { Link } from "react-router-dom";
 
-const Discount = ({ addToCart }) => {
+const Discount = ({ addToCart, setListFiltered }) => {
+  const filterMarcas = () => {
+    const products = Ddata;
+    setListFiltered(products);
+  };
+
   return (
     <>
       <section
@@ -15,7 +22,9 @@ const Discount = ({ addToCart }) => {
               <h2>Grandes descuentos</h2>
             </div>
             <div className="heading-right row ">
-              <span>Ver todo</span>
+              <Link to={`/productlist/grandes&descuentos`}>
+                <span onClick={() => filterMarcas()}>Ver todo</span>
+              </Link>
               <i className="fa-solid fa-caret-right"></i>
             </div>
           </div>

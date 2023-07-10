@@ -1,8 +1,14 @@
 import React from "react";
 import Cart from "./Cart";
 import "./style.css";
+import { Link } from "react-router-dom";
+import Ndata from "./Ndata";
 
-const NewArrivals = () => {
+const NewArrivals = ({ setListFiltered }) => {
+  const filterMarcas = () => {
+    const products = Ndata;
+    setListFiltered(products);
+  };
   return (
     <>
       <section className="NewArrivals background">
@@ -10,10 +16,12 @@ const NewArrivals = () => {
           <div className="heading d_flex">
             <div className="heading-left row f_flex">
               <img src="https://img.icons8.com/glyph-neue/64/26e07f/new.png" />
-              <h2>Los recién llegados </h2>
+              <h2>Los recién llegados</h2>
             </div>
             <div className="heading-right row ">
-              <span>Ver todo</span>
+              <Link to={`/productlist/recien&llegados`}>
+                <span onClick={() => filterMarcas()}>Ver todo</span>
+              </Link>
               <i className="fa-solid fa-caret-right"></i>
             </div>
           </div>

@@ -16,6 +16,7 @@ const Pages = ({
   shopItems,
   setCatFiltered,
   setCatFilteredModal,
+  setListFiltered,
 }) => {
   return (
     <div>
@@ -27,8 +28,8 @@ const Pages = ({
       <Home CartItem={CartItem} />
       <FlashDeals productItems={productItems} addToCart={addToCart} />
       <TopCate />
-      <NewArrivals />
-      <Discount addToCart={addToCart} />
+      <NewArrivals setListFiltered={setListFiltered} />
+      <Discount addToCart={addToCart} setListFiltered={setListFiltered} />
       <Shop shopItems={shopItems} addToCart={addToCart} />
       <Annocument />
       <Wrapper />

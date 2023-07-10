@@ -10,24 +10,24 @@ const Product = ({ productItems, CartItem }) => {
   const location = useLocation();
   const path = location.pathname.split("/")[2];
 
-  const [selectedImg, setSelectedImg] = useState(productItems[path - 1].cover1);
+  // const [selectedImg, setSelectedImg] = useState(productItems[path - 1].cover1);
 
   const [previewImg, setPreviewImg] = useState(0);
 
   const [slideNumber, setSlideNumber] = useState(path);
-  const [selectedImage, setSelectedImage] = useState(false);
+  // const [selectedImage, setSelectedImage] = useState(false);
   const [quantity, setQuantity] = useState(1);
 
-  const seleted1 = () => {
-    setSelectedImg(productItems[slideNumber - 1].cover1);
-    setSelectedImage(!selectedImage);
-  };
-  const seleted2 = () => {
-    setSelectedImg(productItems[slideNumber - 1].cover2);
-    setSelectedImage(!selectedImage);
-  };
+  // const seleted1 = () => {
+  //   setSelectedImg(productItems[slideNumber - 1].cover1);
+  //   setSelectedImage(!selectedImage);
+  // };
+  // const seleted2 = () => {
+  //   setSelectedImg(productItems[slideNumber - 1].cover2);
+  //   setSelectedImage(!selectedImage);
+  // };
 
-  const countTotal = productItems[slideNumber - 1].price * quantity;
+  // const countTotal = productItems[slideNumber - 1].price * quantity;
 
   const increaseQty = () => {
     setQuantity((prevQty) => {
@@ -54,7 +54,7 @@ const Product = ({ productItems, CartItem }) => {
       : "kjahdskjah"
   }`;
 
-  const imgUrl = "./images/flash/aaaa.png";
+  // const imgUrl = "./images/flash/aaaa.png";
 
   return (
     <>
@@ -84,19 +84,6 @@ const Product = ({ productItems, CartItem }) => {
                         // isHintEnabled: true,
                       }}
                     />
-
-                    {/* <img
-                      src={
-                        productItems[slideNumber - 1]
-                          ? productItems[slideNumber - 1].img[previewImg]
-                            ? productItems[slideNumber - 1].img[previewImg]
-                            : "asdads"
-                          : "kjahdskjah"
-                      }
-                      alt=""
-                      className="img-cover"
-                      draggable={false}
-                    /> */}
                   </div>
                   <div className="img-preview-collection flex justify-center">
                     {productItems[slideNumber - 1].img?.map((image, idx) => {
