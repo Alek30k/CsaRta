@@ -28,7 +28,10 @@ const Pages = ({
       <Home CartItem={CartItem} />
       <FlashDeals productItems={productItems} addToCart={addToCart} />
       <TopCate />
-      <NewArrivals setListFiltered={setListFiltered} />
+      <NewArrivals
+        productItems={productItems}
+        setListFiltered={setListFiltered}
+      />
       <Discount addToCart={addToCart} setListFiltered={setListFiltered} />
       <Shop shopItems={shopItems} addToCart={addToCart} />
       <Annocument />

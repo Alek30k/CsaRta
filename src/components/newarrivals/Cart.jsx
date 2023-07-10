@@ -1,7 +1,8 @@
 import React from "react";
 import Ndata from "./Ndata";
+import { Link } from "react-router-dom";
 
-const Cart = () => {
+const Cart = ({ productItems }) => {
   return (
     <>
       <div className="content grid productStock" id="resize">
@@ -9,7 +10,9 @@ const Cart = () => {
           return (
             <div className="boxNew " key={index}>
               <div className="img">
-                <img src={val.cover} alt="" />
+                <Link to={`/product/${val.id}`}>
+                  <img src={val.cover} alt="" />
+                </Link>
               </div>
               <div>
                 <h4>{val.name}</h4>

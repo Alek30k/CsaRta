@@ -4,7 +4,7 @@ import "./style.css";
 import { Link } from "react-router-dom";
 import Ndata from "./Ndata";
 
-const NewArrivals = ({ setListFiltered }) => {
+const NewArrivals = ({ setListFiltered, productItems }) => {
   const filterMarcas = () => {
     const products = Ndata;
     setListFiltered(products);
@@ -26,7 +26,7 @@ const NewArrivals = ({ setListFiltered }) => {
             </div>
           </div>
 
-          <Cart />
+          <Cart productItems={productItems} />
         </div>
       </section>
     </>
