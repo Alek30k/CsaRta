@@ -1,12 +1,11 @@
 /*------head-----------*/
 .head {
   border-bottom: 1px solid #f7f7fd;
-  /* padding: 10px 0; */
-  margin-top: 5px;
-  color: #fff;
+  background-color: #0410b3;
+  padding: 20px;
 }
 .head img {
-  width: 100%;
+  width: 100vw;
 }
 
 /*------head-----------*/
