@@ -1064,10 +1064,12 @@ button {
   overflow: hidden;
   border-radius: 6px;
   padding: 10px;
+  transition: 0.5s;
   box-shadow: rgba(99, 99, 99, 0.06) 0px 2px 8px 0px;
 }
 .productsFilter .product-list .product-item:hover {
   border: 1px solid #2938df;
+  transform: scale(1.1);
 }
 
 .img-cover {

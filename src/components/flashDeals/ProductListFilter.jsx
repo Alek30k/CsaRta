@@ -28,10 +28,10 @@ const ProductListFilter = ({ listFiltered }) => {
                     className="img-cover"
                   /> */}
                   <img src={product.cover} alt="" className="img-cover " />
-                  <div className="product-discount">
+                  {/* <div className="product-discount">
                     {product?.discountPercentage}
                     <span>%</span>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="product-item-body">
                   <span className="product-category">{product?.category}</span>
