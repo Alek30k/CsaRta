@@ -16,7 +16,7 @@ const Catg = ({
     <>
       <div className={catOpen && "category"} onClick={() => setCatOpen(true)}>
         <div className="cheadi d_flex">
-          <h1>Marcas </h1>
+          <h1 onClick={() => filterMarcas("Marcas")}>Marcas </h1>
           {/* <h1>Tiendas </h1> */}
         </div>
         {cateName.map((marca) => {

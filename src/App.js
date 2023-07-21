@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Header from "./common/header/Header";
@@ -17,10 +17,24 @@ import styled, { ThemeProvider } from "styled-components";
 import Head from "./common/header/Head";
 import ProductListproduct from "./pages/productList/ProductListproduct";
 import ProductListFilter from "./components/flashDeals/ProductListFilter";
+import axios from "axios";
 
 function App() {
   const { productItems } = Data;
   const { shopItems } = Sdata;
+
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(async () => {
+    try {
+      const res = await axios.get(`http://localhost:8800/api/products`, {});
+      setProducts(res.data);
+      setIsLoading(false);
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
 
   const [CartItem, setCartItem] = useState([]);
 
@@ -67,7 +81,6 @@ function App() {
   const [catFiltered, setCatFiltered] = useState([]);
   const [listFiltered, setListFiltered] = useState([]);
 
-  console.log(listFiltered);
   const [catFilteredModal, setCatFilteredModal] = useState([]);
   const [catFilteredSearch, setCatFilteredSearch] = useState([]);
 
@@ -92,6 +105,7 @@ function App() {
               setCatFiltered={setCatFiltered}
               setCatFilteredSearch={setCatFilteredSearch}
               productItems={productItems}
+              products={products}
               cambiarTheme={cambiarTheme}
               theme={theme}
               setTheme={setTheme}
@@ -116,10 +130,11 @@ function App() {
           path: "/",
           element: (
             <Pages
+              isLoading={isLoading}
               productItems={productItems}
-              addToCart={addToCart}
               shopItems={shopItems}
-              cambiarTheme={cambiarTheme}
+              products={products}
+              setProducts={setProducts}
               Container={Container}
               setCatFiltered={setCatFiltered}
               catFilteredModal={setCatFilteredModal}
@@ -138,6 +153,7 @@ function App() {
               setCatFilteredSearch={setCatFilteredSearch}
               setCatFiltered={setCatFiltered}
               shopItems={shopItems}
+              products={products}
             />
           ),
         },
@@ -152,6 +168,7 @@ function App() {
               shopItems={shopItems}
               CartItem={CartItem}
               catFiltered={catFiltered}
+              products={products}
               productItems={productItems}
               setCatFiltered={setCatFiltered}
               catFilteredModal={catFilteredModal}
@@ -181,6 +198,7 @@ function App() {
             <QueryClientProvider client={queryClient}>
               <Container>
                 <ProductCard
+                  products={products}
                   shopItems={shopItems}
                   CartItem={CartItem}
                   productItems={productItems}

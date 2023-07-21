@@ -2,13 +2,15 @@ import React from "react";
 import Cart from "./Cart";
 import "./style.css";
 import { Link } from "react-router-dom";
-import Ndata from "./Ndata";
 
-const NewArrivals = ({ setListFiltered, productItems }) => {
+const NewArrivals = ({ setListFiltered, productItems, products }) => {
   const filterMarcas = () => {
-    const products = Ndata;
-    setListFiltered(products);
+    const productsFilter = products.filter(
+      (item) => item.seccion === "newcomers"
+    );
+    setListFiltered(productsFilter);
   };
+
   return (
     <>
       <section className="NewArrivals background">
@@ -26,7 +28,7 @@ const NewArrivals = ({ setListFiltered, productItems }) => {
             </div>
           </div>
 
-          <Cart productItems={productItems} />
+          <Cart productItems={productItems} products={products} />
         </div>
       </section>
     </>

@@ -11,12 +11,15 @@ import Navbar from "../common/header/Navbar";
 
 const Pages = ({
   productItems,
+  products,
+  setProducts,
   addToCart,
   CartItem,
   shopItems,
   setCatFiltered,
   setCatFilteredModal,
   setListFiltered,
+  isLoading,
 }) => {
   return (
     <div>
@@ -24,16 +27,29 @@ const Pages = ({
         setCatFiltered={setCatFiltered}
         productItems={productItems}
         setCatFilteredModal={setCatFilteredModal}
+        products={products}
       />
       <Home CartItem={CartItem} />
-      <FlashDeals productItems={productItems} addToCart={addToCart} />
+
+      <FlashDeals
+        products={products}
+        addToCart={addToCart}
+        setProducts={setProducts}
+        isLoading={isLoading}
+      />
+
       <TopCate />
       <NewArrivals
         productItems={productItems}
         setListFiltered={setListFiltered}
+        products={products}
       />
-      <Discount addToCart={addToCart} setListFiltered={setListFiltered} />
-      <Shop shopItems={shopItems} addToCart={addToCart} />
+      <Discount
+        addToCart={addToCart}
+        setListFiltered={setListFiltered}
+        products={products}
+      />
+      <Shop shopItems={shopItems} addToCart={addToCart} products={products} />
       <Annocument />
       <Wrapper />
     </div>

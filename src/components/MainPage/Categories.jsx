@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Categories = ({ setCatFiltered, productItems }) => {
+const Categories = ({ setCatFiltered, products }) => {
   const data = [
     {
       id: 1,
@@ -57,7 +57,7 @@ const Categories = ({ setCatFiltered, productItems }) => {
   ];
 
   const filterMarcas = (value) => {
-    const filteredProduct = productItems.filter(
+    const filteredProduct = products.filter(
       (p) => p.catCat.toLowerCase() === value.cateName
     );
     setCatFiltered(filteredProduct);

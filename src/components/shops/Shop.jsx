@@ -3,23 +3,27 @@ import Catg from "./Catg";
 import ShopCart from "./ShopCart";
 import "./style.css";
 
-const Shop = ({ addToCart, shopItems }) => {
+const Shop = ({ addToCart, shopItems, products }) => {
   const allMarcas = [
     // "Todo",
     ...new Set(shopItems.map((producto) => producto.cateName)),
   ];
 
+  const filterShop = products.filter((item) => item.seccion === "shop");
+
   const [cateName, setCateName] = useState(allMarcas);
-  const [products, setProducts] = useState(shopItems);
+  const [productsSelect, setProductsSelect] = useState(filterShop);
   const [catOpen, setCatOpen] = useState(true);
 
   const filterMarcas = (marca) => {
-    // if (marca === "Todo") {
-    //   setProducts(shopItems);
-    //   return;
-    // }
-    const filteredProduct = shopItems.filter((p) => p.cateName === marca);
-    setProducts(filteredProduct);
+    if (marca === "Marcas") {
+      setProductsSelect(filterShop);
+      return;
+    }
+    const filteredProduct = products.filter(
+      (p) => p.subCategory.toLowerCase() === marca.toLowerCase()
+    );
+    setProductsSelect(filteredProduct);
   };
   return (
     <>
@@ -32,7 +36,7 @@ const Shop = ({ addToCart, shopItems }) => {
               cateName={cateName}
               filterMarcas={filterMarcas}
               shopItems={shopItems}
-              setProducts={setProducts}
+              setProductsSelect={setProductsSelect}
               catOpen={catOpen}
               setCatOpen={setCatOpen}
             />
@@ -52,7 +56,7 @@ const Shop = ({ addToCart, shopItems }) => {
               <ShopCart
                 addToCart={addToCart}
                 shopItems={shopItems}
-                products={products}
+                productsSelect={productsSelect}
               />
             </div>
           </div>

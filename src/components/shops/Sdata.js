@@ -99,7 +99,7 @@ const Sdata = {
       name: "OPPO A74",
       price: "120",
       discount: "10",
-      cateName: "opo",
+      cateName: "oppo",
     },
     {
       id: 21,

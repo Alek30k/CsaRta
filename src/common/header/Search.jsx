@@ -9,12 +9,10 @@ import axios from "axios";
 import newRequest from "../../utils/newRequest";
 // import newRequest from "../../utils/newRequest";
 
-const Search = ({ CartItem, setCatFilteredSearch }) => {
+const Search = ({ CartItem, setCatFilteredSearch, products }) => {
   const [avatarOpen, setAvatarOpen] = useState(false);
   const [avatarOpenIngresar, setAvatarOpenIngresar] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-
-  const { productItems } = Data;
 
   const [query, setQuery] = useState("");
 
@@ -50,7 +48,7 @@ const Search = ({ CartItem, setCatFilteredSearch }) => {
   };
 
   const handleSearch = () => {
-    const searchProduct = productItems.filter(
+    const searchProduct = products.filter(
       (product) =>
         product.name.toLowerCase().includes(query) ||
         product.catCat.toLowerCase().includes(query) ||

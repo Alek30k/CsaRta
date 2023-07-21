@@ -24,11 +24,15 @@ const SamplePrevArrow = (props) => {
     </div>
   );
 };
-const FlashCard = ({ productItems, addToCart }) => {
+const FlashCard = ({ products, addToCart, setProducts, isLoading }) => {
   const [count, setCount] = useState(0);
   const increment = () => {
     setCount(count + 1);
   };
+
+  const filterSection = products.filter(
+    (item) => item.seccion === "flashdeals"
+  );
 
   const settings = {
     dots: false,
@@ -77,56 +81,60 @@ const FlashCard = ({ productItems, addToCart }) => {
 
   return (
     <div>
-      <Slider {...settings}>
-        {productItems.map((productItems, i) => {
-          return (
-            <div key={i}>
-              <div className="box">
-                <div className="product mtop productshop">
-                  <div className="imgFlash">
-                    <span className="discount">
-                      {productItems.discount}% Off
-                    </span>
+      {isLoading ? (
+        "Loading..."
+      ) : (
+        <Slider {...settings}>
+          {filterSection?.map((productItems, i) => {
+            return (
+              <div key={i}>
+                <div className="box">
+                  <div className="product mtop productshop">
+                    <div className="imgFlash">
+                      {/* <span className="discount">
+                                  {productItems.discount}% Off
+                                </span> */}
 
-                    <Link to={`/product/${productItems.id}`}>
-                      <img
-                        src={productItems.cover}
-                        alt=""
-                        className="flashImg "
-                      />
-                    </Link>
+                      <Link to={`/product/${productItems?._id}`}>
+                        <img
+                          src={productItems?.cover}
+                          alt=""
+                          className="flashImg "
+                        />
+                      </Link>
 
-                    <div className="product-like">
-                      {/* <label>{count}</label> <br /> */}
+                      <div className="product-like">
+                        {/* <label>{count}</label> <br /> */}
 
-                      <i className="fa-regular fa-heart"></i>
+                        <i className="fa-regular fa-heart"></i>
+                      </div>
                     </div>
-                  </div>
-                  <div className="product-details">
-                    <h3>{productItems.name}</h3>
-                    <div className="rate">
-                      <i className="fa fa-star"></i>
-                      <i className="fa fa-star"></i>
-                      <i className="fa fa-star"></i>
-                      <i className="fa fa-star"></i>
-                      <i className="fa fa-star"></i>
-                    </div>
-                    <div className="price">
-                      <div className="containerPriceFlash">
-                        <h4>${productItems.price}.00 </h4>
+                    <div className="product-details">
+                      <h3>{productItems?.name}</h3>
+                      <div className="rate">
+                        <i className="fa fa-star"></i>
+                        <i className="fa fa-star"></i>
+                        <i className="fa fa-star"></i>
+                        <i className="fa fa-star"></i>
+                        <i className="fa fa-star"></i>
+                      </div>
+                      <div className="price">
+                        <div className="containerPriceFlash">
+                          <h4>${productItems?.price}.00 </h4>
 
-                        <button onClick={() => addToCart(productItems)}>
-                          <i className="fa fa-plus"></i>
-                        </button>
+                          <button onClick={() => addToCart(productItems)}>
+                            <i className="fa fa-plus"></i>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </Slider>
+            );
+          })}
+        </Slider>
+      )}
     </div>
   );
 };

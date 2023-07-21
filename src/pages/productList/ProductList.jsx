@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-// import Search from "../../common/header/Search";
-// import Footer from "../../common/footer/Footer";
 import { Link, useLocation } from "react-router-dom";
 import ShopCartCat from "./ShopCartCat";
 import Data from "../../components/Data";
-import proximo from "./proximo.png";
 import CatgFilter from "./CatgFilter";
 
 const ProductList = ({
@@ -14,38 +11,49 @@ const ProductList = ({
   setCatFiltered,
   productItems,
   catFilteredModal,
+  products,
 }) => {
-  const [products, setProducts] = useState(shopItems);
-  const [isLoading, setIsLoading] = useState(false);
   const location = useLocation();
   const cat = location.pathname.split("/")[2];
   const [catOpen, setCatOpen] = useState(true);
-
   // const [productSelect, setProductSelect] = useState("");
 
-  // console.log(productSelect);
   const { DataCategory } = Data;
 
   const filterMarcas = (cat) => {
-    const filteredProduct = productItems.filter(
-      (p) => p.subCategory === cat.name
-    );
+    const filteredProduct = products.filter((p) => p.subCategory === cat.name);
     setCatFiltered(filteredProduct);
   };
-
-  // const filterRuta = (cat) => {
-  //   console.log(cat);
-  //   setProductSelect(cat[0].name);
-  // };
 
   return (
     <div>
       <section className=" shop backgroundd categoris">
+        <div className="containerCat">
+          <div className="breadcrumb">
+            <ul className="breadcrumb-items flex">
+              <li className="breadcrumb-item">
+                <Link to="/">
+                  <i className="fas fa-home"></i>
+                  <span className="breadcrumb-separator">
+                    <i className="fas fa-chevron-right"></i>
+                  </span>
+                </Link>
+              </li>
+              <li>
+                Category
+                <span className="breadcrumb-separator">
+                  <i className="fas fa-chevron-right"></i>
+                </span>
+              </li>
+              <li>{cat}</li>
+            </ul>
+          </div>
+        </div>
         <div className="containerMobile containerCat d_flexCat">
           <div className="filterCat ">
-            <div className=" f_flex">
+            {/* <div className=" f_flex">
               <h2>{cat}</h2>
-            </div>
+            </div> */}
             <div className="filter">
               <h4>Categorías </h4>
             </div>
@@ -76,21 +84,18 @@ const ProductList = ({
             </div>
           </div>
           <div className="contentWidthCat container">
-            {isLoading ? (
-              "Cargando..."
-            ) : (
-              <div className="cateBanner">
-                {DataCategory.map((value) => {
-                  return (
-                    <div key={value.id}>
-                      {cat === value.name.toLowerCase() && (
-                        <img src={value.img} alt="" />
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            )}
+            <div className="cateBanner">
+              {DataCategory.map((value) => {
+                return (
+                  <div key={value.id}>
+                    {cat === value.name.toLowerCase() && (
+                      <img src={value.img} alt="" />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+
             <button
               className="buttonFiltrar"
               onClick={() => setCatOpen(!catOpen)}
@@ -123,9 +128,9 @@ const ProductList = ({
             ) : (
               <div className="product-content grid1 shopCartCatFilter">
                 <ShopCartCat
-                  addToCart={addToCart}
-                  shopItems={shopItems}
-                  products={products}
+                  // addToCart={addToCart}
+                  // shopItems={shopItems}
+                  // products={products}
                   catFiltered={catFiltered}
                   catFilteredModal={catFilteredModal}
                 />

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 // import { AuthContext } from "../../context/authContext";
 
-const Navbar = ({ setCatFiltered, productItems }) => {
+const Navbar = ({ setCatFiltered, productItems, products }) => {
   // Toogle Menu
   const [MobileMenu, setMobileMenu] = useState(false);
   const [Menu, setMenu] = useState(false);
@@ -46,7 +46,7 @@ const Navbar = ({ setCatFiltered, productItems }) => {
   //   setCatFiltered(filteredProduct);
   // };
   const filterMarcass = (value) => {
-    const filteredProduct = productItems.filter(
+    const filteredProduct = products.filter(
       (p) => p.catCat.toLowerCase() === value.cateName
     );
     setCatFiltered(filteredProduct);
@@ -71,7 +71,7 @@ const Navbar = ({ setCatFiltered, productItems }) => {
               <div className="containerTotal">
                 <Categories
                   setCatFiltered={setCatFiltered}
-                  productItems={productItems}
+                  products={products}
                 />
               </div>
             )}

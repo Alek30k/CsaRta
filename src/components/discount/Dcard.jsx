@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-const Dcard = () => {
+const Dcard = ({ products }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -60,13 +60,15 @@ const Dcard = () => {
     setOpen(true);
   };
 
+  const filterSection = products.filter((item) => item.seccion === "discount");
+
   const handleMove = (direction) => {
     let newSlideNumber;
 
     if (direction === "l") {
-      newSlideNumber = slideNumber === 0 ? 8 : slideNumber - 1;
+      newSlideNumber = slideNumber === 0 ? 6 : slideNumber - 1;
     } else {
-      newSlideNumber = slideNumber === 8 ? 0 : slideNumber + 1;
+      newSlideNumber = slideNumber === 6 ? 0 : slideNumber + 1;
     }
 
     setSlideNumber(newSlideNumber);
@@ -75,7 +77,7 @@ const Dcard = () => {
   return (
     <>
       <Slider {...settings}>
-        {Ddata.map((value, index) => {
+        {filterSection?.map((value, index) => {
           return (
             <div key={index} onClick={() => handleOpen(index)}>
               <div className="box product producti">
@@ -103,9 +105,9 @@ const Dcard = () => {
                 className="closee"
                 onClick={() => setOpen(false)}
               />
-              <Link to={`/product/${Ddata[slideNumber].id}`}>
+              <Link to={`/product/${filterSection[slideNumber]._id}`}>
                 <img
-                  src={`${Ddata[slideNumber].cover}`}
+                  src={`${filterSection[slideNumber].cover}`}
                   alt=""
                   className="sliderImg"
                 />

@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import Dcard from "./Dcard";
-import Ddata from "./Ddata";
+// import Ddata from "./Ddata";
 import { Link } from "react-router-dom";
 
-const Discount = ({ addToCart, setListFiltered }) => {
+const Discount = ({ addToCart, setListFiltered, products }) => {
   const filterMarcas = () => {
-    const products = Ddata;
-    setListFiltered(products);
+    const productsFilter = products.filter(
+      (item) => item.seccion === "discount"
+    );
+    setListFiltered(productsFilter);
   };
 
   return (
@@ -28,7 +30,7 @@ const Discount = ({ addToCart, setListFiltered }) => {
               <i className="fa-solid fa-caret-right"></i>
             </div>
           </div>
-          <Dcard addToCart={addToCart} />
+          <Dcard addToCart={addToCart} products={products} />
         </div>
       </section>
     </>

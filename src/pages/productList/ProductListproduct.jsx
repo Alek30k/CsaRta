@@ -9,14 +9,15 @@ const ProductListproduct = ({
   catFilteredSearch,
   setCatFiltered,
   productItems,
+  products,
 }) => {
-  const [products, setProducts] = useState(shopItems);
+  // const [products, setProducts] = useState(shopItems);
 
   const location = useLocation();
   const cat = location.pathname.split("/")[3];
 
   const filterMarcas = (value) => {
-    const filteredProduct = productItems.filter(
+    const filteredProduct = products.filter(
       (p) => p.catCat.toLowerCase() === value.cateName
     );
     setCatFiltered(filteredProduct);

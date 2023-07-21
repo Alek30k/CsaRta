@@ -69,7 +69,7 @@ const Footer = () => {
         </ul>
 
         <div className="footer-bottom">
-          <p>All Right reserved by &copy;Supermercados Santa Rita 2023</p>
+          <p>All Right reserved by &copy;Alejandro Cabrera 2023</p>
         </div>
       </footer>
     </div>

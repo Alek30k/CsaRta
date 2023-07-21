@@ -7,6 +7,8 @@ const ShopCartCat = ({ catFiltered, catFilteredModal }) => {
     setCount(count + 1);
   };
 
+  console.log(catFiltered);
+
   return (
     <>
       {catFiltered.map((shopItems, index) => {
@@ -14,7 +16,7 @@ const ShopCartCat = ({ catFiltered, catFilteredModal }) => {
           <div className="box productCat" key={index}>
             <div className=" mtop  productImg">
               <div className="img">
-                <Link to={`/product/${shopItems.id}`}>
+                <Link to={`/product/${shopItems._id}`}>
                   <img src={shopItems.cover} alt="" />
                 </Link>
                 <div className="product-like">

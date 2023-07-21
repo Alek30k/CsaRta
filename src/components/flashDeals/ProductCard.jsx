@@ -1,60 +1,74 @@
-import React, { useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ProductCard.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ReactImageMagnify from "react-image-magnify";
 import { calculateDiscountedPrice, formatPrice } from "../../utils/helpers";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import axios from "axios";
 // import { AuthContext } from "../../context/authContext";
 
-const Product = ({ productItems, CartItem }) => {
-  const location = useLocation();
-  const path = location.pathname.split("/")[2];
+const Product = ({ products }) => {
+  // const location = useLocation();
+  // const path = location.pathname.split("/")[2];
+
+  const { id } = useParams();
+
+  const [singleProduct, setSingleProduct] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   // const [selectedImg, setSelectedImg] = useState(productItems[path - 1].cover1);
 
+  useEffect(() => {
+    setLoading(true);
+    const getProducts = async () => {
+      try {
+        const res = await axios.get(
+          `http://localhost:8800/api/products/single/${id}`
+        );
+
+        setSingleProduct(res.data);
+        setLoading(false);
+      } catch (err) {}
+    };
+    getProducts();
+  }, [id]);
+
   const [previewImg, setPreviewImg] = useState(0);
 
-  const [slideNumber, setSlideNumber] = useState(path);
-  // const [selectedImage, setSelectedImage] = useState(false);
-  const [quantity, setQuantity] = useState(1);
+  // const [quantity, setQuantity] = useState(1);
 
-  // const seleted1 = () => {
-  //   setSelectedImg(productItems[slideNumber - 1].cover1);
-  //   setSelectedImage(!selectedImage);
-  // };
-  // const seleted2 = () => {
-  //   setSelectedImg(productItems[slideNumber - 1].cover2);
-  //   setSelectedImage(!selectedImage);
+  // const increaseQty = () => {
+  //   setQuantity((prevQty) => {
+  //     let tempQty = prevQty + 1;
+  //     if (tempQty > productItems[slideNumber - 1]?.stock)
+  //       tempQty = productItems[slideNumber - 1]?.stock;
+  //     return tempQty;
+  //   });
   // };
 
-  // const countTotal = productItems[slideNumber - 1].price * quantity;
-
-  const increaseQty = () => {
-    setQuantity((prevQty) => {
-      let tempQty = prevQty + 1;
-      if (tempQty > productItems[slideNumber - 1]?.stock)
-        tempQty = productItems[slideNumber - 1]?.stock;
-      return tempQty;
-    });
-  };
-
-  const decreaseQty = () => {
-    setQuantity((prevQty) => {
-      let tempQty = prevQty - 1;
-      if (tempQty < 1) tempQty = 1;
-      return tempQty;
-    });
-  };
+  // const decreaseQty = () => {
+  //   setQuantity((prevQty) => {
+  //     let tempQty = prevQty - 1;
+  //     if (tempQty < 1) tempQty = 1;
+  //     return tempQty;
+  //   });
+  // };
 
   const imageUrl = `${
-    productItems[slideNumber - 1]
-      ? productItems[slideNumber - 1].img[previewImg]
-        ? productItems[slideNumber - 1].img[previewImg]
-        : "asdads"
+    singleProduct
+      ? singleProduct.img
+        ? singleProduct?.img[previewImg]
+          ? singleProduct.img
+            ? singleProduct?.img[previewImg]
+            : "asdads"
+          : "kjahdskjah"
+        : "kjahdskjah"
       : "kjahdskjah"
   }`;
 
-  // const imgUrl = "./images/flash/aaaa.png";
+  // const imageUrl = singleProduct.cover;
+
+  // console.log(singleProduct?.img[previewImg]);
 
   return (
     <>
@@ -65,39 +79,45 @@ const Product = ({ productItems, CartItem }) => {
               <div className="product-s-img">
                 <div className="img-preview py-5">
                   <div className="img-preview-zoom ">
-                    <ReactImageMagnify
-                      {...{
-                        smallImage: {
-                          alt: "Wristwatch by Ted Baker London",
-                          isFluidWidth: true,
-                          src: imageUrl,
-                        },
-                        largeImage: {
-                          src: imageUrl,
-                          width: 1000,
-                          height: 1000,
-                        },
-                        enlargedImageContainerStyle: {
-                          zIndex: "1",
-                        },
+                    {loading ? (
+                      "Loading..."
+                    ) : (
+                      <ReactImageMagnify
+                        {...{
+                          smallImage: {
+                            alt: "Wristwatch by Ted Baker London",
+                            isFluidWidth: true,
+                            src: imageUrl,
+                          },
+                          largeImage: {
+                            src: imageUrl,
+                            width: 1000,
+                            height: 1000,
+                          },
+                          enlargedImageContainerStyle: {
+                            zIndex: "1",
+                          },
 
-                        // isHintEnabled: true,
-                      }}
-                    />
+                          // isHintEnabled: true,
+                        }}
+                      />
+                    )}
                   </div>
                   <div className="img-preview-collection flex justify-center">
-                    {productItems[slideNumber - 1].img?.map((image, idx) => {
+                    {singleProduct.img?.map((image, idx) => {
                       return (
                         <div
                           className={`collection-item ${
-                            previewImg === idx ? "collection-item-active" : ""
+                            singleProduct === idx
+                              ? "collection-item-active"
+                              : ""
                           }`}
                           key={idx}
                           onClick={() => setPreviewImg(idx)}
                         >
                           <img
                             src={image ? image : "no_image"}
-                            alt={productItems[slideNumber - 1]?.name}
+                            alt={singleProduct?.name}
                             className="img-cover"
                           />
                         </div>
@@ -108,35 +128,32 @@ const Product = ({ productItems, CartItem }) => {
               </div>
               <div className="product-s-details py-5">
                 <div className="title fw-6 fs-16 px-3 py-1">
-                  {productItems[slideNumber - 1]?.name}
+                  {singleProduct?.name}
                 </div>
-                <p className="description fs-14">
-                  {productItems[slideNumber - 1]?.desc}
-                </p>
+                <p className="description fs-14">{singleProduct?.desc}</p>
                 <div className="rating my-2 flex align-center"></div>
                 <div className="price flex align-center">
                   <span className="discounted-price fs-20 fw-7">
-                    {productItems[slideNumber - 1]?.price &&
-                    productItems[slideNumber - 1]?.discount
+                    {singleProduct?.price && singleProduct?.discount
                       ? formatPrice(
                           calculateDiscountedPrice(
-                            productItems[slideNumber - 1].price,
-                            productItems[slideNumber - 1].discount
+                            singleProduct.price,
+                            singleProduct.discount
                           )
                         )
                       : 0}
                   </span>
                   <span className="actual-price text-dark mx-3">
-                    {formatPrice(productItems[slideNumber - 1]?.price)}
+                    {formatPrice(singleProduct?.price)}
                   </span>
 
                   <span className="discounted-percent text-primary fs-12">
-                    {productItems[slideNumber - 1]?.discount}%
+                    {singleProduct?.discount}%
                   </span>
                 </div>
                 <div className="quantity py-3">
                   <h5 className="fw-4">Quantity:</h5>
-                  <div className="quantity-toggle flex">
+                  {/* <div className="quantity-toggle flex">
                     <button
                       className="qty-dec flex align-center justify-center"
                       onClick={() => decreaseQty()}
@@ -152,7 +169,7 @@ const Product = ({ productItems, CartItem }) => {
                     >
                       <AiOutlinePlus size={14} />
                     </button>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="shop-btns">
                   <Link className="buy-btn shop-btn fs-14">Buy Now</Link>

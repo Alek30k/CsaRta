@@ -1,16 +1,17 @@
 import React from "react";
-import Ndata from "./Ndata";
 import { Link } from "react-router-dom";
 
-const Cart = ({ productItems }) => {
+const Cart = ({ products }) => {
+  const filterSection = products.filter((item) => item.seccion === "newcomers");
+
   return (
     <>
       <div className="content grid productStock" id="resize">
-        {Ndata.map((val, index) => {
+        {filterSection.map((val, index) => {
           return (
             <div className="boxNew " key={index}>
               <div className="img">
-                <Link to={`/product/${val.id}`}>
+                <Link to={`/product/${val._id}`}>
                   <img src={val.cover} alt="" />
                 </Link>
               </div>

@@ -17,7 +17,7 @@ const ProductListFilter = ({ listFiltered }) => {
           {listFiltered?.map((product, i) => {
             return (
               <Link
-                to={`/product/${product?.id}`}
+                to={`/product/${product?._id}`}
                 className="product-item"
                 key={i}
               >
@@ -35,11 +35,11 @@ const ProductListFilter = ({ listFiltered }) => {
                 </div>
                 <div className="product-item-body">
                   <span className="product-category">{product?.category}</span>
-                  <span className="product-title">{product?.title}</span>
+                  <span className="product-title">{product?.name}</span>
 
                   <div className="product-price">
                     <span className="fw-6 fs-16">$ &nbsp;{product?.price}</span>
-                    <span className="text-dark">Brand: {product?.brand}</span>
+                    {/* <span className="text-dark">Brand: {product?.brand}</span> */}
                   </div>
 
                   <div className="product-item-bottom fs-12 flex align-center">

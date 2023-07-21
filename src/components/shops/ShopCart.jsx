@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ShopCart = ({ addToCart, products }) => {
+const ShopCart = ({ addToCart, productsSelect }) => {
   const [count, setCount] = useState(0);
   const increment = () => {
     setCount(count + 1);
   };
 
-  let productsShop = products.slice(0, 6);
-
   return (
     <>
-      {productsShop.map((shopItems, index) => {
+      {productsSelect.slice(0, 6).map((shopItems, index) => {
         return (
           <div className="box" key={index}>
             <div className="product mtop shopi productImg">
               <div className="img">
                 <span className="discount">{shopItems.discount}% Off</span>
-                <Link to={`/product/${shopItems.id}`}>
+                <Link to={`/product/${shopItems._id}`}>
                   <img src={shopItems.cover} alt="" />
                 </Link>
                 <div className="product-like">
