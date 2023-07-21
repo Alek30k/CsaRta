@@ -23,7 +23,7 @@ const Product = ({ products }) => {
     const getProducts = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8800/api/products/single/${id}`
+          `https://csarta.onrender.com/api/products/single/${id}`
         );
 
         setSingleProduct(res.data);

@@ -28,7 +28,10 @@ function App() {
 
   useEffect(async () => {
     try {
-      const res = await axios.get(`http://localhost:8800/api/products`, {});
+      const res = await axios.get(
+        `https://csarta.onrender.com/api/products`,
+        {}
+      );
       setProducts(res.data);
       setIsLoading(false);
     } catch (err) {
