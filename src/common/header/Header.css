@@ -1296,9 +1296,9 @@ header ul li a:hover {
   .head label {
     font-size: 9px;
   }
-  .open {
+  .header .open {
     position: absolute;
-    top: 18%;
+    top: 10%;
     left: 26px;
     color: #ff014f;
     display: block;
