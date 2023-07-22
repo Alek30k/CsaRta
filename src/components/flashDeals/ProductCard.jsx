@@ -69,11 +69,11 @@ const Product = ({ products }) => {
   }`;
 
   const settings = {
-    dots: false,
+    dots: true,
     infinite: true,
-    speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 2,
     slidesToScroll: 1,
+    autoplay: false,
     arrows: true,
   };
 
@@ -82,7 +82,7 @@ const Product = ({ products }) => {
       <main className="bg-secundary">
         <div className="containersinglePage ">
           <div className="sc-wrapper py-5">
-            <div className="product-s bg-white grid">
+            <div className="product-s bg-white ">
               <div className="product-s-img">
                 <div className="img-preview py-5">
                   <div className="img-preview-zoom ">
@@ -124,16 +124,16 @@ const Product = ({ products }) => {
                         >
                           <img
                             src={image ? image : "no_image"}
-                            alt={singleProduct?.name}
+                            alt={image?.name}
                             className="img-cover"
                           />
                         </div>
                       );
                     })}
                   </div>
-
                   <div className="img-preview-collection-mobile flex justify-center">
                     <Slider {...settings}>
+                      {/* <div className="img-preview-collection-mobile flex justify-center"> */}
                       {singleProduct.img?.map((image, idx) => {
                         return (
                           <div
@@ -147,16 +147,18 @@ const Product = ({ products }) => {
                           >
                             <img
                               src={image ? image : "no_image"}
-                              alt={singleProduct?.name}
+                              alt={image?.name}
                               className="img-cover"
                             />
                           </div>
                         );
                       })}
+                      {/* </div> */}
                     </Slider>
                   </div>
                 </div>
               </div>
+
               <div className="product-s-details py-5">
                 <div className="title fw-6 fs-16 px-3 py-1">
                   {singleProduct?.name}
