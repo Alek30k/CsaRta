@@ -2170,14 +2170,15 @@ button {
   }
 
   .collection-item {
-    width: 80px;
+    /* width: 120px; */
     height: 120px;
     overflow: hidden;
-    border: none;
-    margin: 0 4px;
+    /* border: none; */
+    margin: auto;
     padding: 0px;
     /* transition: $transition-default; */
     cursor: pointer;
+    border: 1px solid gray;
   }
 
   .product .price {
