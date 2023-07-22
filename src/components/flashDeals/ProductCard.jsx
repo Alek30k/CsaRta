@@ -5,7 +5,9 @@ import ReactImageMagnify from "react-image-magnify";
 import { calculateDiscountedPrice, formatPrice } from "../../utils/helpers";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import axios from "axios";
-// import { AuthContext } from "../../context/authContext";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Product = ({ products }) => {
   // const location = useLocation();
@@ -66,9 +68,14 @@ const Product = ({ products }) => {
       : "kjahdskjah"
   }`;
 
-  // const imageUrl = singleProduct.cover;
-
-  // console.log(singleProduct?.img[previewImg]);
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    arrows: true,
+  };
 
   return (
     <>
@@ -123,6 +130,30 @@ const Product = ({ products }) => {
                         </div>
                       );
                     })}
+                  </div>
+
+                  <div className="img-preview-collection-mobile flex justify-center">
+                    <Slider {...settings}>
+                      {singleProduct.img?.map((image, idx) => {
+                        return (
+                          <div
+                            className={`collection-item  ${
+                              singleProduct === idx
+                                ? "collection-item-active"
+                                : ""
+                            }`}
+                            key={idx}
+                            onClick={() => setPreviewImg(idx)}
+                          >
+                            <img
+                              src={image ? image : "no_image"}
+                              alt={singleProduct?.name}
+                              className="img-cover"
+                            />
+                          </div>
+                        );
+                      })}
+                    </Slider>
                   </div>
                 </div>
               </div>

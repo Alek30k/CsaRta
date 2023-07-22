@@ -1,10 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import "./style.css";
 import { Link, useNavigate } from "react-router-dom";
-// import { AuthContext } from "../../context/authContext";
-import { useDispatch } from "react-redux";
-// import { loginFailure, loginStart, loginSuccess } from "../../redux/userSlice";
-import axios from "axios";
+
 import newRequest from "../../utils/newRequest";
 
 function Login() {
@@ -14,8 +11,6 @@ function Login() {
   const [err, setErr] = useState(null);
 
   const navigate = useNavigate();
-
-  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
