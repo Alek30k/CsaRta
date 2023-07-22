@@ -1174,6 +1174,14 @@ button {
 }
 
 @media (max-width: 1024px) {
+  .product-s-img .img-preview-zoom {
+    /* max-width: 400px;
+    height: 360px;
+    margin-right: auto;
+    margin-left: auto; */
+    overflow: hidden;
+  }
+
   .background {
     padding: 30px 0;
   }
