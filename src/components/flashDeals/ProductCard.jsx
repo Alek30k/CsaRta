@@ -158,7 +158,6 @@ const Product = ({ products }) => {
                   </div>
                 </div>
               </div>
-
               <div className="product-s-details py-5">
                 <div className="title fw-6 fs-16 px-3 py-1">
                   {singleProduct?.name}
