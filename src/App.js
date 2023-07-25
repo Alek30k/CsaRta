@@ -41,6 +41,15 @@ function App() {
 
   const [CartItem, setCartItem] = useState([]);
 
+  useEffect(() => {
+    const cartIemLS = JSON.parse(localStorage.getItem("carItem")) ?? [];
+    setCartItem(cartIemLS);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("carItem", JSON.stringify(CartItem));
+  }, [CartItem]);
+
   const addToCart = (product) => {
     const productExit = CartItem.find((item) => item._id === product._id);
 
