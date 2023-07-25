@@ -42,12 +42,12 @@ function App() {
   const [CartItem, setCartItem] = useState([]);
 
   const addToCart = (product) => {
-    const productExit = CartItem.find((item) => item.id === product.id);
+    const productExit = CartItem.find((item) => item._id === product._id);
 
     if (productExit) {
       setCartItem(
         CartItem.map((item) =>
-          item.id === product.id
+          item._id === product._id
             ? { ...productExit, quantity: productExit.quantity + 1 }
             : item
         )
@@ -58,14 +58,14 @@ function App() {
   };
 
   const decreaseQty = (product) => {
-    const productExit = CartItem.find((item) => item.id === product.id);
+    const productExit = CartItem.find((item) => item._id === product._id);
 
     if (productExit.quantity === 1) {
-      setCartItem(CartItem.filter((item) => item.id !== product.id));
+      setCartItem(CartItem.filter((item) => item._id !== product._id));
     } else {
       setCartItem(
         CartItem.map((item) =>
-          item.id === product.id
+          item._id === product._id
             ? { ...productExit, quantity: productExit.quantity - 1 }
             : item
         )
@@ -133,6 +133,7 @@ function App() {
           path: "/",
           element: (
             <Pages
+              addToCart={addToCart}
               isLoading={isLoading}
               productItems={productItems}
               shopItems={shopItems}

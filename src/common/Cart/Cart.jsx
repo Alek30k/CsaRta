@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
+import { BsFillCartXFill } from "react-icons/bs";
 // import Footer from "../../common/footer/Footer";
 // import Search from "../../common/header/Search";
 
@@ -25,7 +26,16 @@ const Cart = ({ CartItem, addToCart, decreaseQty, setCartItem }) => {
           <div className="cart-details">
             {CartItem.length === 0 && (
               <>
-                <h1 className="no-items product">TU CARRITO ESTÁ VACÍO</h1>
+                <div div className="div_no_cartItem  product">
+                  <div className="icon_cartEmpty">
+                    <BsFillCartXFill />
+                  </div>
+                  <h1 className="no-items">TU CARRITO ESTÁ VACÍO</h1>
+                  <Link className="keepShopping" to="/">
+                    <p>SEGUIR COMPRANDO</p>
+                  </Link>
+                </div>
+
                 <h4>Aún no tenes artículos en tu carrito de compra.</h4>
               </>
             )}
@@ -36,7 +46,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty, setCartItem }) => {
               return (
                 <div className="cart-list product d_flexCart" key={item.id}>
                   <div className="img">
-                    <Link to={`/product/${item.id}`}>
+                    <Link to={`/product/${item._id}`}>
                       <img src={item.cover} alt="" />
                       <div className="ver">Ver Producto</div>
                     </Link>

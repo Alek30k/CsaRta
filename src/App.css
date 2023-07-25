@@ -761,6 +761,7 @@ button {
   /* transition: $transition-default; */
   cursor: pointer;
 }
+
 .flex {
   display: flex;
   &-column {

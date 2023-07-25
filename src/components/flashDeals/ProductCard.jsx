@@ -9,7 +9,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const Product = ({ products }) => {
+const Product = ({ products, addToCart }) => {
   // const location = useLocation();
   // const path = location.pathname.split("/")[2];
 
@@ -27,7 +27,7 @@ const Product = ({ products }) => {
         const res = await axios.get(
           `https://csarta.onrender.com/api/products/single/${id}`
         );
-
+        // console.log(res);
         setSingleProduct(res.data);
         setLoading(false);
       } catch (err) {}
