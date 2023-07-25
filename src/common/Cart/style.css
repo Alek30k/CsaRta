@@ -516,15 +516,6 @@
   .div_no_cartItem {
     margin-bottom: 70px;
   }
-}
-
-@media (max-width: 305px) {
-  .cart-items .cart-total {
-    width: 100%;
-    margin-top: 30px;
-    margin: auto;
-    height: 130px;
-  }
 
   .cartControl button {
     width: 40px;
