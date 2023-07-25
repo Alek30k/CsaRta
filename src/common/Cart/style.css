@@ -512,6 +512,12 @@
   }
 }
 
+@media (max-width: 375px) {
+  .div_no_cartItem {
+    margin-bottom: 70px;
+  }
+}
+
 @media (max-width: 305px) {
   .cart-items .cart-total {
     width: 100%;
@@ -530,9 +536,5 @@
     padding: 10px;
     display: flex;
     align-items: center;
-  }
-
-  .div_no_cartItem {
-    margin-bottom: 70px;
   }
 }
