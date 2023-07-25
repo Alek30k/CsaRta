@@ -35,7 +35,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty, setCartItem }) => {
                     <p>SEGUIR COMPRANDO</p>
                   </Link>
                 </div>
-                <h4>Aún no tenes artículos en tu carrito de compra.</h4>
+                {/* <h4>Aún no tenes artículos en tu carrito de compra.</h4> */}
               </>
             )}
 

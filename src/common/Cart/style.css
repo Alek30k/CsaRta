@@ -519,4 +519,16 @@
     margin: auto;
     height: 130px;
   }
+
+  .cartControl button {
+    width: 40px;
+    height: 30px;
+    margin: 3px;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
 }
