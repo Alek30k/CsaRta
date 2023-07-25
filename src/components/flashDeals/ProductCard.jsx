@@ -210,9 +210,12 @@ const Product = ({ products, addToCart }) => {
                       Add to Cart
                     </button>
                   ) : ( */}
-                  <Link className="add-to-cart-btn shop-btn fs-14">
+                  <button
+                    className="add-to-cart-btn shop-btn fs-14"
+                    onClick={() => addToCart(singleProduct)}
+                  >
                     Add to Cart
-                  </Link>
+                  </button>
                   {/* )} */}
                 </div>
               </div>
