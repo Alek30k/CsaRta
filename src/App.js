@@ -17,6 +17,7 @@ import styled, { ThemeProvider } from "styled-components";
 import Head from "./common/header/Head";
 import ProductListproduct from "./pages/productList/ProductListproduct";
 import ProductListFilter from "./components/flashDeals/ProductListFilter";
+import Swal from "sweetalert2";
 import axios from "axios";
 
 function App() {
@@ -51,6 +52,38 @@ function App() {
   }, [CartItem]);
 
   const addToCart = (product) => {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 1500,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener("mouseenter", Swal.stopTimer);
+        toast.addEventListener("mouseleave", Swal.resumeTimer);
+      },
+    });
+
+    Toast.fire({
+      icon: "success",
+      title: "El producto fue agregado al carrito!",
+    });
+    const productExit = CartItem.find((item) => item._id === product._id);
+
+    if (productExit) {
+      setCartItem(
+        CartItem.map((item) =>
+          item._id === product._id
+            ? { ...productExit, quantity: productExit.quantity + 1 }
+            : item
+        )
+      );
+    } else {
+      setCartItem([...CartItem, { ...product, quantity: 1 }]);
+    }
+  };
+
+  const addToCart2 = (product) => {
     const productExit = CartItem.find((item) => item._id === product._id);
 
     if (productExit) {
@@ -230,6 +263,7 @@ function App() {
             <Cart
               CartItem={CartItem}
               addToCart={addToCart}
+              addToCart2={addToCart2}
               decreaseQty={decreaseQty}
               setCartItem={setCartItem}
             />

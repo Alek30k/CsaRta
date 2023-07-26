@@ -2,25 +2,41 @@ import React from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import { BsFillCartXFill } from "react-icons/bs";
-// import Footer from "../../common/footer/Footer";
-// import Search from "../../common/header/Search";
+import Swal from "sweetalert2";
 
-const Cart = ({ CartItem, addToCart, decreaseQty, setCartItem }) => {
-  // Stpe: 7   calucate total of items
-
+const Cart = ({
+  CartItem,
+  addToCart,
+  addToCart2,
+  decreaseQty,
+  setCartItem,
+}) => {
   const totalPrice = CartItem.reduce(
     (price, item) => price + item.quantity * item.price,
     0
   );
   const cleartCart = () => {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener("mouseenter", Swal.stopTimer);
+        toast.addEventListener("mouseleave", Swal.resumeTimer);
+      },
+    });
+
+    Toast.fire({
+      icon: "warning",
+      title: "El carrito fue vaciado!",
+    });
     setCartItem([]);
   };
-  // prodcut qty total
+
   return (
     <>
-      {/* <div className="searchProduct">
-        <Search CartItem={CartItem} />
-      </div> */}
       <section className="cart-items">
         <div className="containerCart  d_flex">
           <div className="cart-details">
@@ -62,7 +78,7 @@ const Cart = ({ CartItem, addToCart, decreaseQty, setCartItem }) => {
                       <div className="cartControl buttons d_flexCart">
                         <button
                           className="incCart"
-                          onClick={() => addToCart(item)}
+                          onClick={() => addToCart2(item)}
                         >
                           <i className="fa-solid fa-plus"></i>
                         </button>
