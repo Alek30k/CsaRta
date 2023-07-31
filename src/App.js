@@ -52,54 +52,6 @@ function App() {
     localStorage.setItem("carItem", JSON.stringify(CartItem));
   }, [CartItem]);
 
-  const addToCart = (product) => {
-    const productExit = CartItem.find((item) => item._id === product._id);
-
-    if (productExit) {
-      setCartItem(
-        CartItem.map((item) =>
-          item._id === product._id
-            ? { ...productExit, quantity: productExit.quantity + 1 }
-            : item
-        )
-      );
-    } else {
-      setCartItem([...CartItem, { ...product, quantity: 1 }]);
-    }
-  };
-
-  const addToCart2 = (product) => {
-    const productExit = CartItem.find((item) => item._id === product._id);
-
-    if (productExit) {
-      setCartItem(
-        CartItem.map((item) =>
-          item._id === product._id
-            ? { ...productExit, quantity: productExit.quantity + 1 }
-            : item
-        )
-      );
-    } else {
-      setCartItem([...CartItem, { ...product, quantity: 1 }]);
-    }
-  };
-
-  const decreaseQty = (product) => {
-    const productExit = CartItem.find((item) => item._id === product._id);
-
-    if (productExit.quantity === 1) {
-      setCartItem(CartItem.filter((item) => item._id !== product._id));
-    } else {
-      setCartItem(
-        CartItem.map((item) =>
-          item._id === product._id
-            ? { ...productExit, quantity: productExit.quantity - 1 }
-            : item
-        )
-      );
-    }
-  };
-
   const queryClient = new QueryClient({
     defaultOptions: {
       queries: {
@@ -162,7 +114,6 @@ function App() {
           path: "/",
           element: (
             <Pages
-              addToCart={addToCart}
               isLoading={isLoading}
               productItems={productItems}
               shopItems={shopItems}
@@ -197,12 +148,10 @@ function App() {
             //   <QueryClientProvider client={queryClient}>
             //     <Container>
             <ProductList
-              addToCart={addToCart}
               shopItems={shopItems}
               CartItem={CartItem}
               catFiltered={catFiltered}
               products={products}
-              productItems={productItems}
               setCatFiltered={setCatFiltered}
               catFilteredModal={catFilteredModal}
             />
@@ -235,8 +184,6 @@ function App() {
                   shopItems={shopItems}
                   CartItem={CartItem}
                   productItems={productItems}
-                  addToCart={addToCart}
-                  decreaseQty={decreaseQty}
                   cambiarTheme={cambiarTheme}
                 />
               </Container>
@@ -246,15 +193,7 @@ function App() {
         },
         {
           path: "/cart",
-          element: (
-            <Cart
-              CartItem={CartItem}
-              addToCart={addToCart}
-              addToCart2={addToCart2}
-              decreaseQty={decreaseQty}
-              setCartItem={setCartItem}
-            />
-          ),
+          element: <Cart CartItem={CartItem} setCartItem={setCartItem} />,
         },
       ],
     },

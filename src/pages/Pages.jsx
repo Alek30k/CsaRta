@@ -13,7 +13,7 @@ const Pages = ({
   productItems,
   products,
   setProducts,
-  addToCart,
+
   CartItem,
   shopItems,
   setCatFiltered,
@@ -33,7 +33,6 @@ const Pages = ({
 
       <FlashDeals
         products={products}
-        addToCart={addToCart}
         setProducts={setProducts}
         isLoading={isLoading}
       />
@@ -44,12 +43,8 @@ const Pages = ({
         setListFiltered={setListFiltered}
         products={products}
       />
-      <Discount
-        addToCart={addToCart}
-        setListFiltered={setListFiltered}
-        products={products}
-      />
-      <Shop shopItems={shopItems} addToCart={addToCart} products={products} />
+      <Discount setListFiltered={setListFiltered} products={products} />
+      <Shop shopItems={shopItems} products={products} />
       <Annocument />
       <Wrapper />
     </div>

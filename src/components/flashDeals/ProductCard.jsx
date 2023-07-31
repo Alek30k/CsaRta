@@ -171,35 +171,12 @@ const Product = () => {
                 </div>
                 <div className="quantity py-3">
                   <h5 className="fw-4">Quantity:</h5>
-                  {/* <div className="quantity-toggle flex">
-                    <button
-                      className="qty-dec flex align-center justify-center"
-                      onClick={() => decreaseQty()}
-                    >
-                      <AiOutlineMinus size={14} />
-                    </button>
-                    <div className="qty-value flex align-center justify-center fs-14 mx-2">
-                      {quantity}
-                    </div>
-                    <button
-                      className="qty-inc flex align-center justify-center"
-                      onClick={() => increaseQty()}
-                    >
-                      <AiOutlinePlus size={14} />
-                    </button>
-                  </div> */}
                 </div>
                 <div className="shop-btns">
                   <Link className="buy-btn shop-btn fs-14">Buy Now</Link>
-                  {/* {authData.isLoggedIn ? (
-                    <button className="add-to-cart-btn shop-btn fs-14">
-                      Add to Cart
-                    </button>
-                  ) : ( */}
 
                   <button
                     className="add-to-cart-btn shop-btn fs-14"
-                    // onClick={() => addToCart(singleProduct)}
                     onClick={() => handleAddToCart()}
                   >
                     Add to Cart

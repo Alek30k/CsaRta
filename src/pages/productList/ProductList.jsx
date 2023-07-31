@@ -5,11 +5,10 @@ import Data from "../../components/Data";
 import CatgFilter from "./CatgFilter";
 
 const ProductList = ({
-  addToCart,
   shopItems,
   catFiltered,
   setCatFiltered,
-  productItems,
+
   catFilteredModal,
   products,
 }) => {

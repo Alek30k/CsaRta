@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { calculateDiscountedPrice, formatPrice } from "../../utils/helpers";
 
 const Cart = ({ products }) => {
   const filterSection = products.filter((item) => item.seccion === "newcomers");
@@ -19,7 +20,13 @@ const Cart = ({ products }) => {
                 <h4>{val.name}</h4>
               </div>
               <div className="boxPrice">
-                <span>${val.price}</span>
+                <span>
+                  {val?.price && val?.discount
+                    ? formatPrice(
+                        calculateDiscountedPrice(val.price, val.discount)
+                      )
+                    : 0}
+                </span>
               </div>
             </div>
           );

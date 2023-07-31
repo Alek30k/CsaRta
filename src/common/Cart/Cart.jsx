@@ -12,14 +12,9 @@ import {
   clearCart,
 } from "../../redux/cartSlice";
 import { ToastContainer, toast } from "react-toastify";
+import { calculateDiscountedPrice, formatPrice } from "../../utils/helpers";
 
-const Cart = ({
-  CartItem,
-  // addToCart,
-  addToCart2,
-  decreaseQty,
-  setCartItem,
-}) => {
+const Cart = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
 
@@ -27,12 +22,17 @@ const Cart = ({
     dispatch(getTotals());
   }, [cart, dispatch]);
 
-  // const [quantity, setQuantity] = useState(1);
+  // const totalPrice = cart.cartItems.reduce(
+  //   (price, item) =>
+  //     price +
+  //     formatPrice(calculateDiscountedPrice(item.price, item.discount)) *
+  //       item.cartQuantity,
+  //   0
+  // );
 
-  const totalPrice = cart.cartItems.reduce(
-    (price, item) => price + item.cartQuantity * item.price,
-    0
-  );
+  // const cal = cart.cartItems.map((item=> (
+  //   {item.}
+  // )))
 
   const handleClearCart = () => {
     dispatch(clearCart());
@@ -65,6 +65,7 @@ const Cart = ({
               </>
             )}
             {cart.cartItems.map((item) => {
+              // const productQty = item.price * item.cartQuantity;
               const productQty = item.price * item.cartQuantity;
 
               return (
@@ -91,12 +92,7 @@ const Cart = ({
                         >
                           <i className="fa-solid fa-minus"></i>
                         </button>
-                        <div
-                          // onChange={(e) => setQuantity(e.target.value)}
-                          type="number"
-                          // value={item.quantity}
-                          className="inputQuantity"
-                        >
+                        <div type="number" className="inputQuantity">
                           {item.cartQuantity}
                         </div>
                         <button
@@ -126,7 +122,7 @@ const Cart = ({
             <h2>Resumen de la compra</h2>
             <div className=" d_flex total">
               <h4>Precio Total:</h4>
-              <h3>${totalPrice}.00</h3>
+              <h3>${cart.cartTotalAmount}.00</h3>
             </div>
           </div>
         </div>
