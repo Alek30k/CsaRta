@@ -123,8 +123,24 @@
   cursor: pointer;
   background: none;
   border: 1px solid rgb(3 0 71 / 9%);
-  color: #e94560;
 }
+
+.removeProduct {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 15px;
+  color: #e94560;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 500ms ease;
+}
+
+.removeProduct:hover {
+  transform: scale(1.2);
+}
+
 .d_flexCart {
   display: flex;
   /* justify-content: space-between; */

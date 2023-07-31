@@ -7,7 +7,7 @@ import {
   addProductCart,
   decreaseCart,
   addToCart,
-  deleteProductCart,
+  removeFromCart,
   getTotals,
   clearCart,
 } from "../../redux/cartSlice";
@@ -36,6 +36,10 @@ const Cart = () => {
 
   const handleClearCart = () => {
     dispatch(clearCart());
+  };
+
+  const handleRemoveFromCart = (product) => {
+    dispatch(removeFromCart(product));
   };
 
   const handleAddToCart = (product) => {
@@ -70,6 +74,12 @@ const Cart = () => {
 
               return (
                 <div className="cart-list product d_flexCart" key={item._id}>
+                  <span
+                    className="removeProduct"
+                    onClick={() => handleRemoveFromCart(item)}
+                  >
+                    x
+                  </span>
                   <div className="img">
                     <Link to={`/product/${item._id}`}>
                       <img src={item.cover} alt="" />
