@@ -19,6 +19,8 @@ import ProductListproduct from "./pages/productList/ProductListproduct";
 import ProductListFilter from "./components/flashDeals/ProductListFilter";
 import Swal from "sweetalert2";
 import axios from "axios";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 function App() {
   const { productItems } = Data;
@@ -140,27 +142,29 @@ function App() {
   const Layout = () => {
     return (
       <div className="App">
-        <ThemeContext.Provider value={{ theme, setTheme }}>
-          {/* <ThemeProvider theme={themeStyle}>
+        <Provider store={store}>
+          <ThemeContext.Provider value={{ theme, setTheme }}>
+            {/* <ThemeProvider theme={themeStyle}>
             <QueryClientProvider client={queryClient}> */}
-          <Container>
-            <Head />
-            <Header
-              CartItem={CartItem}
-              setCatFiltered={setCatFiltered}
-              setCatFilteredSearch={setCatFilteredSearch}
-              productItems={productItems}
-              products={products}
-              cambiarTheme={cambiarTheme}
-              theme={theme}
-              setTheme={setTheme}
-            />
-            <Outlet />
-            <Footer />
-          </Container>
-          {/* </QueryClientProvider>
+            <Container>
+              <Head />
+              <Header
+                CartItem={CartItem}
+                setCatFiltered={setCatFiltered}
+                setCatFilteredSearch={setCatFilteredSearch}
+                productItems={productItems}
+                products={products}
+                cambiarTheme={cambiarTheme}
+                theme={theme}
+                setTheme={setTheme}
+              />
+              <Outlet />
+              <Footer />
+            </Container>
+            {/* </QueryClientProvider>
           </ThemeProvider> */}
-        </ThemeContext.Provider>
+          </ThemeContext.Provider>
+        </Provider>
       </div>
     );
   };

@@ -3,6 +3,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
+import { addToCart } from "../../redux/cartSlice";
+import { useDispatch } from "react-redux";
 
 const SampleNextArrow = (props) => {
   const { onClick } = props;
@@ -24,7 +26,7 @@ const SamplePrevArrow = (props) => {
     </div>
   );
 };
-const FlashCard = ({ products, addToCart, setProducts, isLoading }) => {
+const FlashCard = ({ products, setProducts, isLoading }) => {
   const [count, setCount] = useState(0);
   const increment = () => {
     setCount(count + 1);
@@ -79,6 +81,14 @@ const FlashCard = ({ products, addToCart, setProducts, isLoading }) => {
     ],
   };
 
+  const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(1);
+
+  const handleAddToCart = (productItems) => {
+    dispatch(addToCart(productItems));
+    // history.push("/cart");
+  };
+
   return (
     <div>
       {isLoading ? (
@@ -122,7 +132,7 @@ const FlashCard = ({ products, addToCart, setProducts, isLoading }) => {
                         <div className="containerPriceFlash">
                           <h4>${productItems?.price}.00 </h4>
 
-                          <button onClick={() => addToCart(productItems)}>
+                          <button onClick={() => handleAddToCart(productItems)}>
                             <i className="fa fa-plus"></i>
                           </button>
                         </div>

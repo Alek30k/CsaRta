@@ -8,6 +8,8 @@ import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useDispatch } from "react-redux";
+// import { addProductCart } from "../../redux/cartSlice";
 
 const Product = ({ products, addToCart }) => {
   // const location = useLocation();
@@ -56,6 +58,9 @@ const Product = ({ products, addToCart }) => {
   //   });
   // };
 
+  const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(1);
+
   const imageUrl = `${
     singleProduct
       ? singleProduct.img
@@ -75,6 +80,10 @@ const Product = ({ products, addToCart }) => {
     slidesToScroll: 1,
     autoplay: false,
     arrows: true,
+  };
+
+  const handleClick = () => {
+    // dispatch(addProductCart({ ...singleProduct, quantity }));
   };
 
   return (
@@ -210,9 +219,16 @@ const Product = ({ products, addToCart }) => {
                       Add to Cart
                     </button>
                   ) : ( */}
+                  <input
+                    onChange={(e) => setQuantity(e.target.value)}
+                    type="number"
+                    defaultValue={1}
+                    // className={styles.quantity}
+                  />
                   <button
                     className="add-to-cart-btn shop-btn fs-14"
-                    onClick={() => addToCart(singleProduct)}
+                    // onClick={() => addToCart(singleProduct)}
+                    onClick={handleClick}
                   >
                     Add to Cart
                   </button>

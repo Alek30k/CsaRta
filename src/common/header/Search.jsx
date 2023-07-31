@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/userSlice";
 import axios from "axios";
 import newRequest from "../../utils/newRequest";
-// import newRequest from "../../utils/newRequest";
 
 const Search = ({ CartItem, setCatFilteredSearch, products }) => {
   const [avatarOpen, setAvatarOpen] = useState(false);
@@ -70,7 +69,9 @@ const Search = ({ CartItem, setCatFilteredSearch, products }) => {
   }
 
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-  // const { currentUser } = useSelector((state) => state.user);
+
+  // const quantity = useSelector((state) => state.cart.cartTotalQuantity);
+  const quantity = useSelector((state) => state.cart.cartItems.length);
 
   return (
     <>
@@ -135,14 +136,16 @@ const Search = ({ CartItem, setCatFilteredSearch, products }) => {
             <div className="cart">
               <Link to="/cart">
                 <i className="fa fa-shopping-bag icon-circle"></i>
-                <span>{CartItem.length === 0 ? "" : CartItem.length}</span>
+                <span>{quantity}</span>
               </Link>
             </div>
           </div>
           <div className="cartMobile">
             <Link to="/cart">
               <i className="fa fa-shopping-bag icon-circle"></i>
-              <span>{CartItem.length === 0 ? "" : CartItem.length}</span>
+              <span>{quantity === 0 ? "" : quantity}</span>
+
+              <span>{quantity}</span>
             </Link>
           </div>
         </div>
@@ -195,7 +198,7 @@ const Search = ({ CartItem, setCatFilteredSearch, products }) => {
             <div className="cart">
               <Link to="/cart">
                 <i className="fa fa-shopping-bag icon-circle"></i>
-                <span>{CartItem.length === 0 ? "" : CartItem.length}</span>
+                <span>{quantity === 0 ? "" : quantity}</span>
               </Link>
             </div>
           </div>
