@@ -17,7 +17,6 @@ import styled, { ThemeProvider } from "styled-components";
 import Head from "./common/header/Head";
 import ProductListproduct from "./pages/productList/ProductListproduct";
 import ProductListFilter from "./components/flashDeals/ProductListFilter";
-import Swal from "sweetalert2";
 import axios from "axios";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
@@ -54,22 +53,6 @@ function App() {
   }, [CartItem]);
 
   const addToCart = (product) => {
-    const Toast = Swal.mixin({
-      toast: true,
-      position: "top-end",
-      showConfirmButton: false,
-      timer: 2500,
-      timerProgressBar: true,
-      didOpen: (toast) => {
-        toast.addEventListener("mouseenter", Swal.stopTimer);
-        toast.addEventListener("mouseleave", Swal.resumeTimer);
-      },
-    });
-
-    Toast.fire({
-      icon: "success",
-      title: "El producto fue agregado al carrito!",
-    });
     const productExit = CartItem.find((item) => item._id === product._id);
 
     if (productExit) {

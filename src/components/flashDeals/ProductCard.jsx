@@ -9,18 +9,14 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useDispatch } from "react-redux";
-// import { addProductCart } from "../../redux/cartSlice";
+import { addToCart } from "../../redux/cartSlice";
+import { ToastContainer } from "react-toastify";
 
-const Product = ({ products, addToCart }) => {
-  // const location = useLocation();
-  // const path = location.pathname.split("/")[2];
-
+const Product = () => {
   const { id } = useParams();
 
   const [singleProduct, setSingleProduct] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  // const [selectedImg, setSelectedImg] = useState(productItems[path - 1].cover1);
 
   useEffect(() => {
     setLoading(true);
@@ -29,7 +25,7 @@ const Product = ({ products, addToCart }) => {
         const res = await axios.get(
           `https://csarta.onrender.com/api/products/single/${id}`
         );
-        // console.log(res);
+
         setSingleProduct(res.data);
         setLoading(false);
       } catch (err) {}
@@ -38,25 +34,6 @@ const Product = ({ products, addToCart }) => {
   }, [id]);
 
   const [previewImg, setPreviewImg] = useState(0);
-
-  // const [quantity, setQuantity] = useState(1);
-
-  // const increaseQty = () => {
-  //   setQuantity((prevQty) => {
-  //     let tempQty = prevQty + 1;
-  //     if (tempQty > productItems[slideNumber - 1]?.stock)
-  //       tempQty = productItems[slideNumber - 1]?.stock;
-  //     return tempQty;
-  //   });
-  // };
-
-  // const decreaseQty = () => {
-  //   setQuantity((prevQty) => {
-  //     let tempQty = prevQty - 1;
-  //     if (tempQty < 1) tempQty = 1;
-  //     return tempQty;
-  //   });
-  // };
 
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
@@ -82,8 +59,8 @@ const Product = ({ products, addToCart }) => {
     arrows: true,
   };
 
-  const handleClick = () => {
-    // dispatch(addProductCart({ ...singleProduct, quantity }));
+  const handleAddToCart = () => {
+    dispatch(addToCart(singleProduct));
   };
 
   return (
@@ -219,19 +196,15 @@ const Product = ({ products, addToCart }) => {
                       Add to Cart
                     </button>
                   ) : ( */}
-                  <input
-                    onChange={(e) => setQuantity(e.target.value)}
-                    type="number"
-                    defaultValue={1}
-                    // className={styles.quantity}
-                  />
+
                   <button
                     className="add-to-cart-btn shop-btn fs-14"
                     // onClick={() => addToCart(singleProduct)}
-                    onClick={handleClick}
+                    onClick={() => handleAddToCart()}
                   >
                     Add to Cart
                   </button>
+                  <ToastContainer />
                   {/* )} */}
                 </div>
               </div>

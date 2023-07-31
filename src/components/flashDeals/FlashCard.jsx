@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 import { addToCart } from "../../redux/cartSlice";
 import { useDispatch } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
 
 const SampleNextArrow = (props) => {
   const { onClick } = props;
@@ -86,6 +87,7 @@ const FlashCard = ({ products, setProducts, isLoading }) => {
 
   const handleAddToCart = (productItems) => {
     dispatch(addToCart(productItems));
+
     // history.push("/cart");
   };
 
@@ -145,6 +147,7 @@ const FlashCard = ({ products, setProducts, isLoading }) => {
           })}
         </Slider>
       )}
+      <ToastContainer />
     </div>
   );
 };

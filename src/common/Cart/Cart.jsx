@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import { BsFillCartXFill } from "react-icons/bs";
-import Swal from "sweetalert2";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addProductCart,
@@ -10,9 +9,9 @@ import {
   addToCart,
   deleteProductCart,
   getTotals,
-  reset,
   clearCart,
 } from "../../redux/cartSlice";
+import { ToastContainer, toast } from "react-toastify";
 
 const Cart = ({
   CartItem,
@@ -92,7 +91,6 @@ const Cart = ({
                         >
                           <i className="fa-solid fa-minus"></i>
                         </button>
-
                         <div
                           // onChange={(e) => setQuantity(e.target.value)}
                           type="number"
@@ -107,6 +105,7 @@ const Cart = ({
                         >
                           <i className="fa-solid fa-plus"></i>
                         </button>
+                        <ToastContainer />
                       </div>
                     </div>
                     <div className="cart-item-price"></div>
@@ -121,6 +120,7 @@ const Cart = ({
             >
               Vaciar Carrito
             </button>
+            <ToastContainer />
           </div>
           <div className="cart-total productCart">
             <h2>Resumen de la compra</h2>
