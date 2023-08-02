@@ -27,7 +27,7 @@ const SamplePrevArrow = (props) => {
     </div>
   );
 };
-const FlashCard = ({ products, setProducts, isLoading }) => {
+const FlashCard = ({ products, isLoading }) => {
   const [count, setCount] = useState(0);
   const increment = () => {
     setCount(count + 1);
@@ -91,6 +91,16 @@ const FlashCard = ({ products, setProducts, isLoading }) => {
     // history.push("/cart");
   };
 
+  const [favorite, setFavorite] = useState([]);
+
+  const handleHeartClick = (id) => {
+    setFavorite((item) =>
+      item.includes(id)
+        ? favorite.filter((fav) => fav !== id)
+        : [...favorite, id]
+    );
+  };
+
   return (
     <div>
       {isLoading ? (
@@ -115,10 +125,15 @@ const FlashCard = ({ products, setProducts, isLoading }) => {
                         />
                       </Link>
 
-                      <div className="product-like">
-                        {/* <label>{count}</label> <br /> */}
-
-                        <i className="fa-regular fa-heart"></i>
+                      <div
+                        className="product-like"
+                        onClick={() => handleHeartClick(productItems?._id)}
+                      >
+                        {favorite.includes(productItems._id) ? (
+                          <i class="fa-solid fa-heart"></i>
+                        ) : (
+                          <i class="fa-regular fa-heart"></i>
+                        )}
                       </div>
                     </div>
                     <div className="product-details">

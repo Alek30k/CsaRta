@@ -144,9 +144,6 @@ function App() {
         {
           path: "/products/:category",
           element: (
-            // <ThemeProvider theme={themeStyle}>
-            //   <QueryClientProvider client={queryClient}>
-            //     <Container>
             <ProductList
               shopItems={shopItems}
               CartItem={CartItem}
@@ -155,9 +152,6 @@ function App() {
               setCatFiltered={setCatFiltered}
               catFilteredModal={catFilteredModal}
             />
-            //     </Container>
-            //   </QueryClientProvider>
-            // </ThemeProvider>
           ),
         },
         {

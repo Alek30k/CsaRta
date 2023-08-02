@@ -1,25 +1,15 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import logo from "../../components/assets/images/logo2.png";
 import { Link, useNavigate } from "react-router-dom";
-// import { AuthContext } from "../../context/authContext";
-import Data from "../../components/Data";
-import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../redux/userSlice";
-import axios from "axios";
+
 import newRequest from "../../utils/newRequest";
+import { useSelector } from "react-redux";
 
 const Search = ({ CartItem, setCatFilteredSearch, products }) => {
-  const [avatarOpen, setAvatarOpen] = useState(false);
   const [avatarOpenIngresar, setAvatarOpenIngresar] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
   const [query, setQuery] = useState("");
-
-  // const [input, setInput] = useState("");
-
-  // const handleSubmit = () => {
-  //   navigate(`/products/${query}`);
-  // };
 
   const navigate = useNavigate();
 
@@ -27,14 +17,6 @@ const Search = ({ CartItem, setCatFilteredSearch, products }) => {
     const search = document.querySelector(".search");
     search.classList.toggle("active", window.scrollY > 100);
   });
-
-  const dispatch = useDispatch();
-
-  // const handleClick = () => {
-  //   dispatch(logout());
-  //   setOpenModal(!openModal);
-  //   navigate("/");
-  // };
 
   const handleLogout = async () => {
     try {
@@ -73,6 +55,8 @@ const Search = ({ CartItem, setCatFilteredSearch, products }) => {
   // const quantity = useSelector((state) => state.cart.cartTotalQuantity);
   const quantity = useSelector((state) => state.cart.cartItems.length);
 
+  const [openModalFavorite, setOpenModalFavorite] = useState(false);
+
   return (
     <>
       <section className="search">
@@ -95,7 +79,18 @@ const Search = ({ CartItem, setCatFilteredSearch, products }) => {
           </div>
 
           <div className="icon f_flex width">
-            <i className="fa-solid fa-heart icon-circle heart"></i>
+            <i
+              className="fa-solid fa-heart icon-circle heart"
+              onClick={() => setOpenModalFavorite(!openModalFavorite)}
+            ></i>
+
+            {openModalFavorite && (
+              <div className="menuAvatar">
+                <div className="buttonLogout">
+                  <button>Favoritos</button>
+                </div>
+              </div>
+            )}
 
             {currentUser ? (
               <div>
