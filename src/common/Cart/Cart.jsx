@@ -82,7 +82,7 @@ const Cart = () => {
                   </span>
                   <div className="img">
                     <Link to={`/product/${item._id}`}>
-                      <img src={item.cover} alt="" />
+                      <img src={item.img[0]} alt="" />
                       <div className="ver">Ver Producto</div>
                     </Link>
                   </div>

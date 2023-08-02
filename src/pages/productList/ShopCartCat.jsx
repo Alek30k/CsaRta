@@ -17,7 +17,7 @@ const ShopCartCat = ({ catFiltered, catFilteredModal }) => {
             <div className=" mtop  productImg">
               <div className="img">
                 <Link to={`/product/${shopItems._id}`}>
-                  <img src={shopItems.cover} alt="" />
+                  <img src={shopItems.img[0]} alt="" />
                 </Link>
                 <div className="product-like">
                   <label>{count}</label> <br />

@@ -25,7 +25,7 @@ const ShopCart = ({ productsSelect }) => {
               <div className="img">
                 <span className="discount">{shopItems.discount}% Off</span>
                 <Link to={`/product/${shopItems._id}`}>
-                  <img src={shopItems.cover} alt="" />
+                  <img src={shopItems.img[0]} alt="" />
                 </Link>
                 <div className="product-like">
                   <label>{count}</label> <br />

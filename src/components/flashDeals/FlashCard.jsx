@@ -109,7 +109,7 @@ const FlashCard = ({ products, setProducts, isLoading }) => {
 
                       <Link to={`/product/${productItems?._id}`}>
                         <img
-                          src={productItems?.cover}
+                          src={productItems?.img[0]}
                           alt=""
                           className="flashImg "
                         />
