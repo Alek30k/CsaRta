@@ -10,7 +10,7 @@ const ShopCartCatproduct = ({ catFilteredSearch }) => {
             <div className=" mtop  productImg">
               <div className="img">
                 <Link to={`/product/${shopItems._id}`}>
-                  <img src={shopItems.cover} alt="" />
+                  <img src={shopItems.img[0]} alt="" />
                 </Link>
               </div>
               <div className="titleShop">

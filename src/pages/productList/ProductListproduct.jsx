@@ -10,8 +10,6 @@ const ProductListproduct = ({
   setCatFiltered,
   products,
 }) => {
-  // const [products, setProducts] = useState(shopItems);
-
   const location = useLocation();
   const cat = location.pathname.split("/")[3];
 
@@ -130,9 +128,6 @@ const ProductListproduct = ({
             </div>
 
             <div className="listCat">
-              {/* <div className="filter">
-                <h4>Sub-Categorías</h4>
-              </div> */}
               {data.map((value, index) => {
                 return (
                   <Link to={`/products/${value.cateName}`} key={index}>
