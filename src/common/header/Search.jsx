@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import logo from "../../components/assets/images/logo2.png";
 import { Link, useNavigate } from "react-router-dom";
 
 import newRequest from "../../utils/newRequest";
 import { useSelector } from "react-redux";
 
-const Search = ({ CartItem, setCatFilteredSearch, products }) => {
+const Search = ({ setCatFilteredSearch, products }) => {
   const [avatarOpenIngresar, setAvatarOpenIngresar] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
@@ -82,6 +82,7 @@ const Search = ({ CartItem, setCatFilteredSearch, products }) => {
             <i
               className="fa-solid fa-heart icon-circle heart"
               onClick={() => setOpenModalFavorite(!openModalFavorite)}
+              // onChange={(event) => setView(event.target.value as "available" | "readlist")}
             ></i>
 
             {openModalFavorite && (

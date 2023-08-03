@@ -2,7 +2,7 @@ import React from "react";
 import FlashCard from "./FlashCard";
 import "./style.css";
 
-const FlashDeals = ({ products, addToCart, setProducts, isLoading }) => {
+const FlashDeals = ({ products, setProducts }) => {
   return (
     <>
       <section className="flash">
@@ -12,12 +12,7 @@ const FlashDeals = ({ products, addToCart, setProducts, isLoading }) => {
             <h1>Productos Destacados</h1>
           </div>
 
-          <FlashCard
-            isLoading={isLoading}
-            products={products}
-            addToCart={addToCart}
-            setProducts={setProducts}
-          />
+          <FlashCard products={products} setProducts={setProducts} />
         </div>
       </section>
     </>

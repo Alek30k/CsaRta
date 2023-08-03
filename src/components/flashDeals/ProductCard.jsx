@@ -3,7 +3,6 @@ import "./ProductCard.css";
 import { Link, useParams } from "react-router-dom";
 import ReactImageMagnify from "react-image-magnify";
 import { calculateDiscountedPrice, formatPrice } from "../../utils/helpers";
-import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

@@ -3,7 +3,7 @@ import Catg from "./Catg";
 import ShopCart from "./ShopCart";
 import "./style.css";
 
-const Shop = ({ addToCart, shopItems, products }) => {
+const Shop = ({ shopItems, products }) => {
   const allMarcas = [
     // "Todo",
     ...new Set(shopItems.map((producto) => producto.cateName)),
@@ -53,11 +53,7 @@ const Shop = ({ addToCart, shopItems, products }) => {
               </div>
             </div>
             <div className="product-content grid1">
-              <ShopCart
-                addToCart={addToCart}
-                shopItems={shopItems}
-                productsSelect={productsSelect}
-              />
+              <ShopCart productsSelect={productsSelect} />
             </div>
           </div>
         </div>

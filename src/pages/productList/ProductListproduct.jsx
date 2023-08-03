@@ -8,7 +8,6 @@ const ProductListproduct = ({
   shopItems,
   catFilteredSearch,
   setCatFiltered,
-  productItems,
   products,
 }) => {
   // const [products, setProducts] = useState(shopItems);

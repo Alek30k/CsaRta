@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 // import { AuthContext } from "../../context/authContext";
 
-const Navbar = ({ setCatFiltered, productItems, products }) => {
+const Navbar = ({ setCatFiltered, products }) => {
   // Toogle Menu
   const [MobileMenu, setMobileMenu] = useState(false);
   const [Menu, setMenu] = useState(false);

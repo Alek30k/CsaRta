@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -27,7 +27,7 @@ const SamplePrevArrow = (props) => {
     </div>
   );
 };
-const FlashCard = ({ products, isLoading }) => {
+const FlashCard = ({ products }) => {
   const [count, setCount] = useState(0);
   const increment = () => {
     setCount(count + 1);
@@ -93,75 +93,77 @@ const FlashCard = ({ products, isLoading }) => {
 
   const [favorite, setFavorite] = useState([]);
 
+  useEffect(() => {
+    setFavorite(JSON.parse(localStorage.getItem("favorite") ?? "[]"));
+  }, []);
+
   const handleHeartClick = (id) => {
-    setFavorite((item) =>
-      item.includes(id)
-        ? favorite.filter((fav) => fav !== id)
-        : [...favorite, id]
-    );
+    const draft = favorite.includes(id)
+      ? favorite.filter((fav) => fav !== id)
+      : [...favorite, id];
+
+    setFavorite(draft);
+    localStorage.setItem("favorite", JSON.stringify(draft));
   };
 
   return (
     <div>
-      {isLoading ? (
-        "Loading..."
-      ) : (
-        <Slider {...settings}>
-          {filterSection?.map((productItems, i) => {
-            return (
-              <div key={i}>
-                <div className="box">
-                  <div className="product mtop productshop">
-                    <div className="imgFlash">
-                      {/* <span className="discount">
+      <Slider {...settings}>
+        {filterSection?.map((productItems, i) => {
+          return (
+            <div key={i}>
+              <div className="box">
+                <div className="product mtop productshop">
+                  <div className="imgFlash">
+                    {/* <span className="discount">
                                   {productItems.discount}% Off
                                 </span> */}
 
-                      <Link to={`/product/${productItems?._id}`}>
-                        <img
-                          src={productItems?.img[0]}
-                          alt=""
-                          className="flashImg "
-                        />
-                      </Link>
+                    <Link to={`/product/${productItems?._id}`}>
+                      <img
+                        src={productItems?.img[0]}
+                        alt=""
+                        className="flashImg "
+                      />
+                    </Link>
 
-                      <div
-                        className="product-like"
-                        onClick={() => handleHeartClick(productItems?._id)}
-                      >
-                        {favorite.includes(productItems._id) ? (
-                          <i class="fa-solid fa-heart"></i>
-                        ) : (
-                          <i class="fa-regular fa-heart"></i>
-                        )}
-                      </div>
+                    <div
+                      className="product-like"
+                      onClick={() => handleHeartClick(productItems?._id)}
+                    >
+                      {favorite.includes(productItems._id) ? (
+                        <i class="fa-solid fa-heart"></i>
+                      ) : (
+                        <i class="fa-regular fa-heart"></i>
+                      )}
                     </div>
-                    <div className="product-details">
-                      <h3>{productItems?.name}</h3>
-                      <div className="rate">
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                        <i className="fa fa-star"></i>
-                      </div>
-                      <div className="price">
-                        <div className="containerPriceFlash">
-                          <h4>${productItems?.price}.00 </h4>
+                  </div>
+                  <div className="product-details">
+                    <h3>{productItems?.name}</h3>
+                    <div className="rate">
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                      <i className="fa fa-star"></i>
+                    </div>
+                    <div className="price">
+                      <div className="containerPriceFlash">
+                        <h4>${productItems?.price}.00 </h4>
 
-                          <button onClick={() => handleAddToCart(productItems)}>
-                            <i className="fa fa-plus"></i>
-                          </button>
-                        </div>
+                        <button onClick={() => handleAddToCart(productItems)}>
+                          <i className="fa fa-plus"></i>
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            );
-          })}
-        </Slider>
-      )}
+            </div>
+          );
+        })}
+      </Slider>
+
       <ToastContainer />
     </div>
   );

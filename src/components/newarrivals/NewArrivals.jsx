@@ -28,7 +28,7 @@ const NewArrivals = ({ setListFiltered, productItems, products }) => {
             </div>
           </div>
 
-          <Cart productItems={productItems} products={products} />
+          <Cart products={products} />
         </div>
       </section>
     </>

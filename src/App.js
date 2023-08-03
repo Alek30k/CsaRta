@@ -12,8 +12,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Register from "./pages/register/Register";
 import ProductCard from "./components/flashDeals/ProductCard";
 import ProductList from "./pages/productList/ProductList";
-import { Dark, Light } from "./styles/Themes";
-import styled, { ThemeProvider } from "styled-components";
 import Head from "./common/header/Head";
 import ProductListproduct from "./pages/productList/ProductListproduct";
 import ProductListFilter from "./components/flashDeals/ProductListFilter";
@@ -28,17 +26,20 @@ function App() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(async () => {
-    try {
-      const res = await axios.get(
-        `https://csarta.onrender.com/api/products`,
-        {}
-      );
-      setProducts(res.data);
-      setIsLoading(false);
-    } catch (err) {
-      console.log(err);
-    }
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(
+          `https://csarta.onrender.com/api/products`,
+          {}
+        );
+        setProducts(res.data);
+        setIsLoading(false);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
   }, []);
 
   const [CartItem, setCartItem] = useState([]);
@@ -66,39 +67,18 @@ function App() {
   const [catFilteredModal, setCatFilteredModal] = useState([]);
   const [catFilteredSearch, setCatFilteredSearch] = useState([]);
 
-  const ThemeContext = React.createContext(null);
-  const [theme, setTheme] = useState("Dark");
-  const themeStyle = theme === "light" ? Light : Dark;
-
-  const cambiarTheme = () => {
-    setTheme((theme) => (theme === "light" ? "dark" : "light"));
-  };
-
   const Layout = () => {
     return (
       <div className="App">
         <Provider store={store}>
-          <ThemeContext.Provider value={{ theme, setTheme }}>
-            {/* <ThemeProvider theme={themeStyle}>
-            <QueryClientProvider client={queryClient}> */}
-            <Container>
-              <Head />
-              <Header
-                CartItem={CartItem}
-                setCatFiltered={setCatFiltered}
-                setCatFilteredSearch={setCatFilteredSearch}
-                productItems={productItems}
-                products={products}
-                cambiarTheme={cambiarTheme}
-                theme={theme}
-                setTheme={setTheme}
-              />
-              <Outlet />
-              <Footer />
-            </Container>
-            {/* </QueryClientProvider>
-          </ThemeProvider> */}
-          </ThemeContext.Provider>
+          <Head />
+          <Header
+            setCatFiltered={setCatFiltered}
+            setCatFilteredSearch={setCatFilteredSearch}
+            products={products}
+          />
+          <Outlet />
+          <Footer />
         </Provider>
       </div>
     );
@@ -114,15 +94,11 @@ function App() {
           path: "/",
           element: (
             <Pages
-              isLoading={isLoading}
               productItems={productItems}
               shopItems={shopItems}
               products={products}
               setProducts={setProducts}
-              Container={Container}
               setCatFiltered={setCatFiltered}
-              catFilteredModal={setCatFilteredModal}
-              setCatFilteredModal={setCatFilteredModal}
               setListFiltered={setListFiltered}
             />
           ),
@@ -133,8 +109,6 @@ function App() {
           element: (
             <ProductListproduct
               catFilteredSearch={catFilteredSearch}
-              productItems={productItems}
-              setCatFilteredSearch={setCatFilteredSearch}
               setCatFiltered={setCatFiltered}
               shopItems={shopItems}
               products={products}
@@ -146,7 +120,6 @@ function App() {
           element: (
             <ProductList
               shopItems={shopItems}
-              CartItem={CartItem}
               catFiltered={catFiltered}
               products={products}
               setCatFiltered={setCatFiltered}
@@ -158,36 +131,21 @@ function App() {
           path: "/productlist/:category",
           element: (
             <QueryClientProvider client={queryClient}>
-              <Container>
-                <ProductListFilter
-                  productItems={productItems}
-                  listFiltered={listFiltered}
-                />
-              </Container>
+              <ProductListFilter listFiltered={listFiltered} />
             </QueryClientProvider>
           ),
         },
         {
           path: "/product/:id",
           element: (
-            // <ThemeProvider theme={themeStyle}>
             <QueryClientProvider client={queryClient}>
-              <Container>
-                <ProductCard
-                  products={products}
-                  shopItems={shopItems}
-                  CartItem={CartItem}
-                  productItems={productItems}
-                  cambiarTheme={cambiarTheme}
-                />
-              </Container>
+              <ProductCard />
             </QueryClientProvider>
-            // </ThemeProvider>
           ),
         },
         {
           path: "/cart",
-          element: <Cart CartItem={CartItem} setCartItem={setCartItem} />,
+          element: <Cart />,
         },
       ],
     },
@@ -204,10 +162,5 @@ function App() {
 
   return <RouterProvider router={router} />;
 }
-
-const Container = styled.div`
-  background-color: ${({ theme }) => theme.body};
-  color: ${({ theme }) => theme.text};
-`;
 
 export default App;

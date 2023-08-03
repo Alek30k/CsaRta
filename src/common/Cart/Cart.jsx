@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import { BsFillCartXFill } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  addProductCart,
   decreaseCart,
   addToCart,
   removeFromCart,
   getTotals,
   clearCart,
 } from "../../redux/cartSlice";
-import { ToastContainer, toast } from "react-toastify";
-import { calculateDiscountedPrice, formatPrice } from "../../utils/helpers";
+import { ToastContainer } from "react-toastify";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -21,18 +19,6 @@ const Cart = () => {
   useEffect(() => {
     dispatch(getTotals());
   }, [cart, dispatch]);
-
-  // const totalPrice = cart.cartItems.reduce(
-  //   (price, item) =>
-  //     price +
-  //     formatPrice(calculateDiscountedPrice(item.price, item.discount)) *
-  //       item.cartQuantity,
-  //   0
-  // );
-
-  // const cal = cart.cartItems.map((item=> (
-  //   {item.}
-  // )))
 
   const handleClearCart = () => {
     dispatch(clearCart());

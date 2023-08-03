@@ -3,7 +3,7 @@ import Dcard from "./Dcard";
 // import Ddata from "./Ddata";
 import { Link } from "react-router-dom";
 
-const Discount = ({ addToCart, setListFiltered, products }) => {
+const Discount = ({ setListFiltered, products }) => {
   const filterMarcas = () => {
     const productsFilter = products.filter(
       (item) => item.seccion === "discount"
@@ -30,7 +30,7 @@ const Discount = ({ addToCart, setListFiltered, products }) => {
               <i className="fa-solid fa-caret-right"></i>
             </div>
           </div>
-          <Dcard addToCart={addToCart} products={products} />
+          <Dcard products={products} />
         </div>
       </section>
     </>

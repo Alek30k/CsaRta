@@ -8,7 +8,6 @@ const ProductList = ({
   shopItems,
   catFiltered,
   setCatFiltered,
-
   catFilteredModal,
   products,
 }) => {
@@ -127,9 +126,6 @@ const ProductList = ({
             ) : (
               <div className="product-content grid1 shopCartCatFilter">
                 <ShopCartCat
-                  // addToCart={addToCart}
-                  // shopItems={shopItems}
-                  // products={products}
                   catFiltered={catFiltered}
                   catFilteredModal={catFilteredModal}
                 />

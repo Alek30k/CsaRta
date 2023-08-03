@@ -13,29 +13,16 @@ const Pages = ({
   productItems,
   products,
   setProducts,
-
-  CartItem,
   shopItems,
   setCatFiltered,
-  setCatFilteredModal,
   setListFiltered,
-  isLoading,
 }) => {
   return (
     <div>
-      <Navbar
-        setCatFiltered={setCatFiltered}
-        productItems={productItems}
-        setCatFilteredModal={setCatFilteredModal}
-        products={products}
-      />
-      <Home CartItem={CartItem} />
+      <Navbar setCatFiltered={setCatFiltered} products={products} />
+      <Home />
 
-      <FlashDeals
-        products={products}
-        setProducts={setProducts}
-        isLoading={isLoading}
-      />
+      <FlashDeals products={products} setProducts={setProducts} />
 
       <TopCate />
       <NewArrivals
