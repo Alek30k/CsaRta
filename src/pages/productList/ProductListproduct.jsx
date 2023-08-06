@@ -5,7 +5,6 @@ import ShopCartCatproduct from "./ShopCartCatproduct";
 import CatgSearch from "./CatgSearch";
 
 const ProductListproduct = ({
-  shopItems,
   catFilteredSearch,
   setCatFiltered,
   products,
@@ -84,16 +83,6 @@ const ProductListproduct = ({
 
   const { DataCategory } = Data;
 
-  // const filterCat = (value) => {
-  //   const filteredProduct = productItems.filter(
-  //     (p) => p.catCat.toLowerCase() === value.cateName
-  //   );
-  //   setCatFiltered(filteredProduct);
-  // };
-
-  const [productsSearch, setProductsSearch] = useState(data);
-  // const [openFiltro, setOpenFiltro] = useState(false);
-
   return (
     <div>
       <section className=" shop backgroundd categoris catFilterSearch">
@@ -113,8 +102,6 @@ const ProductListproduct = ({
           <CatgSearch
             cateName={cateName}
             filterMarcas={filterMarcas}
-            shopItems={shopItems}
-            setProductsSearch={setProductsSearch}
             catOpen={catOpen}
             setCatOpen={setCatOpen}
             setCatFiltered={setCatFiltered}

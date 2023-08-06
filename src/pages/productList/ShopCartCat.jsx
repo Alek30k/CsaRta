@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ShopCartCat = ({ catFiltered, catFilteredModal }) => {
+const ShopCartCat = ({ catFiltered }) => {
   const [count, setCount] = useState(0);
   const increment = () => {
     setCount(count + 1);
   };
-
-  console.log(catFiltered);
 
   return (
     <>

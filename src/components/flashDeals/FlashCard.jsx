@@ -4,8 +4,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 import { addToCart } from "../../redux/cartSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
+import { addFavorite } from "../../redux/favoriteReducer";
 
 const SampleNextArrow = (props) => {
   const { onClick } = props;
@@ -83,7 +84,7 @@ const FlashCard = ({ products }) => {
   };
 
   const dispatch = useDispatch();
-  const [quantity, setQuantity] = useState(1);
+  // const [quantity, setQuantity] = useState(1);
 
   const handleAddToCart = (productItems) => {
     dispatch(addToCart(productItems));
@@ -92,6 +93,9 @@ const FlashCard = ({ products }) => {
   };
 
   const [favorite, setFavorite] = useState([]);
+  // const favorites = useSelector((state) => state.favorite);
+
+  // console.log(favorites);
 
   useEffect(() => {
     setFavorite(JSON.parse(localStorage.getItem("favorite") ?? "[]"));
@@ -101,6 +105,12 @@ const FlashCard = ({ products }) => {
     const draft = favorite.includes(id)
       ? favorite.filter((fav) => fav !== id)
       : [...favorite, id];
+
+    // const favSelect = products.filter((item) => item._id === id);
+
+    // console.log(favSelect);
+
+    // dispatch(addFavorite(favSelect));
 
     setFavorite(draft);
     localStorage.setItem("favorite", JSON.stringify(draft));

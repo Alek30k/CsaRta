@@ -4,13 +4,7 @@ import ShopCartCat from "./ShopCartCat";
 import Data from "../../components/Data";
 import CatgFilter from "./CatgFilter";
 
-const ProductList = ({
-  shopItems,
-  catFiltered,
-  setCatFiltered,
-  catFilteredModal,
-  products,
-}) => {
+const ProductList = ({ catFiltered, setCatFiltered, products }) => {
   const location = useLocation();
   const cat = location.pathname.split("/")[2];
   const [catOpen, setCatOpen] = useState(true);
@@ -107,7 +101,6 @@ const ProductList = ({
             >
               <CatgFilter
                 filterMarcas={filterMarcas}
-                shopItems={shopItems}
                 catOpen={catOpen}
                 setCatOpen={setCatOpen}
                 setCatFiltered={setCatFiltered}
@@ -125,10 +118,7 @@ const ProductList = ({
               </div>
             ) : (
               <div className="product-content grid1 shopCartCatFilter">
-                <ShopCartCat
-                  catFiltered={catFiltered}
-                  catFilteredModal={catFilteredModal}
-                />
+                <ShopCartCat catFiltered={catFiltered} />
               </div>
             )}
           </div>

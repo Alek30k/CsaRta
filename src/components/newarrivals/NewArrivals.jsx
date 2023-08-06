@@ -3,7 +3,7 @@ import Cart from "./Cart";
 import "./style.css";
 import { Link } from "react-router-dom";
 
-const NewArrivals = ({ setListFiltered, productItems, products }) => {
+const NewArrivals = ({ setListFiltered, products }) => {
   const filterMarcas = () => {
     const productsFilter = products.filter(
       (item) => item.seccion === "newcomers"

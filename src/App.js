@@ -20,11 +20,8 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 
 function App() {
-  const { productItems } = Data;
-  const { shopItems } = Sdata;
-
   const [products, setProducts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,7 +31,7 @@ function App() {
           {}
         );
         setProducts(res.data);
-        setIsLoading(false);
+        // setIsLoading(false);
       } catch (err) {
         console.log(err);
       }
@@ -64,7 +61,6 @@ function App() {
   const [catFiltered, setCatFiltered] = useState([]);
   const [listFiltered, setListFiltered] = useState([]);
 
-  const [catFilteredModal, setCatFilteredModal] = useState([]);
   const [catFilteredSearch, setCatFilteredSearch] = useState([]);
 
   const Layout = () => {
@@ -94,8 +90,6 @@ function App() {
           path: "/",
           element: (
             <Pages
-              productItems={productItems}
-              shopItems={shopItems}
               products={products}
               setProducts={setProducts}
               setCatFiltered={setCatFiltered}
@@ -110,7 +104,6 @@ function App() {
             <ProductListproduct
               catFilteredSearch={catFilteredSearch}
               setCatFiltered={setCatFiltered}
-              shopItems={shopItems}
               products={products}
             />
           ),
@@ -119,11 +112,9 @@ function App() {
           path: "/products/:category",
           element: (
             <ProductList
-              shopItems={shopItems}
               catFiltered={catFiltered}
               products={products}
               setCatFiltered={setCatFiltered}
-              catFilteredModal={catFilteredModal}
             />
           ),
         },

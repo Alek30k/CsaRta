@@ -2,17 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import Data from "../../components/Data";
 
-const CatgFilter = ({
-  filterMarcas,
-  shopItems,
-  setProductsSearch,
-  setCatOpen,
-  catOpen,
-}) => {
-  const allBrands = () => {
-    setProductsSearch(shopItems);
-  };
-
+const CatgFilter = ({ filterMarcas, setCatOpen, catOpen }) => {
   const { DataCategory } = Data;
 
   const location = useLocation();

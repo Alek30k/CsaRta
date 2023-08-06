@@ -1,17 +1,6 @@
 import React from "react";
 
-const Catg = ({
-  cateName,
-  filterMarcas,
-  shopItems,
-  setProducts,
-  setCatOpen,
-  catOpen,
-}) => {
-  const allBrands = () => {
-    setProducts(shopItems);
-  };
-
+const Catg = ({ cateName, filterMarcas, setCatOpen, catOpen }) => {
   return (
     <>
       <div className={catOpen && "category"} onClick={() => setCatOpen(true)}>

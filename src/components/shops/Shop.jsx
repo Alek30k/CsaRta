@@ -3,13 +3,13 @@ import Catg from "./Catg";
 import ShopCart from "./ShopCart";
 import "./style.css";
 
-const Shop = ({ shopItems, products }) => {
+const Shop = ({ products }) => {
+  const filterShop = products.filter((item) => item.seccion === "shop");
+
   const allMarcas = [
     // "Todo",
-    ...new Set(shopItems.map((producto) => producto.cateName)),
+    ...new Set(filterShop.map((producto) => producto.subCategory)),
   ];
-
-  const filterShop = products.filter((item) => item.seccion === "shop");
 
   const [cateName, setCateName] = useState(allMarcas);
   const [productsSelect, setProductsSelect] = useState(filterShop);
@@ -35,8 +35,6 @@ const Shop = ({ shopItems, products }) => {
             <Catg
               cateName={cateName}
               filterMarcas={filterMarcas}
-              shopItems={shopItems}
-              setProductsSelect={setProductsSelect}
               catOpen={catOpen}
               setCatOpen={setCatOpen}
             />

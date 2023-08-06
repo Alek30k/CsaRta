@@ -1,17 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const CatgSearch = ({
-  filterMarcas,
-  shopItems,
-  setProductsSearch,
-  setCatOpen,
-  catOpen,
-}) => {
-  const allBrands = () => {
-    setProductsSearch(shopItems);
-  };
-
+const CatgSearch = ({ filterMarcas, setCatOpen, catOpen }) => {
   const data = [
     {
       id: 1,

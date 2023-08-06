@@ -1,12 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Register.css";
-import axios from "axios";
 import newRequest from "../../utils/newRequest";
 import upload from "../../utils/upload";
-// import upload from "../../utils/upload";
-// import { useDispatch } from "react-redux";
-// import { loginFailure, loginStart, loginSuccess } from "../../redux/userSlice";
 
 const Register = () => {
   // const [name, setName] = useState("");

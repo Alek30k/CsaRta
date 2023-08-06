@@ -9,14 +9,7 @@ import Annocument from "../components/annocument/Annocument";
 import Wrapper from "../components/wrapper/Wrapper";
 import Navbar from "../common/header/Navbar";
 
-const Pages = ({
-  productItems,
-  products,
-  setProducts,
-  shopItems,
-  setCatFiltered,
-  setListFiltered,
-}) => {
+const Pages = ({ products, setProducts, setCatFiltered, setListFiltered }) => {
   return (
     <div>
       <Navbar setCatFiltered={setCatFiltered} products={products} />
@@ -25,13 +18,9 @@ const Pages = ({
       <FlashDeals products={products} setProducts={setProducts} />
 
       <TopCate />
-      <NewArrivals
-        productItems={productItems}
-        setListFiltered={setListFiltered}
-        products={products}
-      />
+      <NewArrivals setListFiltered={setListFiltered} products={products} />
       <Discount setListFiltered={setListFiltered} products={products} />
-      <Shop shopItems={shopItems} products={products} />
+      <Shop products={products} />
       <Annocument />
       <Wrapper />
     </div>
