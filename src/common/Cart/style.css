@@ -15,7 +15,7 @@
 }
 
 .inputQuantity {
-  width: 60px;
+  min-width: 30px;
   height: 40px;
   /* border: 1px solid lightgray; */
   background-color: rgb(238, 235, 235);
@@ -427,6 +427,12 @@
     display: flex;
     flex-direction: column-reverse;
   }
+
+  /* .inputQuantity {
+    width: 100px;
+    height: 40px;
+    background-color: yellowgreen;
+  } */
 
   .cart-items {
     background: #f6f9fc;
